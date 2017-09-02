@@ -3,10 +3,10 @@
   <channel>
     <title>Florian Hartmann</title>
     <description></description>
-    <link>http://localhost:4002/</link>
-    <atom:link href="http://localhost:4002/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 02 Sep 2017 18:19:43 +0100</pubDate>
-    <lastBuildDate>Sat, 02 Sep 2017 18:19:43 +0100</lastBuildDate>
+    <link>https://florian.github.io//</link>
+    <atom:link href="https://florian.github.io//feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sat, 02 Sep 2017 18:23:25 +0100</pubDate>
+    <lastBuildDate>Sat, 02 Sep 2017 18:23:25 +0100</lastBuildDate>
     <generator>Jekyll v3.5.2</generator>
     
       <item>
@@ -14,8 +14,8 @@
         <description>&lt;p&gt;Yup&lt;/p&gt;
 </description>
         <pubDate>Fri, 01 Sep 2017 14:36:20 +0100</pubDate>
-        <link>http://localhost:4002/recurrent/</link>
-        <guid isPermaLink="true">http://localhost:4002/recurrent/</guid>
+        <link>https://florian.github.io//recurrent/</link>
+        <guid isPermaLink="true">https://florian.github.io//recurrent/</guid>
         
         
         <category>machine-learning</category>
@@ -27,8 +27,8 @@
         <description>&lt;p&gt;Yup&lt;/p&gt;
 </description>
         <pubDate>Fri, 01 Sep 2017 14:36:20 +0100</pubDate>
-        <link>http://localhost:4002/mnist/</link>
-        <guid isPermaLink="true">http://localhost:4002/mnist/</guid>
+        <link>https://florian.github.io//mnist/</link>
+        <guid isPermaLink="true">https://florian.github.io//mnist/</guid>
         
         
         <category>machine-learning</category>
@@ -40,8 +40,8 @@
         <description>&lt;p&gt;Yup&lt;/p&gt;
 </description>
         <pubDate>Fri, 01 Sep 2017 14:36:20 +0100</pubDate>
-        <link>http://localhost:4002/learning-ml/</link>
-        <guid isPermaLink="true">http://localhost:4002/learning-ml/</guid>
+        <link>https://florian.github.io//learning-ml/</link>
+        <guid isPermaLink="true">https://florian.github.io//learning-ml/</guid>
         
         
         <category>machine-learning</category>
@@ -53,8 +53,8 @@
         <description>&lt;p&gt;Yup&lt;/p&gt;
 </description>
         <pubDate>Fri, 01 Sep 2017 14:36:20 +0100</pubDate>
-        <link>http://localhost:4002/differential-privacy/</link>
-        <guid isPermaLink="true">http://localhost:4002/differential-privacy/</guid>
+        <link>https://florian.github.io//differential-privacy/</link>
+        <guid isPermaLink="true">https://florian.github.io//differential-privacy/</guid>
         
         
         <category>reading-notes</category>
@@ -66,8 +66,8 @@
         <description>&lt;p&gt;Yup&lt;/p&gt;
 </description>
         <pubDate>Fri, 01 Sep 2017 14:36:20 +0100</pubDate>
-        <link>http://localhost:4002/decision-trees/</link>
-        <guid isPermaLink="true">http://localhost:4002/decision-trees/</guid>
+        <link>https://florian.github.io//decision-trees/</link>
+        <guid isPermaLink="true">https://florian.github.io//decision-trees/</guid>
         
         
         <category>machine-learning</category>
@@ -79,8 +79,8 @@
         <description>&lt;p&gt;Yup&lt;/p&gt;
 </description>
         <pubDate>Fri, 01 Sep 2017 14:36:20 +0100</pubDate>
-        <link>http://localhost:4002/bloom-filters/</link>
-        <guid isPermaLink="true">http://localhost:4002/bloom-filters/</guid>
+        <link>https://florian.github.io//bloom-filters/</link>
+        <guid isPermaLink="true">https://florian.github.io//bloom-filters/</guid>
         
         
         <category>probabilistic-data-structures</category>
@@ -250,8 +250,8 @@ I’m pretty sure it was the same for 2016, which means I haven’t read a book 
 German for at least two years.&lt;/p&gt;
 </description>
         <pubDate>Sun, 01 Jan 2017 12:00:00 +0000</pubDate>
-        <link>http://localhost:4002/reading-2017/</link>
-        <guid isPermaLink="true">http://localhost:4002/reading-2017/</guid>
+        <link>https://florian.github.io//reading-2017/</link>
+        <guid isPermaLink="true">https://florian.github.io//reading-2017/</guid>
         
         
         <category>reading-notes</category>
