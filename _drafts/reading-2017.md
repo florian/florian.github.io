@@ -1,0 +1,167 @@
+---
+layout: post
+title:  "What I read in 2017"
+date:   2017-01-01 12:00:00
+description: "Some notes on the books I read this year"
+categories: reading-notes
+---
+
+Whenever I'm looking for a new book to read, I really enjoy looking at lists of
+books other people read. Since I started reading more again this year, I thought
+it'd be a good idea to write down some thoughts on the individual books. I ended
+up reading 12 books, picking up a new one nearly every month.
+In the following, the books are listed in the order that I read them in.
+
+---
+
+### [The Sense of Style](https://www.amazon.com/Sense-Style-Thinking-Persons-Writing/dp/0143127799/r)
+
+![The Sense of Style cover](/assets/posts/books-2017/sense-of-style.jpg)
+
+The Sense of Style is a style guide that tries to explain how to write more elegantly and
+effectively. I started reading this book in the very beginning of January, when I
+was in the final weeks of working on my bachelor thesis. Of course, the timing was not a
+coincidence, and I do feel like the book has helped to improve my thesis a bit.
+
+To my surprise however, I also ended up finding the book itself quite enjoyable to read. Partly, this
+is definitely because it is written in great style, by a highly eloquent author.
+While I was reading the book, it also occured to me that I never really thought
+about the fact that there are style guides for writing prose, similiarly to how
+programmers have style guides for code.
+
+The book addresses not only stylistic choices but also dives into more psychological
+aspects. One of these points that I really internalized is what the author
+calls the *curse of knowledge*.
+By having a deep understanding of a topic, it becomes incredibly hard to explain
+it in a good way to people without much prior knowledge. This is due to the fact
+that we forget the difficulties we had when first learning about
+the topic ourselves. Now it all seems so simple and it's easy to fall into the
+trap of thinking that certain parts are also obvious to other people.
+
+### [The Signal and the Noise](https://www.amazon.com/Signal-Noise-Many-Predictions-Fail-but/dp/0143125087/)
+
+![The Signal and the Noise cover](/assets/posts/books-2017/signal-and-noise.jpg)
+
+A lot of people will probably know the author, Nate Silver, for his incredibly
+accurate election predictions. He is also well known for applying statistical
+techniques to baseball, and for his articles at
+[FiveThirtyEight](http://fivethirtyeight.com), where he combines statistics with
+journalism. I have to admit that this impressive biography is also what got me
+interested in his book initially. While this is not the best reason to read a
+book, I have to say that I really enjoyed it. Over the last year, I ended up recommending
+the book to a lot of people.
+
+In each chapter, Silver explains how statistics are used to make
+predictions in different fields.
+The range of these applications is quite large and goes from elections over
+weather reports and climate change to online pocker.
+Because there is such a large variety of topics, the book never gets boring. It's also
+interesting to see how complicated things like weather predictions are, while
+they are so ordinary for us that we don't give them much thought.
+
+When I started reading the book, my expectations were a bit off, as I expected a
+lot more math. Instead, the book is more concerned with explaining the
+fundamental ideas on a popular scientific level. This means that the book
+contains nearly no math but often gets into psychological aspects. For example,
+a good part of the chapter on weather predictions is spent on explaining why some
+predictions are made more inaccurate for psychological reasons. This is not
+necessarily a negative criticism of the book, as I also deeply enjoyed these topics.
+Lastly, I want to mention that the book also contains a really good high-level introduction to
+Bayesian statistics.
+
+### [Reinforcement Learning: An Introduction](http://incompleteideas.net/sutton/book/the-book.html)
+
+![Reinforcement Learning: An Introduction cover](/assets/posts/books-2017/rl.jpg)
+
+Reinforcement learning is a subarea of Machine Learning with some essential
+differences to (un)supervised learning. The fundamental idea is that we want to
+train an agent that learns how to perform tasks in a dynamic environment. In
+contrast to supervised learning, the feedback given to the agent is delayed and
+does not tell it what the best action would have been.
+
+Because reinforcement learning is a bit of a niche area in Machine Learning, I
+never really got into it when I was new to the field. Still, the fundamental
+idea sounded incredibly interesting to me, so in the holidays after the winter
+semester I decided to work through this book. This was just in time to read the
+reworked second edition.
+
+The book was written by Sutton and Barto who are renowned experts in the field
+and came up with many of the most important ideas themselves. While the book
+does contain a large amount of math, it's still very accessible because
+everything is explained up from the ground up.
+
+Working through the book was a lot of fun and I ended up [implementing](https://github.com/florian/reinforcement-learning) many algorithms from the book using Jupyter notebooks.
+By now, reinforcement learning is also one of my absolute favorite areas of
+machine learning, and the book definitely contributed to this. I still marvel at
+the way it builds up the entire framework step by step.
+
+### [The Seven Habits of Highly Effective People](https://www.amazon.com/Habits-Highly-Effective-People-Powerful/dp/1451639619/)
+
+![The Seven Habits of Highly Effective People cover](/assets/posts/books-2017/effective.jpg)
+
+This book tries to explain what traits most successful people have in common.
+The fundamental idea behind the book is that there are seven such habits that
+most of these people share.
+One chapter is devoted to each habit, in which it is discussed in a lot of detail.
+
+On the first few pages of the book, there is an incredible number of quotes from
+well-known people that praise the book. This increased my expectations even
+further, but ultimately I really did not like the book. The habits themselves all make
+sense but they are discussed in a huge length, which becomes off-putting at some
+point. Other advice from the book is way too over-engineered and complicated. I
+feel like it would've made more sense to write down these ideas in a long essay
+rather than 400 page book.
+
+### [A Clash of Kings](https://www.amazon.com/Clash-Kings-Song-Fire-Book/dp/0553579908)
+
+![A Clash of Kings cover](/assets/posts/books-2017/acok.jpg)
+
+*A Clash of Kings* is the second book from the *A Song of Ice and Fire* series
+that *Game of Thrones* is based on. After I read the first book in 2016, I was
+planning to read the other four books this year just so that I would be done
+when the sixth book was going to come out. Unfortunately, that book got delayed further
+and further and is not even out by now, so I decided to pause again after the second book.
+
+All in all, I really enjoyed the book. Knowing the important plot points from
+the TV series takes some fun away, but the second book already starts to deviate
+from the show, so there were still some surprises left. The writing style is
+also great and I really like how each chapter is told from the point of view of
+a different character.
+
+### A Mathematician's Apology
+
+Short essay, interesting, don't agree on all points
+
+### How To Win Friends And Influence People
+
+Suggested by most reading lists, a lot of obvious points but generally
+interesting to read
+
+### [OpenIntro Statistics](https://www.openintro.org/stat/)
+
+![OpenIntro Statistics cover](/assets/posts/books-2017/openintro-stats.jpg)
+
+After having focused my studies on Machine Learning, I felt like I learned a lot
+about certain areas of statistics while not touching others at all. At some
+point, I decided that I should spent a little bit of time learning the
+fundamentals of statistics to be able to get a good overview of the entire
+field. Especially significance tests were a part of statistics where I felt like
+I really lacked knowledge.
+
+OpenIntro Statistics is a freely available textbook that seemed suitable for
+this. It makes nearly no assumptions about the prior knowledge of the reader. On
+the one hand this is great. You can pick up the book without revising
+any other topics beforehand. But it also means that some parts of the book are
+incredibly basic.
+
+This is the first book where I actively started writing
+[notes](https://github.com/florian/reading-notes/blob/master/1_OpenIntro-Statistics.md) that
+summarize the most important points and concepts. This turned out to be incredibly effective,
+and I still can't believe I never did this in an organized fashion before.
+
+---
+
+Looking back, I really like that the books cover a large number of different
+genres. I also only just noticed that I only read books in English this year.
+I'm pretty sure it was the same for 2016, which means I haven't read a book in
+German for at least two years.

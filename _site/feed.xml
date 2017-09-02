@@ -5,203 +5,256 @@
     <description></description>
     <link>http://localhost:4002/</link>
     <atom:link href="http://localhost:4002/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 02 Sep 2017 10:44:31 +0100</pubDate>
-    <lastBuildDate>Sat, 02 Sep 2017 10:44:31 +0100</lastBuildDate>
+    <pubDate>Sat, 02 Sep 2017 18:19:43 +0100</pubDate>
+    <lastBuildDate>Sat, 02 Sep 2017 18:19:43 +0100</lastBuildDate>
     <generator>Jekyll v3.5.2</generator>
     
       <item>
-        <title>My new year!</title>
-        <description>&lt;p&gt;You’ll find this post in your &lt;code&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
-
-&lt;p&gt;To add new posts, simply add a file in the &lt;code&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
-
-&lt;p&gt;Jekyll also offers powerful support for code snippets:
-&lt;!-- linenos --&gt;&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Tom&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &amp;#39;Hi, Tom&amp;#39; to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://github.com/jekyll/jekyll-help&quot;&gt;Jekyll’s dedicated Help repository&lt;/a&gt;.&lt;/p&gt;
-
+        <title>Recurrent Neural Networks and Long-Short Term Memory</title>
+        <description>&lt;p&gt;Yup&lt;/p&gt;
 </description>
-        <pubDate>Fri, 02 Jan 2015 12:49:22 +0000</pubDate>
-        <link>http://localhost:4002/my-new-year/</link>
-        <guid isPermaLink="true">http://localhost:4002/my-new-year/</guid>
+        <pubDate>Fri, 01 Sep 2017 14:36:20 +0100</pubDate>
+        <link>http://localhost:4002/recurrent/</link>
+        <guid isPermaLink="true">http://localhost:4002/recurrent/</guid>
         
         
-        <category>new</category>
-        
-        <category>year</category>
-        
-        <category>resolution</category>
+        <category>machine-learning</category>
         
       </item>
     
       <item>
-        <title>Playing with UI</title>
-        <description>&lt;p&gt;AT&amp;amp;T You’ll find this post in your &lt;code&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/FlakCannon_Large.png&quot; alt=&quot;My Flak Cannon&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;To add new posts, simply add a file in the &lt;code&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
-
-&lt;p&gt;Trying out lists:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Item&lt;/li&gt;
-  &lt;li&gt;Item 2&lt;/li&gt;
-  &lt;li&gt;Item 3&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Or Ordered lists&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Yo&lt;/li&gt;
-  &lt;li&gt;Is&lt;/li&gt;
-  &lt;li&gt;Cool&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Nested Lists&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Item 1
-    &lt;ol&gt;
-      &lt;li&gt;A corollary to the above item.&lt;/li&gt;
-      &lt;li&gt;Yet another point to consider.&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Item 2
-    &lt;ul&gt;
-      &lt;li&gt;A corollary that does not need to be ordered.
-        &lt;ul&gt;
-          &lt;li&gt;This is indented four spaces, because it’s two spaces further than the item above.&lt;/li&gt;
-          &lt;li&gt;You might want to consider makign a new list.&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Item 3&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;In the words of Abraham Lincoln:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Pardon my french&lt;/p&gt;
-&lt;/blockquote&gt;
+        <title>Tackling MNIST with deep learning techniques</title>
+        <description>&lt;p&gt;Yup&lt;/p&gt;
+</description>
+        <pubDate>Fri, 01 Sep 2017 14:36:20 +0100</pubDate>
+        <link>http://localhost:4002/mnist/</link>
+        <guid isPermaLink="true">http://localhost:4002/mnist/</guid>
+        
+        
+        <category>machine-learning</category>
+        
+      </item>
+    
+      <item>
+        <title>What I learned from implementing ML algorithms</title>
+        <description>&lt;p&gt;Yup&lt;/p&gt;
+</description>
+        <pubDate>Fri, 01 Sep 2017 14:36:20 +0100</pubDate>
+        <link>http://localhost:4002/learning-ml/</link>
+        <guid isPermaLink="true">http://localhost:4002/learning-ml/</guid>
+        
+        
+        <category>machine-learning</category>
+        
+      </item>
+    
+      <item>
+        <title>Differential Privacy</title>
+        <description>&lt;p&gt;Yup&lt;/p&gt;
+</description>
+        <pubDate>Fri, 01 Sep 2017 14:36:20 +0100</pubDate>
+        <link>http://localhost:4002/differential-privacy/</link>
+        <guid isPermaLink="true">http://localhost:4002/differential-privacy/</guid>
+        
+        
+        <category>reading-notes</category>
+        
+      </item>
+    
+      <item>
+        <title>Understanding Decision Trees</title>
+        <description>&lt;p&gt;Yup&lt;/p&gt;
+</description>
+        <pubDate>Fri, 01 Sep 2017 14:36:20 +0100</pubDate>
+        <link>http://localhost:4002/decision-trees/</link>
+        <guid isPermaLink="true">http://localhost:4002/decision-trees/</guid>
+        
+        
+        <category>machine-learning</category>
+        
+      </item>
+    
+      <item>
+        <title>Bloom Filters</title>
+        <description>&lt;p&gt;Yup&lt;/p&gt;
+</description>
+        <pubDate>Fri, 01 Sep 2017 14:36:20 +0100</pubDate>
+        <link>http://localhost:4002/bloom-filters/</link>
+        <guid isPermaLink="true">http://localhost:4002/bloom-filters/</guid>
+        
+        
+        <category>probabilistic-data-structures</category>
+        
+      </item>
+    
+      <item>
+        <title>What I read in 2017</title>
+        <description>&lt;p&gt;Whenever I’m looking for a new book to read, I really enjoy looking at lists of
+books other people read. Since I started reading more again this year, I thought
+it’d be a good idea to write down some thoughts on the individual books. I ended
+up reading 12 books, picking up a new one nearly every month.
+In the following, the books are listed in the order that I read them in.&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;p&gt;&lt;em&gt;This text will be italic&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&quot;the-sense-of-style&quot;&gt;&lt;a href=&quot;https://www.amazon.com/Sense-Style-Thinking-Persons-Writing/dp/0143127799/r&quot;&gt;The Sense of Style&lt;/a&gt;&lt;/h3&gt;
 
-&lt;p&gt;&lt;strong&gt;This text will be bold&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/posts/books-2017/sense-of-style.jpg&quot; alt=&quot;The Sense of Style cover&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Everyone &lt;em&gt;must&lt;/em&gt; attend the meeting at 5 o’clock today.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The Sense of Style is a style guide that tries to explain how to write more elegantly and
+effectively. I started reading this book in the very beginning of January, when I
+was in the final weeks of working on my bachelor thesis. Of course, the timing was not a
+coincidence, and I do feel like the book has helped to improve my thesis a bit.&lt;/p&gt;
+
+&lt;p&gt;To my surprise however, I also ended up finding the book itself quite enjoyable to read. Partly, this
+is definitely because it is written in great style, by a highly eloquent author.
+While I was reading the book, it also occured to me that I never really thought
+about the fact that there are style guides for writing prose, similiarly to how
+programmers have style guides for code.&lt;/p&gt;
+
+&lt;p&gt;The book addresses not only stylistic choices but also dives into more psychological
+aspects. One of these points that I really internalized is what the author
+calls the &lt;em&gt;curse of knowledge&lt;/em&gt;.
+By having a deep understanding of a topic, it becomes incredibly hard to explain
+it in a good way to people without much prior knowledge. This is due to the fact
+that we forget the difficulties we had when first learning about
+the topic ourselves. Now it all seems so simple and it’s easy to fall into the
+trap of thinking that certain parts are also obvious to other people.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-signal-and-the-noise&quot;&gt;&lt;a href=&quot;https://www.amazon.com/Signal-Noise-Many-Predictions-Fail-but/dp/0143125087/&quot;&gt;The Signal and the Noise&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/books-2017/signal-and-noise.jpg&quot; alt=&quot;The Signal and the Noise cover&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;A lot of people will probably know the author, Nate Silver, for his incredibly
+accurate election predictions. He is also well known for applying statistical
+techniques to baseball, and for his articles at
+&lt;a href=&quot;http://fivethirtyeight.com&quot;&gt;FiveThirtyEight&lt;/a&gt;, where he combines statistics with
+journalism. I have to admit that this impressive biography is also what got me
+interested in his book initially. While this is not the best reason to read a
+book, I have to say that I really enjoyed it. Over the last year, I ended up recommending
+the book to a lot of people.&lt;/p&gt;
+
+&lt;p&gt;In each chapter, Silver explains how statistics are used to make
+predictions in different fields.
+The range of these applications is quite large and goes from elections over
+weather reports and climate change to online pocker.
+Because there is such a large variety of topics, the book never gets boring. It’s also
+interesting to see how complicated things like weather predictions are, while
+they are so ordinary for us that we don’t give them much thought.&lt;/p&gt;
+
+&lt;p&gt;When I started reading the book, my expectations were a bit off, as I expected a
+lot more math. Instead, the book is more concerned with explaining the
+fundamental ideas on a popular scientific level. This means that the book
+contains nearly no math but often gets into psychological aspects. For example,
+a good part of the chapter on weather predictions is spent on explaining why some
+predictions are made more inaccurate for psychological reasons. This is not
+necessarily a negative criticism of the book, as I also deeply enjoyed these topics.
+Lastly, I want to mention that the book also contains a really good high-level introduction to
+Bayesian statistics.&lt;/p&gt;
+
+&lt;h3 id=&quot;reinforcement-learning-an-introduction&quot;&gt;&lt;a href=&quot;http://incompleteideas.net/sutton/book/the-book.html&quot;&gt;Reinforcement Learning: An Introduction&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/books-2017/rl.jpg&quot; alt=&quot;Reinforcement Learning: An Introduction cover&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Reinforcement learning is a subarea of Machine Learning with some essential
+differences to (un)supervised learning. The fundamental idea is that we want to
+train an agent that learns how to perform tasks in a dynamic environment. In
+contrast to supervised learning, the feedback given to the agent is delayed and
+does not tell it what the best action would have been.&lt;/p&gt;
+
+&lt;p&gt;Because reinforcement learning is a bit of a niche area in Machine Learning, I
+never really got into it when I was new to the field. Still, the fundamental
+idea sounded incredibly interesting to me, so in the holidays after the winter
+semester I decided to work through this book. This was just in time to read the
+reworked second edition.&lt;/p&gt;
+
+&lt;p&gt;The book was written by Sutton and Barto who are renowned experts in the field
+and came up with many of the most important ideas themselves. While the book
+does contain a large amount of math, it’s still very accessible because
+everything is explained up from the ground up.&lt;/p&gt;
+
+&lt;p&gt;Working through the book was a lot of fun and I ended up &lt;a href=&quot;https://github.com/florian/reinforcement-learning&quot;&gt;implementing&lt;/a&gt; many algorithms from the book using Jupyter notebooks.
+By now, reinforcement learning is also one of my absolute favorite areas of
+machine learning, and the book definitely contributed to this. I still marvel at
+the way it builds up the entire framework step by step.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-seven-habits-of-highly-effective-people&quot;&gt;&lt;a href=&quot;https://www.amazon.com/Habits-Highly-Effective-People-Powerful/dp/1451639619/&quot;&gt;The Seven Habits of Highly Effective People&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/books-2017/effective.jpg&quot; alt=&quot;The Seven Habits of Highly Effective People cover&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This book tries to explain what traits most successful people have in common.
+The fundamental idea behind the book is that there are seven such habits that
+most of these people share.
+One chapter is devoted to each habit, in which it is discussed in a lot of detail.&lt;/p&gt;
+
+&lt;p&gt;On the first few pages of the book, there is an incredible number of quotes from
+well-known people that praise the book. This increased my expectations even
+further, but ultimately I really did not like the book. The habits themselves all make
+sense but they are discussed in a huge length, which becomes off-putting at some
+point. Other advice from the book is way too over-engineered and complicated. I
+feel like it would’ve made more sense to write down these ideas in a long essay
+rather than 400 page book.&lt;/p&gt;
+
+&lt;h3 id=&quot;a-clash-of-kings&quot;&gt;&lt;a href=&quot;https://www.amazon.com/Clash-Kings-Song-Fire-Book/dp/0553579908&quot;&gt;A Clash of Kings&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/books-2017/acok.jpg&quot; alt=&quot;A Clash of Kings cover&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;A Clash of Kings&lt;/em&gt; is the second book from the &lt;em&gt;A Song of Ice and Fire&lt;/em&gt; series
+that &lt;em&gt;Game of Thrones&lt;/em&gt; is based on. After I read the first book in 2016, I was
+planning to read the other four books this year just so that I would be done
+when the sixth book was going to come out. Unfortunately, that book got delayed further
+and further and is not even out by now, so I decided to pause again after the second book.&lt;/p&gt;
+
+&lt;p&gt;All in all, I really enjoyed the book. Knowing the important plot points from
+the TV series takes some fun away, but the second book already starts to deviate
+from the show, so there were still some surprises left. The writing style is
+also great and I really like how each chapter is told from the point of view of
+a different character.&lt;/p&gt;
+
+&lt;h3 id=&quot;a-mathematicians-apology&quot;&gt;A Mathematician’s Apology&lt;/h3&gt;
+
+&lt;p&gt;Short essay, interesting, don’t agree on all points&lt;/p&gt;
+
+&lt;h3 id=&quot;how-to-win-friends-and-influence-people&quot;&gt;How To Win Friends And Influence People&lt;/h3&gt;
+
+&lt;p&gt;Suggested by most reading lists, a lot of obvious points but generally
+interesting to read&lt;/p&gt;
+
+&lt;h3 id=&quot;openintro-statistics&quot;&gt;&lt;a href=&quot;https://www.openintro.org/stat/&quot;&gt;OpenIntro Statistics&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/books-2017/openintro-stats.jpg&quot; alt=&quot;OpenIntro Statistics cover&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;After having focused my studies on Machine Learning, I felt like I learned a lot
+about certain areas of statistics while not touching others at all. At some
+point, I decided that I should spent a little bit of time learning the
+fundamentals of statistics to be able to get a good overview of the entire
+field. Especially significance tests were a part of statistics where I felt like
+I really lacked knowledge.&lt;/p&gt;
+
+&lt;p&gt;OpenIntro Statistics is a freely available textbook that seemed suitable for
+this. It makes nearly no assumptions about the prior knowledge of the reader. On
+the one hand this is great. You can pick up the book without revising
+any other topics beforehand. But it also means that some parts of the book are
+incredibly basic.&lt;/p&gt;
+
+&lt;p&gt;This is the first book where I actively started writing
+&lt;a href=&quot;https://github.com/florian/reading-notes/blob/master/1_OpenIntro-Statistics.md&quot;&gt;notes&lt;/a&gt; that
+summarize the most important points and concepts. This turned out to be incredibly effective,
+and I still can’t believe I never did this in an organized fashion before.&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;p&gt;Check out this neat program I wrote:&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;x = 2
-x = 2 + 2
-what is x
-&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Looking back, I really like that the books cover a large number of different
+genres. I also only just noticed that I only read books in English this year.
+I’m pretty sure it was the same for 2016, which means I haven’t read a book in
+German for at least two years.&lt;/p&gt;
 </description>
-        <pubDate>Fri, 12 Dec 2014 12:07:22 +0000</pubDate>
-        <link>http://localhost:4002/playing-with-UI/</link>
-        <guid isPermaLink="true">http://localhost:4002/playing-with-UI/</guid>
+        <pubDate>Sun, 01 Jan 2017 12:00:00 +0000</pubDate>
+        <link>http://localhost:4002/reading-2017/</link>
+        <guid isPermaLink="true">http://localhost:4002/reading-2017/</guid>
         
         
-        <category>ui</category>
-        
-        <category>experiment</category>
-        
-      </item>
-    
-      <item>
-        <title>It's a new game</title>
-        <description>&lt;p&gt;You’ll find this post in your &lt;code&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
-
-&lt;p&gt;To add new posts, simply add a file in the &lt;code&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/Queen_Full.jpg&quot; alt=&quot;Queen Full&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://github.com/jekyll/jekyll-help&quot;&gt;Jekyll’s dedicated Help repository&lt;/a&gt;.&lt;/p&gt;
-
-</description>
-        <pubDate>Thu, 11 Dec 2014 12:07:22 +0000</pubDate>
-        <link>http://localhost:4002/its-a-new-game/</link>
-        <guid isPermaLink="true">http://localhost:4002/its-a-new-game/</guid>
-        
-        
-        <category>jekyll</category>
-        
-      </item>
-    
-      <item>
-        <title>This is new</title>
-        <description>&lt;p&gt;You’ll find this post in your &lt;code&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
-
-&lt;blockquote class=&quot;twitter-tweet&quot; lang=&quot;en&quot; data-link-color=&quot;#F26452&quot;&gt;&lt;p&gt;My studio (&lt;a href=&quot;https://twitter.com/BrotherhoodIO&quot;&gt;@BrotherhoodIO&lt;/a&gt;) is currently looking for new projects. Get in touch if you’re interested! (Any retweets appreciated) :)&lt;/p&gt;&amp;mdash; ғάвισ ↬ (@fffabs) &lt;a href=&quot;https://twitter.com/fffabs/status/530722531272323073&quot;&gt;November 7, 2014&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async=&quot;&quot; src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-
-&lt;p&gt;To add new posts, simply add a file in the &lt;code&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
-
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-coffeescript&quot; data-lang=&quot;coffeescript&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;layerA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;animate&lt;/span&gt;
-    &lt;span class=&quot;nv&quot;&gt;properties:&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;
-    &lt;span class=&quot;nv&quot;&gt;curve: &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;ease-in-out&amp;quot;&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;layerA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;on&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Events&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;AnimationEnd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;-&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;layerA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;animate&lt;/span&gt;
-        &lt;span class=&quot;nv&quot;&gt;properties:&lt;/span&gt;
-            &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;
-        &lt;span class=&quot;nv&quot;&gt;curve: &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;ease-in-out&amp;quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://github.com/jekyll/jekyll-help&quot;&gt;Jekyll’s dedicated Help repository&lt;/a&gt;.&lt;/p&gt;
-
-</description>
-        <pubDate>Mon, 08 Dec 2014 01:07:22 +0000</pubDate>
-        <link>http://localhost:4002/this-is-new/</link>
-        <guid isPermaLink="true">http://localhost:4002/this-is-new/</guid>
-        
-        
-        <category>jekyll</category>
-        
-        <category>update</category>
-        
-      </item>
-    
-      <item>
-        <title>Welcome to Jekyll!</title>
-        <description>&lt;p&gt;You’ll find this post in your &lt;code&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
-
-&lt;p&gt;To add new posts, simply add a file in the &lt;code&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
-
-&lt;p&gt;Jekyll also offers powerful support for code snippets:
-&lt;!-- linenos --&gt;&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Tom&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &amp;#39;Hi, Tom&amp;#39; to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://github.com/jekyll/jekyll-help&quot;&gt;Jekyll’s dedicated Help repository&lt;/a&gt;.&lt;/p&gt;
-
-</description>
-        <pubDate>Sun, 08 Sep 2013 00:38:22 +0100</pubDate>
-        <link>http://localhost:4002/welcome-to-jekyll/</link>
-        <guid isPermaLink="true">http://localhost:4002/welcome-to-jekyll/</guid>
-        
-        
-        <category>jekyll</category>
-        
-        <category>update</category>
+        <category>reading-notes</category>
         
       </item>
     
