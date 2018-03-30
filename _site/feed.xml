@@ -5,9 +5,124 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 30 Mar 2018 15:09:06 +0200</pubDate>
-    <lastBuildDate>Fri, 30 Mar 2018 15:09:06 +0200</lastBuildDate>
+    <pubDate>Fri, 30 Mar 2018 17:41:31 +0200</pubDate>
+    <lastBuildDate>Fri, 30 Mar 2018 17:41:31 +0200</lastBuildDate>
     <generator>Jekyll v3.6.2</generator>
+    
+      <item>
+        <title>Probabilistic Quantization</title>
+        <description>&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://research.googleblog.com/2017/04/federated-learning-collaborative.html&quot;&gt;Federated Learning&lt;/a&gt;
+is an exciting new subarea of machine learning where the
+training process is distributed among many users [1]. It is a form of collaborative
+machine learning with the constraint that the communication can be slow and
+unstable.&lt;/p&gt;
+
+&lt;p&gt;This is easily worth its own post, but in a nutshell Federated Learning works
+like this: A central server maintains a machine learning model. Training data is
+only available locally on the users’ devices, so from time to time they get a copy of the
+model and improve it using their locally available data. The weight updates are
+sent back to the server where they are averaged and the model is updated. This
+process is then repeated from time to time.&lt;/p&gt;
+
+&lt;p&gt;Federated Learning is an incredibly interesting topic because it allows users to
+keep their data private while a high-quality model can still be trained using
+it. There are, however, some challenges for making this work. One of them is
+that a naive approach leads to extremely high communication costs. Neural networks
+nowadays commonly have millions of parameters and sending updates for millions
+of weights from a mobile device to a server is not really desirable.&lt;/p&gt;
+
+&lt;h3 id=&quot;probabilistic-binarization&quot;&gt;Probabilistic Binarization&lt;/h3&gt;
+
+&lt;p&gt;&lt;em&gt;Probabilistic Binarization&lt;/em&gt;, or &lt;em&gt;Quantization&lt;/em&gt;, is one solution to this problem. I found it to be
+very elegant, so I decided it would be worth writing a blog post about.
+Fundamentally, it removes a lot of information from individual updates which
+allows us to encode them using much fewer bits. Still, by taking into account
+the aggregated weight updates from a lot of users, not much information is lost.
+This concept reminds me a lot of &lt;a href=&quot;/differential-privacy/&quot;&gt;differential privacy&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;To understand the idea, it is important to realize that only the average is
+important. If a weight update \(h\) is randomized to a compressed version \(h’\),
+then \(E[h’] = h\) needs to hold. In other words, the compressed estimate needs to
+be correct on average. This is called an &lt;a href=&quot;https://en.wikipedia.org/wiki/Bias_of_an_estimator&quot;&gt;unbiased
+estimator&lt;/a&gt; in statistics.&lt;/p&gt;
+
+&lt;p&gt;Having an unbiased estimator allows us to approximate the true weight update
+more closely and closely as more weight updates are sent. This is known as the &lt;em&gt;law of
+large numbers&lt;/em&gt;.
+A binarization scheme that implements this idea looks as follows:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+h' = \begin{cases}
+		h_{\min} &amp; \text{with probability } (h_{\max} - h) / (h_{\max} - h_{\min})  \\
+		h_{\max} &amp; \text{with probability } (h - h_{\min}) / (h_{\max} - h_{\min})
+	\end{cases}
+    \label{eq:probailistic-binarization} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;where \(h_{\min}\) and \(h_{\max}\) are the smallest and largest values that are
+reasonable for this weight update.&lt;/p&gt;
+
+&lt;p&gt;The denominator in the formula is a normalization factor to make sure that all
+probabilities are between 0 and 1. The numerators compute the distances between
+\(h\) and the two bounds. The bound that is closer to \(h\) is chosen with a
+higher probability.&lt;/p&gt;
+
+&lt;h3 id=&quot;convergence&quot;&gt;Convergence&lt;/h3&gt;
+
+&lt;p&gt;By using this randomization technique, the estimates converge slower to the true
+mean. I implemented some simulations to play with this. In the image below, 500
+users sent random updates using a normal distribution centered around 0.4 with
+a standard deviation of 0.3. Each simulated user sent their true update and the
+randomized one. The plot shows the average after $x$ reports arrived at the
+server.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/posts/probabilistic-quantization/law-of-large-numbers.png&quot; alt=&quot;Convergence&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;As shown, both mean estimates converge to 0.4. The randomized estimate has a
+slower convergence but it is worth noting that 500 users are not a lot when
+requiring data for machine learning. Still, it is worth noting that the formal
+guarantee for convergence is a bit weaker since the training data of users is
+generally differently distributed.&lt;/p&gt;
+
+&lt;p&gt;But all in all, this is a remarkable result: Just by querying some more users,
+we got the same information while each client needed to send much fewer bits.
+The compressed weight update \(h’\) can be encoded using one bit (1 for \(h_{\max}\), 0 for \(h_{\min}\))
+whereas the original update \(h\) was a 32- or 64-bit float. This is a
+huge compression factor.&lt;/p&gt;
+
+&lt;h3 id=&quot;probabilistic-quantization&quot;&gt;Probabilistic Quantization&lt;/h3&gt;
+
+&lt;p&gt;The algorithm shown so far could be called &lt;em&gt;probabilistic binarization&lt;/em&gt;.
+Quantization takes the idea one step further: Instead of sending one of two
+possible values, \(h\) values are possible. To encode an update \(h\), the
+probabilistic binarization scheme using the two closest values is applied.&lt;/p&gt;
+
+&lt;p&gt;Of course, more bits are required to encode the possible values. The trade-off
+is that convergence can be reached much quicker and that the estimates for the
+largest and smallest possible values can be less accurate.&lt;/p&gt;
+
+&lt;p&gt;Finally, it is worth noting that there are further improves to this algorithm [2].
+By applying random rotations, the error when only a few users have sent their
+data can be reduced. Additionally, this method can be combined with other
+compression techniques for Federated Learning [2, 3].&lt;/p&gt;
+
+&lt;h3 id=&quot;references&quot;&gt;References&lt;/h3&gt;
+
+&lt;p&gt;[1] McMahan, H.B., Moore, E., Ramage, D. and Hampson, S., 2016. Communication-efficient learning of deep networks from decentralized data.&lt;/p&gt;
+
+&lt;p&gt;[2] Suresh, A.T., Yu, F.X., McMahan, H.B. and Kumar, S., 2016. Distributed mean estimation with limited communication.&lt;/p&gt;
+
+&lt;p&gt;[3] Konečný, J., McMahan, H.B., Yu, F.X., Richtárik, P., Suresh, A.T. and Bacon, D., 2016. Federated learning: Strategies for improving communication efficiency.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 25 Feb 2018 17:03:00 +0100</pubDate>
+        <link>http://localhost:4000/25-probabilistic-quantization/</link>
+        <guid isPermaLink="true">http://localhost:4000/25-probabilistic-quantization/</guid>
+        
+        
+        <category>federated-learning</category>
+        
+      </item>
     
       <item>
         <title>What I read in 2017</title>
