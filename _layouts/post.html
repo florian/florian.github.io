@@ -2,7 +2,6 @@
 layout: default
 ---
 <div class="post">
-
   <header class="post-header">
     <a href="/" class="home-link">← Home</a>
     <h1 class="post-title">{{ page.title }}</h1>
@@ -13,16 +12,15 @@ layout: default
     {{ content }}
   </article>
 
-  {% comment %}
+  {% if site.related_posts.size > 1 %}
   <hr>
 
   <div class="related">
-    <h2>Related</h2>
+    <h2>Other Posts</h2>
     {% for post in site.related_posts limit:3 %}
       <li><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}
        &nbsp; <span class="post-meta">{{ post.date | date: "%B %d, %Y" }}</span></a>
     {% endfor %}
   </div>
-  {% endcomment %}
-
+  {% endif %}
 </div>

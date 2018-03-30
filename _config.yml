@@ -9,7 +9,7 @@ github_username: florian
 # Build settings
 markdown: kramdown
 permalink: ":title/"
-highlighter: pygments
+highlighter: rouge
 plugins: [jekyll-paginate]
 
 # Pagination

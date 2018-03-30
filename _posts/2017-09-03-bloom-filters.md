@@ -1,249 +1,229 @@
-<!DOCTYPE html>
-<html>
-  <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width initial-scale=1">
+---
+layout: post
+title:  "Bloom Filters"
+date:   2016-09-03 19:36:20
+description: "A probabilistic data structure for sets"
+categories: probabilistic-data-structures
+---
 
-  <title>Bloom Filters</title>
-  <meta name="description" content="">
+<!-- http://jsbin.com/bocovofixo/edit?html,css,js,output -->
 
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://localhost:4000/bloom-filters/">
-  <link rel="alternate" type="application/atom+xml" title="Florian Hartmann" href="http://localhost:4000/feed.xml" />
-</head>
-
-  <body>
-    <div class="wrapper">
-      <div class="page-content">
-        <div class="post">
-  <header class="post-header">
-    <a href="/" class="home-link">← Home</a>
-    <h1 class="post-title">Bloom Filters</h1>
-    <p class="post-meta">September 3, 2016</p>
-  </header>
-
-  <article class="post-content">
-    <!-- http://jsbin.com/bocovofixo/edit?html,css,js,output -->
-
-<p>Probabilistic data structures are great. They allow us to be more efficient in
+Probabilistic data structures are great. They allow us to be more efficient in
 terms of time or space at the cost of only returning an approximate result.
 Bloom filters are a popular such data structure. When I recently learned more
 about their use cases, I found Bloom filters to be quite fascinating, so they
-seem like a good topic to write a blog post about.</p>
+seem like a good topic to write a blog post about.
 
-<p>In a nutshell, Bloom filters allow testing for set membership in a highly
+In a nutshell, Bloom filters allow testing for set membership in a highly
 efficient way. The trade-off is that they only return an approximate result.
 Bloom filters either tell us that a value is definitely not in the set or that
-it is <em>probably</em> in the set.
+it is *probably* in the set.
 If we consider being in the set as a positive result, this means they allow for
-false positives but not for false negatives.</p>
+false positives but not for false negatives.
 
-<p>The remainder of this blog post gives a more thorough introduction to Bloom filters and their
+The remainder of this blog post gives a more thorough introduction to Bloom filters and their
 applications. Generally, the only prerequisites for being able to follow this
 introduction are having a basic understanding of hashing and knowing what a set
 is. To illustrate the ideas on a more intuitive level, I also coded up some live
-demos and embedded them here.</p>
+demos and embedded them here.
 
-<h3 id="general-structure">General structure</h3>
+### General structure
 
-<p>The underlying data structure for a Bloom filter is a bit array. Individual bits
+The underlying data structure for a Bloom filter is a bit array. Individual bits
 in this bit array can either be set or not set. These possible states correspond
 to values of 1 and 0. To efficiently change the values of bits, bitwise
 operations can be used. As these are quite straight-forward, we will not go into
 more detail here and just assume that we have operations for reading and writing
-individual bits available.</p>
+individual bits available.
 
-<p>To get started with Bloom filters, let’s first consider a simple version of
+To get started with Bloom filters, let's first consider a simple version of
 them. To insert a value into the set, we use a hash function to map the value to
 a valid index for the bit array. Then we change the bit corresponding to that
-index to 1.</p>
+index to 1.
 
-<p>To test if a value is part of our set, we hash the value and read
+To test if a value is part of our set, we hash the value and read
 the corresponding bit. If it is 0, the value is definitely not in the set,
-otherwise that bit would’ve been changed to 1. If the bit is 1, this
-tells us that the value is <em>probably</em> in the set. Probably, because there is a
+otherwise that bit would've been changed to 1. If the bit is 1, this
+tells us that the value is *probably* in the set. Probably, because there is a
 chance that another element with the same hash value was inserted. In other
-words, hash collisions are possible.</p>
+words, hash collisions are possible.
 
-<h3 id="evaluating-the-simple-solution">Evaluating the simple solution</h3>
+### Evaluating the simple solution
 
-<p>Below, you can find a live demo that can be used to test how well this works. As
+Below, you can find a live demo that can be used to test how well this works. As
 you will notice, if the bit array is large and we insert relatively few
 elements, then the probability of a hash collision is quite low. Of course, we
 are assuming that the hash function is approximately uniformly distributed. As
 we insert more values, hash collisions get more common and at some point we will
 get too many false positives. Note that the Bloom filter below has only 32 bits
 for visualization purposes.
-This is an extraordinarily small Bloom filter, so we can’t add many elements
-while still maintaining an acceptable false positive rate.</p>
+This is an extraordinarily small Bloom filter, so we can't add many elements
+while still maintaining an acceptable false positive rate.
 
 <div id="bloom-simple"></div>
 
-<p>This already highlights one important property of Bloom filters: We should have
+This already highlights one important property of Bloom filters: We should have
 some estimate for how many values we want to insert. This estimate should then
 be used to choose an appropriate size for the bit array. By choosing a large
 enough size, we can ensure that the expected number of false positives is quite
-low.</p>
+low.
 
-<p>Let’s take a moment to reflect on this solution. Under the assumption that we
+Let's take a moment to reflect on this solution. Under the assumption that we
 choose the array size to be large enough and that some false positives are
 acceptable, we have a very fast way of testing for set membership.
 Conceptionally, this solution is also pretty simple. We can think of it like a
 HashSet that ignores the possibility of collisions. Because we only store a bit
 array, Bloom filters are also quite space efficient, especially when compared to
-methods that store the original values, like HashSets.</p>
+methods that store the original values, like HashSets.
 
-<h3 id="using-multiple-hash-functions">Using multiple hash functions</h3>
+### Using multiple hash functions
 
-<p>In terms of efficiency, the data structure given above is pretty much perfect.
+In terms of efficiency, the data structure given above is pretty much perfect.
 The two important operations, inserting and testing membership, are both
 performed in constant time. What we primarily want to improve now is the
-probability of false positives.</p>
+probability of false positives.
 
-<p>This is where Bloom filters start to get interesting. Instead of just using a
-single hash function, we use <em>k</em> hash functions. So for each value we insert, we
-get <em>k</em> indices where we set the bits to 1. For testing membership, we check
-the bits corresponding to <em>k</em> indices.</p>
+This is where Bloom filters start to get interesting. Instead of just using a
+single hash function, we use *k* hash functions. So for each value we insert, we
+get *k* indices where we set the bits to 1. For testing membership, we check
+the bits corresponding to *k* indices.
 
 <div id="bloom-normal"></div>
 
-<p>This significantly decreases the chance of getting false positives. Given a
-large Bloom filter without many entries, it’s unlikely to get one hash
-collision. But getting <em>k</em> collisions at the same time is even more unlikely if
-most bits are not set.</p>
+This significantly decreases the chance of getting false positives. Given a
+large Bloom filter without many entries, it's unlikely to get one hash
+collision. But getting *k* collisions at the same time is even more unlikely if
+most bits are not set.
 
-<h3 id="deciding-on-the-number-of-hash-functions">Deciding on the number of hash functions</h3>
+### Deciding on the number of hash functions
 
-<p>More hash functions only help until a certain point. As an extreme example,
+More hash functions only help until a certain point. As an extreme example,
 using as many hash functions as bits would make a Bloom filter totally
 useless. On a similiar note, when only having 32 bits available, using 3 hash
 functions fills up the bit array too quickly, as you might have noticed in the
 live demo above. In turns out that the optimal number of hash functions depends
-on the bit array size and on how many elements we expect to be added.</p>
+on the bit array size and on how many elements we expect to be added.
 
-<p>For <em>n</em> added elements and a bit array size of <em>m</em>, the optimal number of hash
-functions <em>k</em> is:</p>
+For *n* added elements and a bit array size of *m*, the optimal number of hash
+functions *k* is:
 
-<script type="math/tex; mode=display">k = \frac{m}{n} * \ln(2)</script>
+$$
+k = \frac{m}{n} * \ln(2)
+$$
 
-<p>On a first look, this formula seems a bit cryptic. The logarithm is due to the
-fact that we’re estimating the probability of false positives using <a href="https://en.wikipedia.org/wiki/Azuma%27s_inequality">Azuma’s
-inequality</a>, which uses the
+On a first look, this formula seems a bit cryptic. The logarithm is due to the
+fact that we're estimating the probability of false positives using [Azuma's
+inequality](https://en.wikipedia.org/wiki/Azuma%27s_inequality), which uses the
 exponential function. By transforming that inequality, we end up with the natural
 logarithm. Other than that, the formula is easy to interpret. As the
 bit array size increases in comparison to the expected number of added elements,
-the optimal number of hash functions increases linearly.</p>
+the optimal number of hash functions increases linearly.
 
-<p>Deciding on the bit array size is also pretty straight-forward. A larger bit
+Deciding on the bit array size is also pretty straight-forward. A larger bit
 array size always decreases the false positive rate. The downside is that more
 space is needed. Generally, this is a trade-off where we choose the exact value
-depending on the use case.</p>
+depending on the use case.
 
-<h3 id="applications">Applications</h3>
+### Applications
 
-<p>After having only talked about the technical parts so far, let’s take a step
+After having only talked about the technical parts so far, let's take a step
 back and look at some applications.
 Generally, Bloom filters are useful when a few false positives are acceptable to
 be more space and time efficient, but false negatives are not.
-In the next two subsections, we’ll go into more detail for two prime examples for Bloom filters.</p>
+In the next two subsections, we'll go into more detail for two prime examples for Bloom filters.
 
-<h4 id="spelling-correction">Spelling correction</h4>
+#### Spelling correction
 
-<p>To implement spelling correction, we need some way to decide whether a word is
+To implement spelling correction, we need some way to decide whether a word is
 misspelt. The Oxford English Dictionary contains more than 200,000 words.
-Having all these words stored in memory all the time is a bad idea.</p>
+Having all these words stored in memory all the time is a bad idea.
 
-<p>Instead, we can insert all words from the dictionary into a Bloom filter to be
+Instead, we can insert all words from the dictionary into a Bloom filter to be
 much more space efficient. The fact that false positives are possible means that
 there will be a few misspelt words that will not be detected. However, no
 correctly written words would be marked as incorrect. This is good because it
-would only annoy users.</p>
+would only annoy users.
 
-<h4 id="databases">Databases</h4>
+#### Databases
 
-<p>Querying a database can be expensive, especially when it requires IO operations.
-<a href="http://cassandra.apache.org">Cassandra</a> uses Bloom filters to make <a href="http://docs.datastax.com/en/cassandra/3.0/cassandra/dml/dmlAboutReads.html">reading data</a>
-more efficient. It’s a first filter that checks if it’s possible that a key is
+Querying a database can be expensive, especially when it requires IO operations.
+[Cassandra](http://cassandra.apache.org) uses Bloom filters to make [reading data](http://docs.datastax.com/en/cassandra/3.0/cassandra/dml/dmlAboutReads.html)
+more efficient. It's a first filter that checks if it's possible that a key is
 contained in some table. This allows Cassandra to prevent many expensive memory
-calls.</p>
+calls.
 
-<p>A few false positives are not a problem here. They just lead to performing the
+A few false positives are not a problem here. They just lead to performing the
 normal expensive call that would be performed anyways if the Bloom filter would
-not be used at all.</p>
+not be used at all.
 
-<h3 id="other-set-operations">Other set operations</h3>
+### Other set operations
 
-<p>So far we only discussed two operations, adding elements and testing for
+So far we only discussed two operations, adding elements and testing for
 membership. Depending on the appliation, other operations are also interesting.
 In the following, we will focus on the classical set operations, union and
-intersection. Afterwards, we’ll also look at removing elements.</p>
+intersection. Afterwards, we'll also look at removing elements.
 
-<p>In the next two subsections, we assume that all Bloom filters use the same hash
-functions and have the same number of bits.</p>
+In the next two subsections, we assume that all Bloom filters use the same hash
+functions and have the same number of bits.
 
-<h4 id="union">Union</h4>
+#### Union
 
-<p>Union is straight-forward to implement for Bloom filters. We simply
-create a Bloom filter where a bit is set when it’s also set in any input Bloom
+Union is straight-forward to implement for Bloom filters. We simply
+create a Bloom filter where a bit is set when it's also set in any input Bloom
 filter. This resulting Bloom filter behaves exactly as when we directly query
 all original Bloom filters and only returning true if at least one individual Bloom
-filters returned true.</p>
+filters returned true.
 
-<h4 id="intersection">Intersection</h4>
+#### Intersection
 
-<p>For implementing an intersection operation, we can try to follow the same idea:
+For implementing an intersection operation, we can try to follow the same idea:
 Construct a Bloom filter where a bit is set when all one input Bloom filter
 had the bit set. It turns out that this is not a perfect solution because it
 will lead to more false positives compared to directly querying the individual
-Bloom filters.</p>
+Bloom filters.
 
-<p>To understand why, it helps to think of a Bloom filter with two hash functions.
+To understand why, it helps to think of a Bloom filter with two hash functions.
 A value is part of this Bloom filter if its respective two bits are set. In the
 Bloom filter resulting from the intersection it is possible that these bits were
 set because of several different values that are not in the intersection themselves.
 This would not happen if we build a new Bloom filter directly from the set
-intersection.</p>
+intersection.
 
-<h3 id="removing-values">Removing values</h3>
+### Removing values
 
-<p>Removing values from standard Bloom filters is difficult. By just setting the
+Removing values from standard Bloom filters is difficult. By just setting the
 corresponding bits to 0, we could accidently introduce false negatives. This is
 due to the fact that a bit maybe also needs to be set for a different added
 element. We generally want to avoid false negatives with Bloom filters, so this
-is not an acceptable solution.</p>
+is not an acceptable solution.
 
-<p>One possible solution is introducing a second Bloom filter that keeps track of
+One possible solution is introducing a second Bloom filter that keeps track of
 the removed values. This only works if values cannot be readded. Still, this is
 not a satisfying solution since false positives in this second Bloom filter
-become false negatives in the first Bloom filter.</p>
+become false negatives in the first Bloom filter.
 
-<p><em>Counting Bloom Filters</em> are a more sophisticated alternative. Instead of just
+*Counting Bloom Filters* are a more sophisticated alternative. Instead of just
 using bits as boolean indicators, enough bits to keep a count at each index are
 used. Then, instead of setting a bit, the count at the respective position is
 increased by 1. For removing an element, the counter is decreased by 1. This
-works well as long as an element is not added more than once before removing it.</p>
+works well as long as an element is not added more than once before removing it.
 
 <div id="bloom-counting"></div>
 
-<h3 id="summary">Summary</h3>
+### Summary
 
-<p>Bloom Filters are a probabilistic data structure that allow for testing set
+Bloom Filters are a probabilistic data structure that allow for testing set
 membership in an extremely efficient way. Since they are based on bitwise operations,
 they also require very little space. The trade-off is that there is a small
 probability of false positives.
 These false positives can be reduced by using enough bits and multiple hash functions.
 There are many interesting use-cases for Bloom Filters, for example to make
-caching in databases more efficient.</p>
+caching in databases more efficient.
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-
 <script src="https://fb.me/react-15.1.0.js"></script>
-
 <script src="https://fb.me/react-dom-15.1.0.js"></script>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/components/core-min.js"></script>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/hmac-md5.js"></script>
 
 <style>
@@ -669,30 +649,3 @@ ReactDOM.render(React.createElement(BloomFilterVisualization, { bits: 32, hash_f
 ReactDOM.render(React.createElement(BloomFilterVisualization, { bits: 32, hash_functions: 3 }), document.getElementById("bloom-normal"));
 ReactDOM.render(React.createElement(BloomFilterVisualization, { bits: 32, hash_functions: 3, counting: true }), document.getElementById("bloom-counting"));
 </script>
-
-
-  </article>
-
-  
-  <hr>
-
-  <div class="related">
-    <h2>Other Posts</h2>
-    
-      <li><a href="/reading-2017/" title="What I read in 2017">What I read in 2017
-       &nbsp; <span class="post-meta">December 30, 2016</span></a>
-    
-      <li><a href="/addon-recommender/" title="Add-on recommendations for Firefox users">Add-on recommendations for Firefox users
-       &nbsp; <span class="post-meta">December 08, 2016</span></a>
-    
-      <li><a href="/differential-privacy/" title="Differential Privacy">Differential Privacy
-       &nbsp; <span class="post-meta">October 12, 2016</span></a>
-    
-  </div>
-  
-</div>
-
-      </div>
-    </div>
-  </body>
-</html>

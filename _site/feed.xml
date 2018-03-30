@@ -3,97 +3,19 @@
   <channel>
     <title>Florian Hartmann</title>
     <description></description>
-    <link>https://florian.github.io//</link>
-    <atom:link href="https://florian.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 02 Sep 2017 18:27:11 +0100</pubDate>
-    <lastBuildDate>Sat, 02 Sep 2017 18:27:11 +0100</lastBuildDate>
-    <generator>Jekyll v3.5.2</generator>
-    
-      <item>
-        <title>Recurrent Neural Networks and Long-Short Term Memory</title>
-        <description>&lt;p&gt;Yup&lt;/p&gt;
-</description>
-        <pubDate>Fri, 01 Sep 2017 14:36:20 +0100</pubDate>
-        <link>https://florian.github.io//recurrent/</link>
-        <guid isPermaLink="true">https://florian.github.io//recurrent/</guid>
-        
-        
-        <category>machine-learning</category>
-        
-      </item>
-    
-      <item>
-        <title>Tackling MNIST with deep learning techniques</title>
-        <description>&lt;p&gt;Yup&lt;/p&gt;
-</description>
-        <pubDate>Fri, 01 Sep 2017 14:36:20 +0100</pubDate>
-        <link>https://florian.github.io//mnist/</link>
-        <guid isPermaLink="true">https://florian.github.io//mnist/</guid>
-        
-        
-        <category>machine-learning</category>
-        
-      </item>
-    
-      <item>
-        <title>What I learned from implementing ML algorithms</title>
-        <description>&lt;p&gt;Yup&lt;/p&gt;
-</description>
-        <pubDate>Fri, 01 Sep 2017 14:36:20 +0100</pubDate>
-        <link>https://florian.github.io//learning-ml/</link>
-        <guid isPermaLink="true">https://florian.github.io//learning-ml/</guid>
-        
-        
-        <category>machine-learning</category>
-        
-      </item>
-    
-      <item>
-        <title>Differential Privacy</title>
-        <description>&lt;p&gt;Yup&lt;/p&gt;
-</description>
-        <pubDate>Fri, 01 Sep 2017 14:36:20 +0100</pubDate>
-        <link>https://florian.github.io//differential-privacy/</link>
-        <guid isPermaLink="true">https://florian.github.io//differential-privacy/</guid>
-        
-        
-        <category>reading-notes</category>
-        
-      </item>
-    
-      <item>
-        <title>Understanding Decision Trees</title>
-        <description>&lt;p&gt;Yup&lt;/p&gt;
-</description>
-        <pubDate>Fri, 01 Sep 2017 14:36:20 +0100</pubDate>
-        <link>https://florian.github.io//decision-trees/</link>
-        <guid isPermaLink="true">https://florian.github.io//decision-trees/</guid>
-        
-        
-        <category>machine-learning</category>
-        
-      </item>
-    
-      <item>
-        <title>Bloom Filters</title>
-        <description>&lt;p&gt;Yup&lt;/p&gt;
-</description>
-        <pubDate>Fri, 01 Sep 2017 14:36:20 +0100</pubDate>
-        <link>https://florian.github.io//bloom-filters/</link>
-        <guid isPermaLink="true">https://florian.github.io//bloom-filters/</guid>
-        
-        
-        <category>probabilistic-data-structures</category>
-        
-      </item>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Fri, 30 Mar 2018 15:09:06 +0200</pubDate>
+    <lastBuildDate>Fri, 30 Mar 2018 15:09:06 +0200</lastBuildDate>
+    <generator>Jekyll v3.6.2</generator>
     
       <item>
         <title>What I read in 2017</title>
         <description>&lt;p&gt;Whenever I’m looking for a new book to read, I really enjoy looking at lists of
 books other people read. Since I started reading more again this year, I thought
-it’d be a good idea to write down some thoughts on the individual books. I ended
-up reading 12 books, picking up a new one nearly every month.
-In the following, the books are listed in the order that I read them in.&lt;/p&gt;
+it’d be a good idea to write down some thoughts on the individual books.
+I ended up picking up a new book pretty much every month. In the following, I
+describe the more interesting ones of them.&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -211,14 +133,39 @@ from the show, so there were still some surprises left. The writing style is
 also great and I really like how each chapter is told from the point of view of
 a different character.&lt;/p&gt;
 
-&lt;h3 id=&quot;a-mathematicians-apology&quot;&gt;A Mathematician’s Apology&lt;/h3&gt;
+&lt;h3 id=&quot;a-mathematicians-apology&quot;&gt;&lt;a href=&quot;https://www.math.ualberta.ca/mss/misc/A%20Mathematician%27s%20Apology.pdf&quot;&gt;A Mathematician’s Apology&lt;/a&gt;&lt;/h3&gt;
 
-&lt;p&gt;Short essay, interesting, don’t agree on all points&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/posts/books-2017/apology.jpg&quot; alt=&quot;A Mathematician's Apology&quot; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;how-to-win-friends-and-influence-people&quot;&gt;How To Win Friends And Influence People&lt;/h3&gt;
+&lt;p&gt;Hardy was one of the most brilliant mathematicians of the 20th century. &lt;em&gt;A
+Mathematician’s Apology&lt;/em&gt; is an essay from him where he tries to reason about why
+it is worth spending time on mathematics. The word &lt;em&gt;apology&lt;/em&gt; refers to a
+justification here.&lt;/p&gt;
 
-&lt;p&gt;Suggested by most reading lists, a lot of obvious points but generally
-interesting to read&lt;/p&gt;
+&lt;p&gt;At the core, it is Hardy’s belief that the most beautiful kind of math is not
+pursued for the sake of possible applications but just for the mathematics
+themselves. Interestingly, he argues that number theory, his field of work, is
+such an example. By now, there are of course many important applications for
+number theory. Hardy compares pure mathematics to fields like poetry that are just
+pursued because there is an aesthetic in them.&lt;/p&gt;
+
+&lt;p&gt;All in all, I found the essay very interesting to read. Hearing about his point
+of view made me change my perspective on certain areas of mathematics a little
+bit. However, I do not agree on all his points, some of his views just seem too
+excessive.&lt;/p&gt;
+
+&lt;h3 id=&quot;how-to-win-friends-and-influence-people&quot;&gt;&lt;a href=&quot;https://www.amazon.com/How-Win-Friends-Influence-People/dp/0671027034/&quot;&gt;How To Win Friends And Influence People&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/books-2017/carnegie.jpg&quot; alt=&quot;How To Win Friends And Influence People&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;How To Win Friends And Influence People&lt;/em&gt; is one of the best-selling books of
+all time and can be found on many book suggestion lists. Because I heard so much
+about it, I intended to read this book for quite some time. In the book,
+Carnegie describes fundamental social principles.&lt;/p&gt;
+
+&lt;p&gt;Many of these rules are fairly obvious. However, some of them are definitely
+worth reading about. For example, I found the parts about criticism and how
+people deal with it interesting to read about from a psychological perspective.&lt;/p&gt;
 
 &lt;h3 id=&quot;openintro-statistics&quot;&gt;&lt;a href=&quot;https://www.openintro.org/stat/&quot;&gt;OpenIntro Statistics&lt;/a&gt;&lt;/h3&gt;
 
@@ -249,9 +196,9 @@ genres. I also only just noticed that I only read books in English this year.
 I’m pretty sure it was the same for 2016, which means I haven’t read a book in
 German for at least two years.&lt;/p&gt;
 </description>
-        <pubDate>Sun, 01 Jan 2017 12:00:00 +0000</pubDate>
-        <link>https://florian.github.io//reading-2017/</link>
-        <guid isPermaLink="true">https://florian.github.io//reading-2017/</guid>
+        <pubDate>Fri, 30 Dec 2016 13:00:00 +0100</pubDate>
+        <link>http://localhost:4000/reading-2017/</link>
+        <guid isPermaLink="true">http://localhost:4000/reading-2017/</guid>
         
         
         <category>reading-notes</category>
@@ -259,20 +206,978 @@ German for at least two years.&lt;/p&gt;
       </item>
     
       <item>
-        <title>Welcome to Jekyll!</title>
-        <description>&lt;p&gt;You’ll find this post in your &lt;code&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code&gt;bundle exec jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+        <title>Add-on recommendations for Firefox users</title>
+        <description>&lt;p&gt;This is a reading suggestion for a very interesting post from the Mozilla Context Graph blog. The
+blog post describes the new prototype of the Firefox add-on recommender
+system: &lt;a href=&quot;https://medium.com/firefox-context-graph/add-on-recommendations-for-firefox-users-7774cc5a5117&quot;&gt;https://medium.com/firefox-context-graph/add-on-recommendations-for-firefox-users-7774cc5a5117&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;To add new posts, simply add a file in the &lt;code&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+&lt;p&gt;It was also cross-posted to &lt;a href=&quot;https://www.a2p.it/wordpress/tech-stuff/mozilla/add-on-recommendations-for-firefox-users-a-prototype-recommender-system-leveraging-existing-data-sources/&quot;&gt;Alessio’s blog&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 09 Dec 2016 00:23:10 +0100</pubDate>
+        <link>http://localhost:4000/addon-recommender/</link>
+        <guid isPermaLink="true">http://localhost:4000/addon-recommender/</guid>
+        
+        
+        <category>differential-privacy</category>
+        
+      </item>
+    
+      <item>
+        <title>Differential Privacy</title>
+        <description>&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;&lt;span style=&quot;opacity:.5&quot;&gt;[This post was jointly written with &lt;a href=&quot;http://github.com/alexrs/&quot;&gt;Alejandro&lt;/a&gt; and also cross-posted on &lt;a href=&quot;http://alexrs.me/2017/rappor/&quot;&gt;his blog&lt;/a&gt;.]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;In 2007 Netflix offered a $1 million prize for a 10% improvement in its recommendation system. They also released a training
+dataset for the competing developers to train their systems. In order to protect their customer’s privacy,
+&lt;a href=&quot;https://www.cs.utexas.edu/~shmat/shmat_oak08netflix.pdf&quot;&gt;they removed personal information and replaced IDs with random IDs&lt;/a&gt;.
+But Netflix is not the only movie-rating portal out there, there are many others such as IMDb. Researchers linked the
+Netflix dataset with IMDb to de-anonymize the Netflix dataset using the dates on which an user rated certain movies.
+This problem isn’t new and remains an important one as today, thanks to computers, we can access larger amounts of data and process them more easily.&lt;/p&gt;
+
+&lt;p&gt;In the mid 90s, The Massachusetts Group Insurance Commission (GIC) released anonymized data on state employees that
+showed every hospital visit. The goal was to help researchers, and the state spent time removing all obvious identifiers
+such as name, address and Social Security number. A graduate student started hunting for the Governor’s hospital records
+in the GIC data. She knew that Governor Weld resided in Cambridge, Massachusetts, a city of 54,000 residents and seven ZIP
+codes. For twenty dollars, she purchased the complete voter rolls from the city of Cambridge. This is a database
+containing, among other things, the name, address, ZIP code, birth date, and sex of every voter. By combining this data
+with the GIC records, she found Governor Weld with ease. Only six people in Cambridge shared his birth date, only three
+of them were men, and of them, only he lived in his ZIP code.
+&lt;a href=&quot;https://fpf.org/wp-content/uploads/The-Re-identification-of-Governor-Welds-Medical-Information-Daniel-Barth-Jones.pdf&quot;&gt;The Governor’s health records were de-anonymized.&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;So, how can we solve this problem? Personal data is already removed from the dataset, and it’s impossible to know whether
+a dataset can be used to de-anonymize another one. Here is where &lt;a href=&quot;https://en.wikipedia.org/wiki/Differential_privacy&quot;&gt;Differential Privacy&lt;/a&gt; appears.&lt;/p&gt;
+
+&lt;p&gt;It formalizes the idea that a query should not reveal whether anyone is present in a dataset, much less what their
+data are. This field was defined by &lt;a href=&quot;https://en.wikipedia.org/wiki/Cynthia_Dwork&quot;&gt;Cynthia Dwork&lt;/a&gt; In 2006, using work that
+started appearing in 2003. It is based on the ideas of &lt;a href=&quot;https://en.wikipedia.org/wiki/Randomized_response&quot;&gt;randomized response&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;randomized-response&quot;&gt;Randomized response&lt;/h2&gt;
+&lt;p&gt;Let’s imagine you’re asked “Do you own the attribute A?”, but you don’t want to answer directly. You can use this procedure:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Throw a coin.&lt;/li&gt;
+  &lt;li&gt;If head, then answer honestly.&lt;/li&gt;
+  &lt;li&gt;If tail, then throw the coin again and answer “Yes” if head, “No” if tail.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;br /&gt;
+If the attribute \( A \) is synonymous with illegal behavior, then answering “Yes” is not incriminating&lt;/p&gt;
+
+&lt;p&gt;Many responses are significant. Positive responses are given to \( 1/4 \) by people who don’t have the attribute A and \( 3/4 \)
+by people who possess it&lt;/p&gt;
+
+&lt;p&gt;Then we expect to obtain \( (1/4)(1-p) + (3/4)p = (1/4) + p/2 \) positive responses. Hence is possible to estimate p.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;If you’re interested in understanding more on how Differential Privacy works, &lt;a href=&quot;https://robertovitillo.com/2016/07/29/differential-privacy-for-dummies/&quot;&gt;here&lt;/a&gt; you can find more information.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Now, the question is, how can we use this technique to collect more complex data?&lt;/p&gt;
+
+&lt;h2 id=&quot;rappor&quot;&gt;RAPPOR&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/42852.pdf&quot;&gt;RAPPOR&lt;/a&gt; is an algorithm developed
+by Google whose main purpose is to collect data while adding random noise to guarantee Differential Privacy.&lt;/p&gt;
+
+&lt;p&gt;Each user is assigned to one of \( m\) cohorts. The value to encode is passed through \( h\) hash functions to encode it into a Bloom filter, and noise is added with probabilities \( p, q, f \). Bloom Filters were also described in more detail on &lt;a href=&quot;/bloom-filters/&quot;&gt;this blog before&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;In RAPPOR, we need to set different parameters:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Size of the Bloom filter, \( k \)&lt;/strong&gt;: RAPPOR uses a &lt;a href=&quot;https://en.wikipedia.org/wiki/Bloom_filter&quot;&gt;Bloom filter&lt;/a&gt;
+to report the data. When selecting the bloom filter size we should have in mind how many unique values are expected.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Number of hash functions, \( h \)&lt;/strong&gt;: Bloom filters uses hash functions to encode the values.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Number of cohorts, \( m \)&lt;/strong&gt;: To avoid collisions, RAPPOR divides the population into different cohorts.
+This value must be choosen carefully. If it’s too small, collisions are still quite likely, while if it’s too large then
+each individual cohort provides insufficient signal due to its small sample size.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Probabilities \( p, q, f \)&lt;/strong&gt;: Noise is added to the Bloom filter with different probabilities. This
+probabilities determine the level of Differential Privacy along with the number of hash functions used.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;em&gt;Note: This is a very simplified version of RAPPOR, you shouldn’t use it in real life. For optimized implementations, &lt;a href=&quot;https://github.com/google/rappor/&quot;&gt;look at the original Google’s repository&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;The first step is to encode the original value into the Bloom filter using \( h \) hash functions.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;encode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cohort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num_hashes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num_bloombits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;# create the bloom filter&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;bloom&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'0'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num_bloombits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;c&quot;&gt;# create the hash function to use&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;md5&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;hashlib&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;md5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cohort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;digest&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;md5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;digest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;# get the indexes for encode the original value into the  bloom filter&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;idx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ord&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;digest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num_bloombits&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num_hashes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
+
+    &lt;span class=&quot;c&quot;&gt;# set the corresponding 'bits' to 1&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;idx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;bloom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'1'&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bloom&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This Bloom filter never leaves the client. The next step is known as Permanent Randomized Response. Here the bits of the Bloom filter are set to 0 or 1 with probability \( f/2 \), or remains unchanged with probability \( 1 - f \). The resulting Bloom filter should be stored in the client and used in the future if the client needs to report the same value more than once.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;get_prr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bloom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prob_f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;rand&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SystemRandom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bloom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)):&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rand&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prob_f&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;bloom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'1'&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;elif&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prob_f&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prob_f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;bloom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'0'&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bloom&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The Instantaneus Randomize Response is computed using the probabilities \( p \) and \( q \). The resulting Bloom filter will have the bit in position \( i \) set to 1 with probability \( q \) if its value was 1 in the PRR, or with probability \( p \) if its value was 0. The resulting bloom filter is sent for analysis.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;get_irr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bloom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prob_p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prob_q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;rand&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SystemRandom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bloom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)):&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;prob&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prob_p&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bloom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'0'&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prob_q&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;bit&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rand&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prob&lt;/span&gt;
+
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;bloom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'1'&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bloom&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;hashlib&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;random&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SystemRandom&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# params&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;num_bloombits&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;16&lt;/span&gt;      &lt;span class=&quot;c&quot;&gt;# Number of bloom filter bits (k)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;num_hashes&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;          &lt;span class=&quot;c&quot;&gt;# Number of bloom filter hashes (h)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;num_cohorts&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;64&lt;/span&gt;        &lt;span class=&quot;c&quot;&gt;# Number of cohorts (m)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;prob_p&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.50&lt;/span&gt;           &lt;span class=&quot;c&quot;&gt;# Probability p&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;prob_q&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.75&lt;/span&gt;           &lt;span class=&quot;c&quot;&gt;# Probability q&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;prob_f&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.50&lt;/span&gt;           &lt;span class=&quot;c&quot;&gt;# Probability f&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# original value&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;v10&quot;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# select cohort&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;rand&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SystemRandom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;cohort&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rand&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num_cohorts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# encode&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;original&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;encode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cohort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num_hashes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num_bloombits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# prr&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;prr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;get_prr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;original&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prob_f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# irr&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;irr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;get_irr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;prr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prob_p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prob_q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;irr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/posts/differential-privacy/rappor.png&quot; alt=&quot;rappor&quot; /&gt;&lt;/p&gt;
+&lt;h1 id=&quot;rappor-analysis&quot;&gt;RAPPOR analysis&lt;/h1&gt;
+
+&lt;p&gt;After clients have generated their randomized responses, they send them to a server.
+This server has the task of aggregating the reports and figuring out which answers were actually given, and how often.
+To do this, we make use of statistical techniques that are explained in the remainder of this blog post.&lt;/p&gt;
+
+&lt;p&gt;The bit arrays are the only information we get from the clients. However, because of the Bloom filter, there are generally
+infinitely many answers that lead to the same bits being set. This means that we need some set of answers that we explicitely
+check for. We call this the &lt;em&gt;candidate set&lt;/em&gt;. What values are used as candidates is completely dependent on the data that we’re collecting.&lt;/p&gt;
+
+&lt;p&gt;Of course we know what bits would be set when hashing these candidate values.
+If we would also know how often each bit was truly set in the original Bloom filters, before noise was added, then we
+could model this problem using an equation system. In this system, we’re looking for candidate counts so that the bits set
+equal the true number of times the individual bits were set. In statistics, this corresponds to a &lt;em&gt;regression&lt;/em&gt; problem.&lt;/p&gt;
+
+&lt;h2 id=&quot;estimating-the-counts-of-bits&quot;&gt;Estimating the counts of bits&lt;/h2&gt;
+
+&lt;p&gt;Of course, the whole point of differential privacy is that we don’t have access to the originally set bits, so we can’t
+directly solve this hypothetical equation system. But what we can do is figure out estimates for how often the bits were set.
+This is possible because we can estimate how much noise was added on average. I won’t go into detail for the exact formulas,
+as they help little to build intuition, but they can be found in  the original &lt;a href=&quot;https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/42852.pdf&quot;&gt;RAPPOR paper&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;While this approach of making estimates might sound a bit messy, it actually has a fairly good theoretical backing.
+By the &lt;a href=&quot;https://en.wikipedia.org/wiki/Law_of_large_numbers&quot;&gt;&lt;em&gt;law of large numbers&lt;/em&gt;&lt;/a&gt;, the estimate will converge to the true counts with an increasing amount of data.
+This also explains one very important constraint when using differential privacy: We need a lot of users to make sense of
+the data. The estimates will be very accurate with many users. On the other hand, we can’t control for the random noise
+well enough if we don’t have a good amount of data.&lt;/p&gt;
+
+&lt;p&gt;After having estimated how often bits were changed for the randomized response, we can compute estimates for how often
+the bits were set in the original Bloom filter. We’ll call these estimates our &lt;em&gt;target vector&lt;/em&gt; \( y \). Note that
+this only gives us information about how often bits were set in total, across all users. We have absolutely no clue
+about which users had the bits set in their original Bloom filter.&lt;/p&gt;
+
+&lt;h2 id=&quot;example&quot;&gt;Example&lt;/h2&gt;
+
+&lt;p&gt;To give a more concrete idea of where we’re going with this, we can stop for a moment and consider this simple example.
+Let’s say we use a Bloom filter with three bits and two hash functions. After having received the randomized reports from
+enough users, we estimate the following true bit counts:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;bit 1: 3000&lt;/li&gt;
+  &lt;li&gt;bit 2: 4000&lt;/li&gt;
+  &lt;li&gt;bit 3: 1000&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We’re collecting data where each client can give exactly one answer out of the possible answers &lt;em&gt;a&lt;/em&gt;, &lt;em&gt;b&lt;/em&gt; and &lt;em&gt;c&lt;/em&gt;.
+These values correspond to our candidate set. When hashing the candidate values, the following bits would be set:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;a&lt;/em&gt;: bits 1, 2 would be set&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;b&lt;/em&gt;: bits 1, 3 would be set&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;c&lt;/em&gt;: bits 2, 3 would be set&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Given this information, we are looking for counts of how often the answers &lt;em&gt;a&lt;/em&gt;, &lt;em&gt;b&lt;/em&gt; or &lt;em&gt;c&lt;/em&gt; were given so that we arrive at the
+estimated numbers for the individual bits. The important inside here is that this is an equation system:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;bit 1: count_a + count_b = 3000&lt;/li&gt;
+  &lt;li&gt;bit 2: count_a + count_c = 4000&lt;/li&gt;
+  &lt;li&gt;bit 3: count_b + count_c = 1000&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Note how this is not just any kind of equation system, it’s a &lt;em&gt;linear equation system&lt;/em&gt;.
+This is great as there are many well-known ways to solve linear equation systems.
+The straightforward solution for this specific system is that answer &lt;em&gt;a&lt;/em&gt; was given 3000 times, &lt;em&gt;b&lt;/em&gt; was never given, while &lt;em&gt;c&lt;/em&gt;
+was given 1000 times.&lt;/p&gt;
+
+&lt;p&gt;Of course this is a very simple and artificially constructed example, it’s just meant to showcase the problem that the RAPPOR
+analysis is being reduced to.&lt;/p&gt;
+
+&lt;h2 id=&quot;creating-the-data-matrix-x&quot;&gt;Creating the data matrix X&lt;/h2&gt;
+
+&lt;p&gt;Linear equation systems can generally be well presented using matrices and vectors. We already described out target vector
+\( y \) earlier. What’s left to talk about is the data matrix \( X \). This matrix encodes what bits are set when candidate
+values are hashed in different cohorts.&lt;/p&gt;
+
+&lt;p&gt;The general idea here is that for each bit and cohort we add a row to the matrix. For each candidate value we add a column.
+A cell then has value 1 if the corresponding bit would be set when hashing the corresponding candidate value in the
+respective cohort. Otherwise, it has value 0.&lt;/p&gt;
+
+&lt;p&gt;In the above simple example, where we have no cohorts, \( X \) would look like this:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+X =
+  \begin{bmatrix}
+    1 &amp; 1 &amp; 0 \\
+    1 &amp; 0 &amp; 1 \\
+    0 &amp; 1 &amp; 1
+  \end{bmatrix} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Now, our linear equation system can be described by \( Xb = y \) where \( b \) gives us the candidate counts that explain the set bits.&lt;/p&gt;
+
+&lt;h2 id=&quot;linear-regression&quot;&gt;Linear regression&lt;/h2&gt;
+
+&lt;p&gt;All of this is a little bit too simplified. Usually, we can’t directly solve this equation system.
+One reason is that \( y \) only contains estimates and that our candidate set might be incomplete.
+This means that the equation system might not have a perfect solution and that we’re generally only looking for an approximate one.
+However, this is still a fairly standard problem in statistics and is usually
+solved by fitting a linear regression model.&lt;/p&gt;
+
+&lt;p&gt;The other problem is that our system does not entirely consist of linear equations.
+It wouldn’t make sense to have negative counts.
+Thus, \( b \) may only contain nonnegative values.
+This makes the problem a fair bit harder to solve, but again it’s not a
+completely new problem.
+There are some implementations of nonnegative least squares (nnls) solvers
+available that allow us to find the best approximate solution to a linear equation system with the nonnegativity constraint.&lt;/p&gt;
+
+&lt;h2 id=&quot;significance-tests&quot;&gt;Significance tests&lt;/h2&gt;
+
+&lt;p&gt;It’s worth keeping in mind that we’re only operating on estimates and that some hash collisions are possible. There are
+many different approximations for the linear equation system and it’s not clear whether candidates with very small counts
+were actually reported in the original Bloom filters.&lt;/p&gt;
+
+&lt;p&gt;All of this screams for statistical significance tests. Computing p-values for linear regression coefficients is a standard
+practice and is usually done using t-tests. In our case, we use one-sided t-tests because the nonnegativity constraint means
+that extreme results are only possible in one direction.&lt;/p&gt;
+
+&lt;p&gt;We use a significance level of 0.05 to filter out candidate values that don’t have enough evidence for their associated counts.
+Because there might be a lot of candidate values, we use a &lt;a href=&quot;https://en.wikipedia.org/wiki/Bonferroni_correction&quot;&gt;Bonferroni corrected&lt;/a&gt; significance level.
+Finally, only the candidate values and frequencies that we have enough confidence in are reported.&lt;/p&gt;
+
+&lt;h2 id=&quot;evaluating-the-results&quot;&gt;Evaluating the results&lt;/h2&gt;
+
+&lt;p&gt;To evaluate how well this works, we can perform a simple simulation. In the simulation shown here, clients report exactly one answer that’s chosen from an exponential distribution.
+We can plot this distribution using a bar plot, where the index of possible answers is on the x-axis and their counts are on the y-axis.
+&lt;img src=&quot;../../assets/posts/differential-privacy/original-distribution.png&quot; alt=&quot;Original distribution&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The randomization technique is then applied and the randomized reports are analysed by our algorithm. The distribution
+generated by the algorithm can then be plotted on top of the previous image.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/posts/differential-privacy/reported-distribution.png&quot; alt=&quot;Reported distribution&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This simulation uses the same parameters that we plan to use in production. As one can see, it works quite well for this
+original distribution. For the common candidate values, the reported counts are very close to the actual ones. However,
+it’s not possible to detect candidate values that only occured very few times. There’s just not enough evidence to report
+them with confidence. Of course only being able to detect common values is not necessarily a bad thing as it means more
+privacy for users that gave unusual answers.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 12 Oct 2016 15:36:20 +0200</pubDate>
+        <link>http://localhost:4000/differential-privacy/</link>
+        <guid isPermaLink="true">http://localhost:4000/differential-privacy/</guid>
+        
+        
+        <category>differential-privacy</category>
+        
+      </item>
+    
+      <item>
+        <title>Bloom Filters</title>
+        <description>&lt;!-- http://jsbin.com/bocovofixo/edit?html,css,js,output --&gt;
+
+&lt;p&gt;Probabilistic data structures are great. They allow us to be more efficient in
+terms of time or space at the cost of only returning an approximate result.
+Bloom filters are a popular such data structure. When I recently learned more
+about their use cases, I found Bloom filters to be quite fascinating, so they
+seem like a good topic to write a blog post about.&lt;/p&gt;
+
+&lt;p&gt;In a nutshell, Bloom filters allow testing for set membership in a highly
+efficient way. The trade-off is that they only return an approximate result.
+Bloom filters either tell us that a value is definitely not in the set or that
+it is &lt;em&gt;probably&lt;/em&gt; in the set.
+If we consider being in the set as a positive result, this means they allow for
+false positives but not for false negatives.&lt;/p&gt;
+
+&lt;p&gt;The remainder of this blog post gives a more thorough introduction to Bloom filters and their
+applications. Generally, the only prerequisites for being able to follow this
+introduction are having a basic understanding of hashing and knowing what a set
+is. To illustrate the ideas on a more intuitive level, I also coded up some live
+demos and embedded them here.&lt;/p&gt;
+
+&lt;h3 id=&quot;general-structure&quot;&gt;General structure&lt;/h3&gt;
+
+&lt;p&gt;The underlying data structure for a Bloom filter is a bit array. Individual bits
+in this bit array can either be set or not set. These possible states correspond
+to values of 1 and 0. To efficiently change the values of bits, bitwise
+operations can be used. As these are quite straight-forward, we will not go into
+more detail here and just assume that we have operations for reading and writing
+individual bits available.&lt;/p&gt;
+
+&lt;p&gt;To get started with Bloom filters, let’s first consider a simple version of
+them. To insert a value into the set, we use a hash function to map the value to
+a valid index for the bit array. Then we change the bit corresponding to that
+index to 1.&lt;/p&gt;
+
+&lt;p&gt;To test if a value is part of our set, we hash the value and read
+the corresponding bit. If it is 0, the value is definitely not in the set,
+otherwise that bit would’ve been changed to 1. If the bit is 1, this
+tells us that the value is &lt;em&gt;probably&lt;/em&gt; in the set. Probably, because there is a
+chance that another element with the same hash value was inserted. In other
+words, hash collisions are possible.&lt;/p&gt;
+
+&lt;h3 id=&quot;evaluating-the-simple-solution&quot;&gt;Evaluating the simple solution&lt;/h3&gt;
+
+&lt;p&gt;Below, you can find a live demo that can be used to test how well this works. As
+you will notice, if the bit array is large and we insert relatively few
+elements, then the probability of a hash collision is quite low. Of course, we
+are assuming that the hash function is approximately uniformly distributed. As
+we insert more values, hash collisions get more common and at some point we will
+get too many false positives. Note that the Bloom filter below has only 32 bits
+for visualization purposes.
+This is an extraordinarily small Bloom filter, so we can’t add many elements
+while still maintaining an acceptable false positive rate.&lt;/p&gt;
+
+&lt;div id=&quot;bloom-simple&quot;&gt;&lt;/div&gt;
+
+&lt;p&gt;This already highlights one important property of Bloom filters: We should have
+some estimate for how many values we want to insert. This estimate should then
+be used to choose an appropriate size for the bit array. By choosing a large
+enough size, we can ensure that the expected number of false positives is quite
+low.&lt;/p&gt;
+
+&lt;p&gt;Let’s take a moment to reflect on this solution. Under the assumption that we
+choose the array size to be large enough and that some false positives are
+acceptable, we have a very fast way of testing for set membership.
+Conceptionally, this solution is also pretty simple. We can think of it like a
+HashSet that ignores the possibility of collisions. Because we only store a bit
+array, Bloom filters are also quite space efficient, especially when compared to
+methods that store the original values, like HashSets.&lt;/p&gt;
+
+&lt;h3 id=&quot;using-multiple-hash-functions&quot;&gt;Using multiple hash functions&lt;/h3&gt;
+
+&lt;p&gt;In terms of efficiency, the data structure given above is pretty much perfect.
+The two important operations, inserting and testing membership, are both
+performed in constant time. What we primarily want to improve now is the
+probability of false positives.&lt;/p&gt;
+
+&lt;p&gt;This is where Bloom filters start to get interesting. Instead of just using a
+single hash function, we use &lt;em&gt;k&lt;/em&gt; hash functions. So for each value we insert, we
+get &lt;em&gt;k&lt;/em&gt; indices where we set the bits to 1. For testing membership, we check
+the bits corresponding to &lt;em&gt;k&lt;/em&gt; indices.&lt;/p&gt;
+
+&lt;div id=&quot;bloom-normal&quot;&gt;&lt;/div&gt;
+
+&lt;p&gt;This significantly decreases the chance of getting false positives. Given a
+large Bloom filter without many entries, it’s unlikely to get one hash
+collision. But getting &lt;em&gt;k&lt;/em&gt; collisions at the same time is even more unlikely if
+most bits are not set.&lt;/p&gt;
+
+&lt;h3 id=&quot;deciding-on-the-number-of-hash-functions&quot;&gt;Deciding on the number of hash functions&lt;/h3&gt;
+
+&lt;p&gt;More hash functions only help until a certain point. As an extreme example,
+using as many hash functions as bits would make a Bloom filter totally
+useless. On a similiar note, when only having 32 bits available, using 3 hash
+functions fills up the bit array too quickly, as you might have noticed in the
+live demo above. In turns out that the optimal number of hash functions depends
+on the bit array size and on how many elements we expect to be added.&lt;/p&gt;
+
+&lt;p&gt;For &lt;em&gt;n&lt;/em&gt; added elements and a bit array size of &lt;em&gt;m&lt;/em&gt;, the optimal number of hash
+functions &lt;em&gt;k&lt;/em&gt; is:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;k = \frac{m}{n} * \ln(2)&lt;/script&gt;
+
+&lt;p&gt;On a first look, this formula seems a bit cryptic. The logarithm is due to the
+fact that we’re estimating the probability of false positives using &lt;a href=&quot;https://en.wikipedia.org/wiki/Azuma%27s_inequality&quot;&gt;Azuma’s
+inequality&lt;/a&gt;, which uses the
+exponential function. By transforming that inequality, we end up with the natural
+logarithm. Other than that, the formula is easy to interpret. As the
+bit array size increases in comparison to the expected number of added elements,
+the optimal number of hash functions increases linearly.&lt;/p&gt;
+
+&lt;p&gt;Deciding on the bit array size is also pretty straight-forward. A larger bit
+array size always decreases the false positive rate. The downside is that more
+space is needed. Generally, this is a trade-off where we choose the exact value
+depending on the use case.&lt;/p&gt;
+
+&lt;h3 id=&quot;applications&quot;&gt;Applications&lt;/h3&gt;
+
+&lt;p&gt;After having only talked about the technical parts so far, let’s take a step
+back and look at some applications.
+Generally, Bloom filters are useful when a few false positives are acceptable to
+be more space and time efficient, but false negatives are not.
+In the next two subsections, we’ll go into more detail for two prime examples for Bloom filters.&lt;/p&gt;
+
+&lt;h4 id=&quot;spelling-correction&quot;&gt;Spelling correction&lt;/h4&gt;
+
+&lt;p&gt;To implement spelling correction, we need some way to decide whether a word is
+misspelt. The Oxford English Dictionary contains more than 200,000 words.
+Having all these words stored in memory all the time is a bad idea.&lt;/p&gt;
+
+&lt;p&gt;Instead, we can insert all words from the dictionary into a Bloom filter to be
+much more space efficient. The fact that false positives are possible means that
+there will be a few misspelt words that will not be detected. However, no
+correctly written words would be marked as incorrect. This is good because it
+would only annoy users.&lt;/p&gt;
+
+&lt;h4 id=&quot;databases&quot;&gt;Databases&lt;/h4&gt;
+
+&lt;p&gt;Querying a database can be expensive, especially when it requires IO operations.
+&lt;a href=&quot;http://cassandra.apache.org&quot;&gt;Cassandra&lt;/a&gt; uses Bloom filters to make &lt;a href=&quot;http://docs.datastax.com/en/cassandra/3.0/cassandra/dml/dmlAboutReads.html&quot;&gt;reading data&lt;/a&gt;
+more efficient. It’s a first filter that checks if it’s possible that a key is
+contained in some table. This allows Cassandra to prevent many expensive memory
+calls.&lt;/p&gt;
+
+&lt;p&gt;A few false positives are not a problem here. They just lead to performing the
+normal expensive call that would be performed anyways if the Bloom filter would
+not be used at all.&lt;/p&gt;
+
+&lt;h3 id=&quot;other-set-operations&quot;&gt;Other set operations&lt;/h3&gt;
+
+&lt;p&gt;So far we only discussed two operations, adding elements and testing for
+membership. Depending on the appliation, other operations are also interesting.
+In the following, we will focus on the classical set operations, union and
+intersection. Afterwards, we’ll also look at removing elements.&lt;/p&gt;
+
+&lt;p&gt;In the next two subsections, we assume that all Bloom filters use the same hash
+functions and have the same number of bits.&lt;/p&gt;
+
+&lt;h4 id=&quot;union&quot;&gt;Union&lt;/h4&gt;
+
+&lt;p&gt;Union is straight-forward to implement for Bloom filters. We simply
+create a Bloom filter where a bit is set when it’s also set in any input Bloom
+filter. This resulting Bloom filter behaves exactly as when we directly query
+all original Bloom filters and only returning true if at least one individual Bloom
+filters returned true.&lt;/p&gt;
+
+&lt;h4 id=&quot;intersection&quot;&gt;Intersection&lt;/h4&gt;
+
+&lt;p&gt;For implementing an intersection operation, we can try to follow the same idea:
+Construct a Bloom filter where a bit is set when all one input Bloom filter
+had the bit set. It turns out that this is not a perfect solution because it
+will lead to more false positives compared to directly querying the individual
+Bloom filters.&lt;/p&gt;
+
+&lt;p&gt;To understand why, it helps to think of a Bloom filter with two hash functions.
+A value is part of this Bloom filter if its respective two bits are set. In the
+Bloom filter resulting from the intersection it is possible that these bits were
+set because of several different values that are not in the intersection themselves.
+This would not happen if we build a new Bloom filter directly from the set
+intersection.&lt;/p&gt;
+
+&lt;h3 id=&quot;removing-values&quot;&gt;Removing values&lt;/h3&gt;
+
+&lt;p&gt;Removing values from standard Bloom filters is difficult. By just setting the
+corresponding bits to 0, we could accidently introduce false negatives. This is
+due to the fact that a bit maybe also needs to be set for a different added
+element. We generally want to avoid false negatives with Bloom filters, so this
+is not an acceptable solution.&lt;/p&gt;
+
+&lt;p&gt;One possible solution is introducing a second Bloom filter that keeps track of
+the removed values. This only works if values cannot be readded. Still, this is
+not a satisfying solution since false positives in this second Bloom filter
+become false negatives in the first Bloom filter.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Counting Bloom Filters&lt;/em&gt; are a more sophisticated alternative. Instead of just
+using bits as boolean indicators, enough bits to keep a count at each index are
+used. Then, instead of setting a bit, the count at the respective position is
+increased by 1. For removing an element, the counter is decreased by 1. This
+works well as long as an element is not added more than once before removing it.&lt;/p&gt;
+
+&lt;div id=&quot;bloom-counting&quot;&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;summary&quot;&gt;Summary&lt;/h3&gt;
+
+&lt;p&gt;Bloom Filters are a probabilistic data structure that allow for testing set
+membership in an extremely efficient way. Since they are based on bitwise operations,
+they also require very little space. The trade-off is that there is a small
+probability of false positives.
+These false positives can be reduced by using enough bits and multiple hash functions.
+There are many interesting use-cases for Bloom Filters, for example to make
+caching in databases more efficient.&lt;/p&gt;
+
+&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+
+&lt;script src=&quot;https://fb.me/react-15.1.0.js&quot;&gt;&lt;/script&gt;
+
+&lt;script src=&quot;https://fb.me/react-dom-15.1.0.js&quot;&gt;&lt;/script&gt;
+
+&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/components/core-min.js&quot;&gt;&lt;/script&gt;
+
+&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/hmac-md5.js&quot;&gt;&lt;/script&gt;
+
+&lt;style&gt;
+.bloom-filter {
+  width: 581px;
+  position: relative;
+  margin-left: 30px;
+  margin-bottom: 15px;
+}
+
+.bloom-filter h2 {
+  font-size: 17px;
+  display: inline-block;
+  margin: 0;
+}
+
+.bloom-filter ul {
+  list-style-type: none;
+  margin: 10px auto;
+  padding: 0;
+}
+
+.bloom-filter li {
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  border: 1px solid #565656;
+  border-right: none;
+  text-align: center;
+  font-size: 13px;
+  vertical-align:top
+}
+
+.bloom-filter li:before {
+  content: '';
+  padding: 0;
+}
+
+
+.bloom-filter ul :last-child {
+  border-right: 1px solid;
+}
+
+.bloom-filter .set {
+  background: grey;
+  transition: background .5s ease-in;
+}
+
+.bloom-filter form {
+  padding-bottom: 10px;
+}
+
+.bloom-filter input {
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+}
+
+.bloom-filter input[type=&quot;text&quot;] {
+  width: 150px;
+  height: 15px;
+  padding: 4px 6px;
+  font-size: 14px;
+  float: none;
+  margin-left: 0;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  outline: none;
+  line-height: 20px;
+  color: #555555;
+  font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;
+  border-radius: 4px 0 0 4px;
+}
+
+.bloom-filter input[type=&quot;submit&quot;], .bloom-filter input[type=&quot;button&quot;] {
+  min-width: 100px;
+  height: 25px;
+  line-height: 15px;
+  margin-left: -3px;
+  padding: 4px 12px;
+  font-size: 14px;
+  color: #333333;
+  text-align: center;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+  cursor: pointer;
+  background-color: #e6e6e6;
+  background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
+  background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
+  background-repeat: repeat-x;
+  border: 1px solid #cccccc;*
+  border: 0;
+  border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  border-bottom-color: #b3b3b3;
+  font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;
+}
+
+.bloom-filter input[type=&quot;submit&quot;]:active, .bloom-filter input[type=&quot;button&quot;]:active {
+  background-color: #ffffff;
+  background-image: -moz-linear-gradient(bottom, #ffffff, #e6e6e6);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#e6e6e6), to(#ffffff));
+  background-image: -webkit-linear-gradient(bottom, #ffffff, #e6e6e6);
+  background-image: -o-linear-gradient(bottom, #ffffff, #e6e6e6);
+  background-image: linear-gradient(to top, #ffffff, #e6e6e6);
+  background-repeat: repeat-x;
+}
+
+.bloom-filter .last-input {
+  border-radius: 0 4px 4px 0;
+}
+
+.bloom-filter .elements {
+  display: inline-block;
+}
+&lt;/style&gt;
+
+&lt;script&gt;
+&quot;use strict&quot;;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i &lt; props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (&quot;value&quot; in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError(&quot;this hasn't been initialised - super() hasn't been called&quot;); } return call &amp;&amp; (typeof call === &quot;object&quot; || typeof call === &quot;function&quot;) ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== &quot;function&quot; &amp;&amp; superClass !== null) { throw new TypeError(&quot;Super expression must either be null or a function, not &quot; + typeof superClass); } subClass.prototype = Object.create(superClass &amp;&amp; superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(&quot;Cannot call a class as a function&quot;); } }
+
+var BloomFilter = function () {
+  function BloomFilter(num_bits, num_hash_functions) {
+    _classCallCheck(this, BloomFilter);
+
+    this.num_bits = num_bits;
+    this.num_hash_functions = num_hash_functions;
+    this._init_storage();
+  }
+
+  _createClass(BloomFilter, [{
+    key: &quot;_init_storage&quot;,
+    value: function _init_storage() {
+      this.storage = Array(this.num_bits);
+      for (var i = 0; i &lt; this.num_bits; i++) {
+        this.storage[i] = false;
+      }
+    }
+  }, {
+    key: &quot;hash&quot;,
+    value: function hash(value) {
+      var seed = arguments.length &gt; 1 &amp;&amp; arguments[1] !== undefined ? arguments[1] : 0;
+
+      return Math.abs(CryptoJS.MD5(value + seed).words.reduce(function (a, b) {
+        return a + b;
+      }), 0) % this.num_bits;
+    }
+  }, {
+    key: &quot;add&quot;,
+    value: function add(value) {
+      for (var i = 0; i &lt; this.num_hash_functions; i++) {
+        var hashed = this.hash(value, i);
+        this.storage[hashed] = true;
+      }
+    }
+  }, {
+    key: &quot;contains&quot;,
+    value: function contains(value) {
+      for (var i = 0; i &lt; this.num_hash_functions; i++) {
+        var hashed = this.hash(value, i);
+        if (!this.storage[hashed]) return false;
+      }
+
+      return true;
+    }
+  }, {
+    key: &quot;print&quot;,
+    value: function print() {
+      return this.storage.reduce(function (result, bit) {
+        if (bit) {
+          return result + &quot;x&quot;;
+        } else {
+          return result + &quot;_&quot;;
+        }
+      }, &quot;&quot;);
+    }
+  }]);
+
+  return BloomFilter;
+}();
+
+var CountingBloomFilter = function (_BloomFilter) {
+  _inherits(CountingBloomFilter, _BloomFilter);
+
+  function CountingBloomFilter() {
+    _classCallCheck(this, CountingBloomFilter);
+
+    return _possibleConstructorReturn(this, (CountingBloomFilter.__proto__ || Object.getPrototypeOf(CountingBloomFilter)).apply(this, arguments));
+  }
+
+  _createClass(CountingBloomFilter, [{
+    key: &quot;_init_storage&quot;,
+    value: function _init_storage() {
+      this.storage = Array(this.num_bits);
+      for (var i = 0; i &lt; this.num_bits; i++) {
+        this.storage[i] = 0;
+      }
+    }
+  }, {
+    key: &quot;add&quot;,
+    value: function add(value) {
+      for (var i = 0; i &lt; this.num_hash_functions; i++) {
+        var hashed = this.hash(value, i);
+        this.storage[hashed] += 1;
+      }
+    }
+  }, {
+    key: &quot;print&quot;,
+    value: function print() {
+      return this.storage.reduce(function (result, bit) {
+        if (bit) {
+          return result + String(bit);
+        } else {
+          return result + &quot;_&quot;;
+        }
+      }, &quot;&quot;);
+    }
+  }, {
+    key: &quot;remove&quot;,
+    value: function remove(value) {
+      for (var i = 0; i &lt; this.num_hash_functions; i++) {
+        var hashed = this.hash(value, i);
+        this.storage[hashed] -= 1;
+      }
+    }
+  }]);
+
+  return CountingBloomFilter;
+}(BloomFilter);
+
+function plural(base, extension, n) {
+  return n + &quot; &quot; + base + (n == 1 ? &quot;&quot; : extension);
+}
+
+var BloomFilterVisualization = function (_React$Component) {
+  _inherits(BloomFilterVisualization, _React$Component);
+
+  function BloomFilterVisualization(props) {
+    _classCallCheck(this, BloomFilterVisualization);
+
+    var _this2 = _possibleConstructorReturn(this, (BloomFilterVisualization.__proto__ || Object.getPrototypeOf(BloomFilterVisualization)).call(this, props));
+
+    _this2.state = {
+      bf: props.counting ? new CountingBloomFilter(props.bits, props.hash_functions) : new BloomFilter(props.bits, props.hash_functions),
+      bits: props.bits,
+      hash_functions: props.hash_functions,
+      addedValues: [],
+      simple: props.simple || false,
+      lastCheck: &quot;&quot;,
+      counting: props.counting || false
+    };
+    return _this2;
+  }
+
+  _createClass(BloomFilterVisualization, [{
+    key: &quot;render&quot;,
+    value: function render() {
+      var data_structure = &quot;Bloom Filter&quot;;
+      if (this.state.counting) {
+        data_structure = &quot;Counting &quot; + data_structure;
+      }
+
+      return React.createElement(
+        &quot;div&quot;,
+        { className: &quot;bloom-filter&quot; },
+        React.createElement(
+          &quot;h2&quot;,
+          null,
+          &quot;Live Demo: &quot;,
+          data_structure,
+          &quot; with &quot;,
+          this.state.bits,
+          &quot; bits and &quot;,
+          plural(&quot;hash function&quot;, &quot;s&quot;, this.state.hash_functions),
+          &quot; &quot;
+        ),
+        React.createElement(
+          &quot;ul&quot;,
+          null,
+          this.state.bf.storage.map(this.renderBit.bind(this))
+        ),
+        this.renderForm(),
+        React.createElement(
+          &quot;div&quot;,
+          { className: &quot;elements&quot; },
+          &quot;Added so far: &quot;,
+          &quot;{&quot;,
+          &quot; &quot;,
+          this.state.addedValues.join(&quot;, &quot;),
+          &quot; &quot;,
+          &quot;}&quot;
+        ),
+        this.state.lastCheck != &quot;&quot; ? React.createElement(
+          &quot;div&quot;,
+          null,
+          this.state.lastCheck
+        ) : &quot;&quot;
+      );
+    }
+  }, {
+    key: &quot;renderBit&quot;,
+    value: function renderBit(bit, i) {
+      var className = &quot;&quot;,
+          content = &quot;&quot;;
+
+      if (this.state.counting) {
+        content = bit == 0 ? &quot;&quot; : String(bit);
+      } else {
+        className = bit ? &quot;set&quot; : &quot;not-set&quot;;
+      }
+
+      return React.createElement(
+        &quot;li&quot;,
+        { className: className, key: i },
+        content
+      );
+    }
+  }, {
+    key: &quot;renderForm&quot;,
+    value: function renderForm() {
+      return React.createElement(
+        &quot;form&quot;,
+        { onSubmit: this.add.bind(this) },
+        React.createElement(&quot;input&quot;, { type: &quot;text&quot;, ref: &quot;value&quot; }),
+        this.state.simple ? React.createElement(&quot;input&quot;, { type: &quot;submit&quot;, value: &quot;Add&quot;, className: &quot;last-input&quot; }) : &quot;&quot;,
+        !this.state.simple ? React.createElement(&quot;input&quot;, { type: &quot;submit&quot;, value: &quot;Add&quot; }) : &quot;&quot;,
+        this.state.counting ? React.createElement(&quot;input&quot;, { type: &quot;button&quot;, value: &quot;Remove&quot;, onClick: this.remove.bind(this) }) : &quot;&quot;,
+        !this.state.simple ? React.createElement(&quot;input&quot;, { type: &quot;button&quot;, value: &quot;Check for membership&quot;, className: &quot;last-input&quot;, onClick: this.check.bind(this) }) : &quot;&quot;
+      );
+    }
+  }, {
+    key: &quot;add&quot;,
+    value: function add(e) {
+      e.preventDefault();
+
+      var input = this.refs.value;
+      var value = input.value;
+      input.select();
+
+      if (value.trim() == &quot;&quot;) return false;
+
+      var addedValues = this.state.addedValues;
+      var inSet = addedValues.indexOf(value) != -1;
+
+      if (this.state.counting &amp;&amp; inSet) {
+        var confirmed = confirm(&quot;Adding an already added value will partly break the Counting Bloom filter. Do you still want to continue?&quot;);
+        if (!confirmed) {
+          return false;
+        }
+      }
+
+      var bf = this.state.bf;
+      bf.add(value);
+
+      if (!inSet) addedValues.push(value);
+
+      this.setState({
+        bf: bf,
+        addedValues: addedValues
+      });
+    }
+  }, {
+    key: &quot;check&quot;,
+    value: function check(e) {
+      e.preventDefault();
+
+      var input = this.refs.value;
+      var value = input.value;
+      input.select();
+
+      if (value.trim() == &quot;&quot;) return false;
+
+      var bf = this.state.bf;
+      var isContained = bf.contains(value);
+
+      this.setState({
+        lastCheck: value + &quot; was &quot; + (isContained ? &quot;&quot; : &quot;not &quot;) + &quot;found&quot;
+      });
+    }
+  }, {
+    key: &quot;remove&quot;,
+    value: function remove(e) {
+      e.preventDefault();
+
+      var input = this.refs.value;
+      var value = input.value;
+      input.select();
+
+      if (value.trim() == &quot;&quot;) return false;
+
+      var addedValues = this.state.addedValues;
+      var inSet = addedValues.indexOf(value) != -1;
+
+      if (!inSet) {
+        var confirmed = confirm(&quot;Removing a value that's not in the set will partly break the Counting Bloom filter. Do you still want to continue?&quot;);
+        if (!confirmed) {
+          return false;
+        }
+      }
+
+      this.state.bf.remove(value);
+      addedValues.splice(addedValues.indexOf(value), 1);
+
+      this.setState({
+        addedValues: addedValues
+      });
+    }
+  }]);
+
+  return BloomFilterVisualization;
+}(React.Component);
+
+ReactDOM.render(React.createElement(BloomFilterVisualization, { bits: 32, hash_functions: 1 }), document.getElementById(&quot;bloom-simple&quot;));
+ReactDOM.render(React.createElement(BloomFilterVisualization, { bits: 32, hash_functions: 3 }), document.getElementById(&quot;bloom-normal&quot;));
+ReactDOM.render(React.createElement(BloomFilterVisualization, { bits: 32, hash_functions: 3, counting: true }), document.getElementById(&quot;bloom-counting&quot;));
+&lt;/script&gt;
 
 </description>
-        <pubDate>Tue, 17 Nov 2015 22:16:01 +0000</pubDate>
-        <link>https://florian.github.io//test/</link>
-        <guid isPermaLink="true">https://florian.github.io//test/</guid>
+        <pubDate>Sat, 03 Sep 2016 21:36:20 +0200</pubDate>
+        <link>http://localhost:4000/bloom-filters/</link>
+        <guid isPermaLink="true">http://localhost:4000/bloom-filters/</guid>
         
         
-        <category>jekyll</category>
-        
-        <category>update</category>
+        <category>probabilistic-data-structures</category>
         
       </item>
     

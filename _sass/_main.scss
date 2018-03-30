@@ -1,0 +1,56 @@
+// Our variables
+$base-font-family: "Fakt", Helvetica, Arial, sans-serif;
+$base-font-size:   18px/1;
+$small-font-size:  $base-font-size * 0.875;
+$base-line-height: 1.7;
+
+$spacing-unit:     30px;
+
+$text-color:       #000;
+$background-color: #fff;
+$brand-color:      #F26452;
+$link-color: #088ef2;
+
+$grey-color:       #828282;
+$grey-color-light: lighten($grey-color, 40%);
+$grey-color-dark:  darken($grey-color, 25%);
+
+// Width of the content area
+$content-width:    700px;
+$on-laptop:        700px;
+
+@font-face {
+  font-family: 'Fakt';
+  src: url('/fonts/FaktPro-Thin.eot');
+  src: url('/fonts/FaktPro-Thin.eot?#iefix') format('embedded-opentype'),
+       url('/fonts/FaktPro-Thin.woff') format('woff'),
+       url('/fonts/FaktPro-Thin.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: 'Fakt';
+  src: url('/fonts/FaktPro-Blond.eot');
+  src: url('/fonts/FaktPro-Blond.eot?#iefix') format('embedded-opentype'),
+       url('/fonts/FaktPro-Blond.woff') format('woff'),
+       url('/fonts/FaktPro-Blond.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Fakt';
+  src: url('/fonts/FaktPro-SemiBold.eot');
+  src: url('/fonts/FaktPro-SemiBold.eot?#iefix') format('embedded-opentype'),
+       url('/fonts/FaktPro-SemiBold.woff') format('woff'),
+       url('/fonts/FaktPro-SemiBold.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 600;
+}
+
+@mixin media-query($device) {
+    @media screen and (max-width: $device) {
+        @content;
+    }
+}
