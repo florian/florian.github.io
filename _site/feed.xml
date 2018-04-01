@@ -5,8 +5,8 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 01 Apr 2018 11:10:11 +0200</pubDate>
-    <lastBuildDate>Sun, 01 Apr 2018 11:10:11 +0200</lastBuildDate>
+    <pubDate>Sun, 01 Apr 2018 11:25:18 +0200</pubDate>
+    <lastBuildDate>Sun, 01 Apr 2018 11:25:18 +0200</lastBuildDate>
     <generator>Jekyll v3.6.2</generator>
     
       <item>
@@ -74,7 +74,7 @@ higher probability.&lt;/p&gt;
 mean. I implemented some simulations to play with this. In the image below, 500
 users sent random updates using a normal distribution centered around 0.4 with
 a standard deviation of 0.3. Each simulated user sent their true update and the
-randomized one. The plot shows the average after $x$ reports arrived at the
+randomized one. The plot shows the average after \(x\) reports arrived at the
 server.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;../assets/posts/probabilistic-quantization/law-of-large-numbers.png&quot; alt=&quot;Convergence&quot; /&gt;&lt;/p&gt;

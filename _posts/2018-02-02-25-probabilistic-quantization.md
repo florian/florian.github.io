@@ -70,7 +70,7 @@ By using this randomization technique, the estimates converge slower to the true
 mean. I implemented some simulations to play with this. In the image below, 500
 users sent random updates using a normal distribution centered around 0.4 with
 a standard deviation of 0.3. Each simulated user sent their true update and the
-randomized one. The plot shows the average after $x$ reports arrived at the
+randomized one. The plot shows the average after \\(x\\) reports arrived at the
 server.
 
 ![Convergence](../assets/posts/probabilistic-quantization/law-of-large-numbers.png)
