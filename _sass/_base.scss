@@ -178,7 +178,11 @@ code {
 }
 
 code {
-    padding: 1px 5px;
+    border: 1px solid grey;
+    display: block;
+    padding: 10px;
+    box-sizing: content-box;
+    border-radius: 5px;
 }
 
 .lineno {
@@ -201,13 +205,6 @@ pre {
     display: block;
     margin: 0 0 1rem;
     line-height: 1.4;
-
-
-    > code {
-        border: 0;
-        padding-right: 0;
-        padding-left: 0;
-    }
 }
 
 /**
