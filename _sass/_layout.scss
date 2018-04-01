@@ -4,10 +4,15 @@
 
 .header-intro {
     font-size: 18px;
-    color: #aaa;
+    color: #777;
 }
+
+.header-intro h2 {
+    color: #444;
+}
+
 .header-intro a, .header-intro a:visited {
-    color: #aaa;
+    color: #666;
     text-decoration: underline;
 }
 .header-intro a:hover {
