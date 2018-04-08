@@ -38,7 +38,7 @@ Because we typically want to find a minimum, we follow the gradient in the
 opposite direction.
 This direction is completely determined by the sign of the gradient.</p>
 
-<h2 id="gradient-magnitudes">Gradient magnitudes</h2>
+<h3 id="gradient-magnitudes">Gradient magnitudes</h3>
 
 <p>To decide on the step size, a scaled version of the gradient’s magnitude is
 generally used by most gradient descent algorithms.
@@ -65,7 +65,7 @@ this should make it clear that using the gradient’s magnitude at all is someti
 Using a fixed learning rate will also fail if only some parts of the function
 are scaled.</p>
 
-<h2 id="updating-weights">Updating weights</h2>
+<h3 id="updating-weights">Updating weights</h3>
 
 <p>Modern gradient descent variants try to circumvent this problem by dynamically
 adapting the step size.
@@ -89,7 +89,7 @@ This step size is then dynamically adapted for each weight, depending on the gra
 with respect to the respective weight is computed.
 We go into the direction of descent using the determined step size.</p>
 
-<h2 id="adapting-the-step-size">Adapting the step size</h2>
+<h3 id="adapting-the-step-size">Adapting the step size</h3>
 
 <p>In each iteration of RProp, the gradients are computed and the step sizes are
 updated for each dimension individually.
