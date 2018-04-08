@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width initial-scale=1">
+
+  <title>RProp</title>
+  <meta name="description" content="">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/rprop/">
+  <link rel="alternate" type="application/atom+xml" title="Florian Hartmann" href="http://localhost:4000/feed.xml" />
+</head>
+
+  <body>
+    <div class="wrapper">
+      <div class="page-content">
+        <div class="post">
+  <header class="post-header">
+    <a href="/" class="home-link">← Home</a>
+    <h1 class="post-title">RProp</h1>
+    <p class="post-meta">April 8, 2018</p>
+  </header>
+
+  <article class="post-content">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+<p><em>RProp</em> is a popular gradient descent algorithm that only uses the signs of
+gradients to compute updates. It stands for <em>Resilient Propagation</em> and works
+well in many situations because it adapts the step size dynamically for each
+weight independently. This blog posts gives an introduction to RProp
+and motivates its design choice of ignoring gradient magnitudes.</p>
+
+<p>Most gradient descent variants use the sign and the magnitude of the gradient.
+The gradient points in the direction of steepest ascent.
+Because we typically want to find a minimum, we follow the gradient in the
+opposite direction.
+This direction is completely determined by the sign of the gradient.</p>
+
+<h2 id="gradient-magnitudes">Gradient magnitudes</h2>
+
+<p>To decide on the step size, a scaled version of the gradient’s magnitude is
+generally used by most gradient descent algorithms.
+This heuristic often works well but there is no guarantee that it is
+always a good choice.
+To see that it can work extremely badly, and does not have
+to contain valuable information, we consider a function \(f\).
+The plots below show \(f\) as well as two scaled versions.</p>
+
+<p><img src="/assets/posts/rprop/scales.png" alt="Three functions with the same optima but vastly different gradients" /></p>
+
+<p>All three of these functions have the exact same optima, so the step updates
+using gradient descent should all be similar.
+However, if we determine the step size using the gradient’s
+magnitude, then the step sizes for the three functions are going to differ by
+orders of magnitude.
+Even worse, the gradient virtually vanishes for the second function and explodes
+for the third.</p>
+
+<p>This shows that the gradient’s magnitude does not have to contain useful
+information for determining the step size.
+Even though optima can still be found by choosing appropriate learning rates,
+this should make it clear that using the gradient’s magnitude at all is sometimes questionable.
+Using a fixed learning rate will also fail if only some parts of the function
+are scaled.</p>
+
+<h2 id="updating-weights">Updating weights</h2>
+
+<p>Modern gradient descent variants try to circumvent this problem by dynamically
+adapting the step size.
+RProp does this in a way that only requires the sign of the gradient.
+By ignoring the gradient’s magnitude, RProp has no problems if a function has a few very
+steep areas.</p>
+
+<p>Concretely, RProp uses a different step size for each dimension.
+Let \(\eta_i^{(t)}\) be the step size for the \(i\)-th weight in the \(t\)-th
+iteration of gradient descent.
+The value for the first and second iteration, \(\eta_i^{(0)}\) and
+\(\eta_i^{(1)}\), is a hyperparameter that needs to be chosen up front.
+This step size is then dynamically adapted for each weight, depending on the gradient.</p>
+
+<p>The weights themselves are updated using</p>
+
+<script type="math/tex; mode=display">w_i^{(t)} = w_i^{(t - 1)} - \eta_i^{(t - 1)} * \operatorname{sgn}\left(\frac{\partial E^{(t -
+	1)}}{\partial w_i^{(t - 1)}}\right)</script>
+
+<p>where the sign of the partial derivative of the error in the last step
+with respect to the respective weight is computed.
+We go into the direction of descent using the determined step size.</p>
+
+<h2 id="adapting-the-step-size">Adapting the step size</h2>
+
+<p>In each iteration of RProp, the gradients are computed and the step sizes are
+updated for each dimension individually.
+This is done by comparing the gradient’s sign of the current and previous
+iteration.
+The idea here is the following:</p>
+
+<ul>
+  <li>When the signs are the same, we go into the same direction as in the
+  previous iteration. Since this seems to be a good direction, the step size
+  should be increased to go to the optimum more quickly</li>
+  <li>If the sign changed, the new update is going into a different direction.
+  This means that we just jumped over an optimum.
+  The step size should be decreased to avoid jumping over the optimum again</li>
+</ul>
+
+<p>A visualization of this idea is shown below.</p>
+
+<p><img src="/assets/posts/rprop/jumps.png" alt="The gradient direction changes when jumping over optima" /></p>
+
+<p>To implement this update scheme, the following formula is used:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\eta_i^{(t)} = \begin{cases}
+	\min(\eta_i^{(t - 1)} * \alpha, \eta_{\max}) & \text{if } \frac{\partial E^{(t)}}{\partial w_i^{(t)}} * \frac{\partial E^{(t - 1)}}{\partial w_i^{(t - 1)}} > 0 \\
+	\max(\eta_i^{(t - 1)} * \beta, \eta_{\min}) & \text{if } \frac{\partial E^{(t)}}{\partial w_i^{(t)}} * \frac{\partial E^{(t - 1)}}{\partial w_i^{(t - 1)}} < 0 \\
+	\eta_i^{(t - 1)} & \text{otherwise}
+	\end{cases}
+\label{eq:rprop} %]]></script>
+
+<p>where \(\alpha &gt; 1 &gt; \beta\) scale the step size, depending on whether
+the speed should be increased or decreased. The step size is then clipped using
+\(\eta_{\min}\) and \(\eta_{\max}\) to avoid that it becomes too large or small.
+If a gradient was zero, a local optimum for this weight was found and the step
+size is not changed.</p>
+
+<h3 id="hyperparameters">Hyperparameters</h3>
+
+<p>These seem like many hyperparameter to choose, but in practice there are known values for them that generally work well.
+It is also not problematic if the clipping values \(\eta_{\min}\) and \(\eta_{\max}\) are respectively smaller and larger than necessary because an inconvenient step size is generally adapted quickly.</p>
+
+<p>Popular values for \(\alpha\) and \(\beta\) are \(1.2\) and \(0.5\).
+Heuristically, it works well to increase the step size slowly, while allowing for the possibility of quickly decreasing it when jumping around an optimum.
+For fine tuning the weights, it is important that \(\beta\) is not the reciprocal of \(\alpha\), to allow for many different step sizes.</p>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>One advantage of RProp that was not discussed so far is having a different step
+size for each weight.
+If one weight is already very close to its optimal value while a second weight
+still needs to be changed a lot, this is not a problem for RProp.
+Other gradient descent variants can have much more problems with such a
+situation, especially because the gradient magnitudes can be misleading here.</p>
+
+<p>While RProp works well in a lot of situations, it is not perfect.
+For instance, RProp generally requires large batch updates.
+If there’s too much randomness in SGD, then the step sizes jump around too much
+and the updates work badly.</p>
+
+<p>Implementing RProp is quite straightforward.
+To get a better understanding of RProp, reading the <a href="https://github.com/pytorch/pytorch/blob/master/torch/optim/rprop.py">PyTorch
+implementation</a> can also be helpful.</p>
+
+<h3 id="references">References</h3>
+
+<p>[1] Rojas, R., 2013. Neural networks: a systematic introduction. Springer
+Science &amp; Business Media.</p>
+
+<p>[2] Riedmiller, M. and Braun, H., 1993. A direct adaptive method for faster
+backpropagation learning: The RPROP algorithm. In Neural Networks, 1993., IEEE
+International Conference on (pp. 586-591). IEEE.</p>
+
+  </article>
+
+  
+  <hr>
+
+  <div class="related">
+    <h2>Other Posts</h2>
+    
+      <li><a href="/25-probabilistic-quantization/" title="Probabilistic Quantization">Probabilistic Quantization
+       &nbsp; <span class="post-meta">February 25, 2018</span></a>
+    
+      <li><a href="/reading-2017/" title="What I read in 2017">What I read in 2017
+       &nbsp; <span class="post-meta">December 30, 2016</span></a>
+    
+      <li><a href="/addon-recommender/" title="Add-on recommendations for Firefox users">Add-on recommendations for Firefox users
+       &nbsp; <span class="post-meta">December 08, 2016</span></a>
+    
+  </div>
+  
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

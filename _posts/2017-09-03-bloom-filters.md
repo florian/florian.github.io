@@ -250,6 +250,8 @@ caching in databases more efficient.
   display: inline-block;
   width: 17px;
   height: 17px;
+  padding: 0;
+  text-indent: 0;
   border: 1px solid #565656;
   border-right: none;
   text-align: center;
