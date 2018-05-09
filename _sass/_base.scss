@@ -92,6 +92,15 @@ article li::before {
  padding-right: 8px;
 }
 
+ol {
+ list-style: decimal;
+
+ li:before {
+  content: '';
+  padding: 0;
+ }
+}
+
 
 /**
  * Headings
