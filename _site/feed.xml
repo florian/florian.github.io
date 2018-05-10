@@ -5,8 +5,8 @@
     <description></description>
     <link>https://florian.github.io//</link>
     <atom:link href="https://florian.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 09 May 2018 21:11:38 -0700</pubDate>
-    <lastBuildDate>Wed, 09 May 2018 21:11:38 -0700</lastBuildDate>
+    <pubDate>Thu, 10 May 2018 08:19:10 -0700</pubDate>
+    <lastBuildDate>Thu, 10 May 2018 08:19:10 -0700</lastBuildDate>
     <generator>Jekyll v3.6.2</generator>
     
       <item>
@@ -28,8 +28,9 @@ However, directly collecting this data is a terrible idea because it is extremel
 Users do not want that everything they type is sent to a server.&lt;/p&gt;
 
 &lt;p&gt;Sending only randomized versions of the original data to the server, based on the ideas of &lt;a href=&quot;/differential-privacy/&quot;&gt;Differential Privacy&lt;/a&gt;, is one potential solution to this problem.
-The second solution is &lt;a href=&quot;https://research.googleblog.com/2017/04/federated-learning-collaborative.html&quot;&gt;&lt;em&gt;Federated Learning&lt;/em&gt;&lt;/a&gt;, a new approach to machine learning where the training data does not leave the user’s computer at all.
+The second solution is &lt;a href=&quot;https://research.googleblog.com/2017/04/federated-learning-collaborative.html&quot;&gt;&lt;em&gt;Federated Learning&lt;/em&gt;&lt;/a&gt;, a new approach to machine learning where the training data does not leave the users’ computer at all.
 Instead of sharing their data, users compute weight updates themselves using their locally available data.
+It is a way of training a model without directly inspecting users’ data on a server.
 This blog posts gives a high-level introduction to Federated Learning and the challenges that arise in this problem setting.&lt;/p&gt;
 
 &lt;h3 id=&quot;federated-optimization&quot;&gt;Federated Optimization&lt;/h3&gt;

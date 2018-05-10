@@ -23,8 +23,9 @@ However, directly collecting this data is a terrible idea because it is extremel
 Users do not want that everything they type is sent to a server.
 
 Sending only randomized versions of the original data to the server, based on the ideas of [Differential Privacy]({{ site.baseurl }}{% link _posts/2017-10-12-differential-privacy.md %}), is one potential solution to this problem.
-The second solution is [*Federated Learning*](https://research.googleblog.com/2017/04/federated-learning-collaborative.html), a new approach to machine learning where the training data does not leave the user's computer at all.
+The second solution is [*Federated Learning*](https://research.googleblog.com/2017/04/federated-learning-collaborative.html), a new approach to machine learning where the training data does not leave the users' computer at all.
 Instead of sharing their data, users compute weight updates themselves using their locally available data.
+It is a way of training a model without directly inspecting users' data on a server.
 This blog posts gives a high-level introduction to Federated Learning and the challenges that arise in this problem setting.
 
 ### Federated Optimization
