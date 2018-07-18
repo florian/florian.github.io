@@ -101,25 +101,28 @@ Generally, it is not possible to perfectly optimize both, bias and variance, so 
 In other words, we accept a certain bias of the model to keep its variance low.
 A good tradeoff between the two needs to be achieved.
 
-### Gadient descent
+### Gradient descent
 
 In supervised machine learning, we compare our model's predictions to the true labels.
 This is done using a loss function.
 If a set of data points \\(x_1, \dots, x_n\\) and labels \\(y_1, \dots\, y_n\\) is given, then the full loss is defined by
 
 $$
-L = \sum\limits_{i = 1}^n \operatorname{loss}(f(x_i), y_i)
+L = \frac{1}{n} \sum\limits_{i = 1}^n \operatorname{loss}(f(x_i), y_i)
 $$
 
-where \\(\operatorname{loss}\\) is a function that compares a prediction to the correct answer.
+where \\(\operatorname{loss}\\) is a function that compares a prediction \\(p\\) to the correct answer \\(y\\).
 One choice for the loss function might be the quadratic error:
 
 $$
 \operatorname{loss}(p, y) = (p - y)^2
 $$
 
-[Gradient descent](https://en.wikipedia.org/wiki/Gradient_descent) optimizes the parameters used in \\(f\\) by computing the gradient of the loss.
+[Gradient descent](https://en.wikipedia.org/wiki/Gradient_descent) optimizes the parameters used in \\(f\\) by computing the gradient of the loss with respect to these parameters.
 This gradient is then used to continually improve the parameters step by step.
+
+#### Full-batch gradient descent
+
 To compute the gradient \\(\nabla L\\) of the loss, we can make use of the [linearity of the gradient operator](https://en.wikipedia.org/wiki/Gradient#Linearity):
 
 $$
@@ -129,6 +132,7 @@ $$
 \end{align*}
 $$
 
+The method that uses the gradient given above is sometimes referred to as *full-batch gradient descent* because it fully uses the available training data in each iteration.
 In many cases, \\(n\\) is a very large value and computing the full update \\(\nabla L\\) is expensive.
 Since computing the gradient is by far the most expensive part of gradient descent, it makes sense to try to make this more efficient.
 
@@ -138,7 +142,7 @@ Every required calculation is repeated 10 times.
 While this is an extreme example, it does happen in practice that much of the training data is similar.
 To save time, it often makes sense to only use a part of the data to estimate the gradient.
 
-### Stochastic gradient descent
+#### Stochastic gradient descent
 
 In *stochastic gradient descent* (*SGD*), a single data point \\(x\\) and label \\(y\\) are sampled uniformly from the training set.
 The true gradient \\(\nabla L\\) is then estimated using only this data point and label:
@@ -162,7 +166,7 @@ This property is the reason why optima can be found using this algorithm.
 While individual estimates are off, the randomness averages out over iterations and the parameters still move into a sensible direction overall.
 Since iterations are much cheaper, many more of them can be performed and this is a major improvement to computing the full gradient.
 
-### Mini-batch gradient descent
+#### Mini-batch gradient descent
 
 These individual SGD estimates can have a large variance however, leading to noisy and jumpy updates.
 A further improvement over this method is *mini-batch gradient descent*.
@@ -192,7 +196,7 @@ The training process needs to find a tradeoff between these two.
 To compute the gradient for the optimization process, it is expensive to use all data points.
 By randomly sampling them, we can compute unbiased estimates in a much faster way.
 If this is done using a large enough sample, the variance of these estimates does not have to be large.
-By properly choosing the sample size, the optimization process can be speeded up significantly.
+By properly choosing the sample size, the optimization process can thus be speeded up significantly.
 
 ### References
 

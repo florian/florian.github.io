@@ -9,8 +9,8 @@
   <meta name="description" content="">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://localhost:4000/estimators/">
-  <link rel="alternate" type="application/atom+xml" title="Florian Hartmann" href="http://localhost:4000/feed.xml" />
+  <link rel="canonical" href="https://florian.github.io//estimators/">
+  <link rel="alternate" type="application/atom+xml" title="Florian Hartmann" href="https://florian.github.io//feed.xml" />
 </head>
 
   <body>
@@ -112,22 +112,25 @@ This is because the model is now based on different random noise.</p>
 In other words, we accept a certain bias of the model to keep its variance low.
 A good tradeoff between the two needs to be achieved.</p>
 
-<h3 id="gadient-descent">Gadient descent</h3>
+<h3 id="gradient-descent">Gradient descent</h3>
 
 <p>In supervised machine learning, we compare our model’s predictions to the true labels.
 This is done using a loss function.
 If a set of data points \(x_1, \dots, x_n\) and labels \(y_1, \dots\, y_n\) is given, then the full loss is defined by</p>
 
-<script type="math/tex; mode=display">L = \sum\limits_{i = 1}^n \operatorname{loss}(f(x_i), y_i)</script>
+<script type="math/tex; mode=display">L = \frac{1}{n} \sum\limits_{i = 1}^n \operatorname{loss}(f(x_i), y_i)</script>
 
-<p>where \(\operatorname{loss}\) is a function that compares a prediction to the correct answer.
+<p>where \(\operatorname{loss}\) is a function that compares a prediction \(p\) to the correct answer \(y\).
 One choice for the loss function might be the quadratic error:</p>
 
 <script type="math/tex; mode=display">\operatorname{loss}(p, y) = (p - y)^2</script>
 
-<p><a href="https://en.wikipedia.org/wiki/Gradient_descent">Gradient descent</a> optimizes the parameters used in \(f\) by computing the gradient of the loss.
-This gradient is then used to continually improve the parameters step by step.
-To compute the gradient \(\nabla L\) of the loss, we can make use of the <a href="https://en.wikipedia.org/wiki/Gradient#Linearity">linearity of the gradient operator</a>:</p>
+<p><a href="https://en.wikipedia.org/wiki/Gradient_descent">Gradient descent</a> optimizes the parameters used in \(f\) by computing the gradient of the loss with respect to these parameters.
+This gradient is then used to continually improve the parameters step by step.</p>
+
+<h4 id="full-batch-gradient-descent">Full-batch gradient descent</h4>
+
+<p>To compute the gradient \(\nabla L\) of the loss, we can make use of the <a href="https://en.wikipedia.org/wiki/Gradient#Linearity">linearity of the gradient operator</a>:</p>
 
 <script type="math/tex; mode=display">% <![CDATA[
 \begin{align*}
@@ -135,7 +138,8 @@ To compute the gradient \(\nabla L\) of the loss, we can make use of the <a href
 	         & = \frac1n \sum\limits_{i = 1}^n \nabla \operatorname{loss}(f(x_i), y_i)
 \end{align*} %]]></script>
 
-<p>In many cases, \(n\) is a very large value and computing the full update \(\nabla L\) is expensive.
+<p>The method that uses the gradient given above is sometimes referred to as <em>full-batch gradient descent</em> because it fully uses the available training data in each iteration.
+In many cases, \(n\) is a very large value and computing the full update \(\nabla L\) is expensive.
 Since computing the gradient is by far the most expensive part of gradient descent, it makes sense to try to make this more efficient.</p>
 
 <p>Computing the gradient as shown above is especially inefficient if there is duplicated training data.
@@ -144,7 +148,7 @@ Every required calculation is repeated 10 times.
 While this is an extreme example, it does happen in practice that much of the training data is similar.
 To save time, it often makes sense to only use a part of the data to estimate the gradient.</p>
 
-<h3 id="stochastic-gradient-descent">Stochastic gradient descent</h3>
+<h4 id="stochastic-gradient-descent">Stochastic gradient descent</h4>
 
 <p>In <em>stochastic gradient descent</em> (<em>SGD</em>), a single data point \(x\) and label \(y\) are sampled uniformly from the training set.
 The true gradient \(\nabla L\) is then estimated using only this data point and label:</p>
@@ -165,7 +169,7 @@ This property is the reason why optima can be found using this algorithm.
 While individual estimates are off, the randomness averages out over iterations and the parameters still move into a sensible direction overall.
 Since iterations are much cheaper, many more of them can be performed and this is a major improvement to computing the full gradient.</p>
 
-<h3 id="mini-batch-gradient-descent">Mini-batch gradient descent</h3>
+<h4 id="mini-batch-gradient-descent">Mini-batch gradient descent</h4>
 
 <p>These individual SGD estimates can have a large variance however, leading to noisy and jumpy updates.
 A further improvement over this method is <em>mini-batch gradient descent</em>.
@@ -195,7 +199,7 @@ The training process needs to find a tradeoff between these two.</p>
 <p>To compute the gradient for the optimization process, it is expensive to use all data points.
 By randomly sampling them, we can compute unbiased estimates in a much faster way.
 If this is done using a large enough sample, the variance of these estimates does not have to be large.
-By properly choosing the sample size, the optimization process can be speeded up significantly.</p>
+By properly choosing the sample size, the optimization process can thus be speeded up significantly.</p>
 
 <h3 id="references">References</h3>
 
