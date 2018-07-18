@@ -3,10 +3,10 @@
   <channel>
     <title>Florian Hartmann</title>
     <description></description>
-    <link>https://florian.github.io//</link>
-    <atom:link href="https://florian.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 10 May 2018 08:19:10 -0700</pubDate>
-    <lastBuildDate>Thu, 10 May 2018 08:19:10 -0700</lastBuildDate>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 17 Jul 2018 19:36:53 -0700</pubDate>
+    <lastBuildDate>Tue, 17 Jul 2018 19:36:53 -0700</lastBuildDate>
     <generator>Jekyll v3.6.2</generator>
     
       <item>
@@ -198,8 +198,8 @@ Communication Association.&lt;/p&gt;
 &lt;p&gt;[7] Bonawitz, K., Ivanov, V., Kreuter, B., Marcedone, A., McMahan, H.B., Patel, S., Ramage, D., Segal, A. and Seth, K., 2017, October. Practical Secure Aggregation for Privacy-Preserving Machine Learning. In Proceedings of the 2017 ACM SIGSAC Conference on Computer and Communications Security (pp. 1175-1191). ACM.&lt;/p&gt;
 </description>
         <pubDate>Wed, 09 May 2018 00:54:00 -0700</pubDate>
-        <link>https://florian.github.io//federated-learning/</link>
-        <guid isPermaLink="true">https://florian.github.io//federated-learning/</guid>
+        <link>http://localhost:4000/federated-learning/</link>
+        <guid isPermaLink="true">http://localhost:4000/federated-learning/</guid>
         
         
         <category>machine-learning,</category>
@@ -349,8 +349,8 @@ backpropagation learning: The RPROP algorithm. In Neural Networks, 1993., IEEE
 International Conference on (pp. 586-591). IEEE.&lt;/p&gt;
 </description>
         <pubDate>Sun, 08 Apr 2018 03:54:00 -0700</pubDate>
-        <link>https://florian.github.io//rprop/</link>
-        <guid isPermaLink="true">https://florian.github.io//rprop/</guid>
+        <link>http://localhost:4000/rprop/</link>
+        <guid isPermaLink="true">http://localhost:4000/rprop/</guid>
         
         
         <category>machine-learning,</category>
@@ -466,8 +466,8 @@ compression techniques for Federated Learning [2, 3].&lt;/p&gt;
 &lt;p&gt;[3] Konečný, J., McMahan, H.B., Yu, F.X., Richtárik, P., Suresh, A.T. and Bacon, D., 2016. Federated learning: Strategies for improving communication efficiency.&lt;/p&gt;
 </description>
         <pubDate>Sun, 25 Feb 2018 08:03:00 -0800</pubDate>
-        <link>https://florian.github.io//probabilistic-quantization/</link>
-        <guid isPermaLink="true">https://florian.github.io//probabilistic-quantization/</guid>
+        <link>http://localhost:4000/probabilistic-quantization/</link>
+        <guid isPermaLink="true">http://localhost:4000/probabilistic-quantization/</guid>
         
         
         <category>federated-learning</category>
@@ -662,8 +662,8 @@ I’m pretty sure it was the same for 2016, which means I haven’t read a book 
 German for at least two years.&lt;/p&gt;
 </description>
         <pubDate>Fri, 30 Dec 2016 04:00:00 -0800</pubDate>
-        <link>https://florian.github.io//reading-2017/</link>
-        <guid isPermaLink="true">https://florian.github.io//reading-2017/</guid>
+        <link>http://localhost:4000/reading-2017/</link>
+        <guid isPermaLink="true">http://localhost:4000/reading-2017/</guid>
         
         
         <category>reading-notes</category>
@@ -679,8 +679,8 @@ system: &lt;a href=&quot;https://medium.com/firefox-context-graph/add-on-recomme
 &lt;p&gt;It was also cross-posted to &lt;a href=&quot;https://www.a2p.it/wordpress/tech-stuff/mozilla/add-on-recommendations-for-firefox-users-a-prototype-recommender-system-leveraging-existing-data-sources/&quot;&gt;Alessio’s blog&lt;/a&gt;.&lt;/p&gt;
 </description>
         <pubDate>Thu, 08 Dec 2016 15:23:10 -0800</pubDate>
-        <link>https://florian.github.io//addon-recommender/</link>
-        <guid isPermaLink="true">https://florian.github.io//addon-recommender/</guid>
+        <link>http://localhost:4000/addon-recommender/</link>
+        <guid isPermaLink="true">http://localhost:4000/addon-recommender/</guid>
         
         
         <category>differential-privacy</category>
@@ -727,10 +727,10 @@ started appearing in 2003. It is based on the ideas of &lt;a href=&quot;https://
 &lt;/ol&gt;
 
 &lt;p&gt;&lt;br /&gt;
-If the attribute \( A \) is synonymous with illegal behavior, then answering “Yes” is not incriminating&lt;/p&gt;
+If the attribute \( A \) is synonymous with illegal behavior, then answering “Yes” is not incriminating.&lt;/p&gt;
 
 &lt;p&gt;Many responses are significant. Positive responses are given to \( 1/4 \) by people who don’t have the attribute A and \( 3/4 \)
-by people who possess it&lt;/p&gt;
+by people who possess it.&lt;/p&gt;
 
 &lt;p&gt;Then we expect to obtain \( (1/4)(1-p) + (3/4)p = (1/4) + p/2 \) positive responses. Hence is possible to estimate p.&lt;/p&gt;
 
@@ -758,7 +758,7 @@ probabilities determine the level of Differential Privacy along with the number 
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;
-&lt;em&gt;Note: This is a very simplified version of RAPPOR, you shouldn’t use it in real life. For optimized implementations, &lt;a href=&quot;https://github.com/google/rappor/&quot;&gt;look at the original Google’s repository&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;em&gt;Note: This is a very simplified version of RAPPOR, you shouldn’t use it in real life. For optimized implementations, &lt;a href=&quot;https://github.com/google/rappor/&quot;&gt;look at the original Google’s repository&lt;/a&gt;&lt;/em&gt;.&lt;/p&gt;
 
 &lt;p&gt;The first step is to encode the original value into the Bloom filter using \( h \) hash functions.&lt;/p&gt;
 
@@ -980,8 +980,8 @@ them with confidence. Of course only being able to detect common values is not n
 privacy for users that gave unusual answers.&lt;/p&gt;
 </description>
         <pubDate>Wed, 12 Oct 2016 06:36:20 -0700</pubDate>
-        <link>https://florian.github.io//differential-privacy/</link>
-        <guid isPermaLink="true">https://florian.github.io//differential-privacy/</guid>
+        <link>http://localhost:4000/differential-privacy/</link>
+        <guid isPermaLink="true">http://localhost:4000/differential-privacy/</guid>
         
         
         <category>differential-privacy</category>
@@ -1640,8 +1640,8 @@ ReactDOM.render(React.createElement(BloomFilterVisualization, { bits: 32, hash_f
 
 </description>
         <pubDate>Sat, 03 Sep 2016 12:36:20 -0700</pubDate>
-        <link>https://florian.github.io//bloom-filters/</link>
-        <guid isPermaLink="true">https://florian.github.io//bloom-filters/</guid>
+        <link>http://localhost:4000/bloom-filters/</link>
+        <guid isPermaLink="true">http://localhost:4000/bloom-filters/</guid>
         
         
         <category>probabilistic-data-structures</category>

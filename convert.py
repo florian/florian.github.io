@@ -1,4 +1,4 @@
-content = open("./_drafts/rprop.md", "rb").read()
+content = open("./_drafts/estimators.md", "rb").read()
 
 result = u""
 first = True
@@ -29,4 +29,4 @@ result = result.replace("\\item", "-")
 
 result = result.replace("\\noindent ", "")
 
-open("./_drafts/rprop2.md", "wb").write(bytearray(result, "utf8"))
+open("./_drafts/estimators2.md", "wb").write(bytearray(result, "utf8"))

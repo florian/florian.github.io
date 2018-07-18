@@ -42,10 +42,10 @@ Let’s imagine you’re asked "Do you own the attribute A?”, but you don’t 
 3. If tail, then throw the coin again and answer "Yes" if head, "No" if tail.
 
 <br/>
-If the attribute \\( A \\) is synonymous with illegal behavior, then answering "Yes" is not incriminating
+If the attribute \\( A \\) is synonymous with illegal behavior, then answering "Yes" is not incriminating.
 
 Many responses are significant. Positive responses are given to \\( 1/4 \\) by people who don't have the attribute A and \\( 3/4 \\)
-by people who possess it
+by people who possess it.
 
 Then we expect to obtain \\( (1/4)(1-p) + (3/4)p = (1/4) + p/2 \\) positive responses. Hence is possible to estimate p.
 
@@ -71,7 +71,7 @@ each individual cohort provides insufficient signal due to its small sample size
 probabilities determine the level of Differential Privacy along with the number of hash functions used.
 
 <br/>
-*Note: This is a very simplified version of RAPPOR, you shouldn't use it in real life. For optimized implementations, [look at the original Google's repository](https://github.com/google/rappor/)*
+*Note: This is a very simplified version of RAPPOR, you shouldn't use it in real life. For optimized implementations, [look at the original Google's repository](https://github.com/google/rappor/)*.
 
 The first step is to encode the original value into the Bloom filter using \\( h \\) hash functions.
 
