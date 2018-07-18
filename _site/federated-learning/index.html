@@ -58,9 +58,12 @@ For the example given above, this could be done by using text from Wikipedia.
 Although this does not produce the best possible model, it is a good starting point and can reduce the time until the Federated Learning process converges.</p>
 
 <p>After the model is initialized, a certain number of users are randomly selected to improve the model.
-They receive the current model from the server and use their locally available data to compute updates to all parameters of the model.
-These updates are sent back to the server where they are averaged, weighted by the number of training examples that the respective clients used.
+Each user receives the current model from the server and uses their locally
+available data to compute a model update \(H_i\).
+All these updates are sent back to the server where they are averaged, weighted by the number of training examples that the respective clients used.
 The server then applies this update to the model, typically by using some form of <a href="https://en.wikipedia.org/wiki/Gradient_descent">gradient descent</a>.</p>
+
+<p><img src="../../assets/posts/federated-learning/iteration.png" width="600" style="margin: 25px auto; display: block" alt="One iteration of a federated learning system" /></p>
 
 <p>All of this is called a communication round.
 This process is then performed many times until the parameters of the model stabilize.
