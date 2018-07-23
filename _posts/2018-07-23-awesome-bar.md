@@ -254,13 +254,6 @@ To measure the quality of history and bookmark suggestions in the URL bar, we us
 
 ### Power Analysis
 
-- Important aspect of study design
-- How many users do we need to have enough data? (treatment)
-- How many users do we need to show certain effects confidently? (treatment, control)
-
 ### Analyzing the Results
 
 ### Future Work
-
-- Language model
-- FL for other applications in Firefox
