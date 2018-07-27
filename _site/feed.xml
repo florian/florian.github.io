@@ -5,8 +5,8 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 24 Jul 2018 16:15:11 -0700</pubDate>
-    <lastBuildDate>Tue, 24 Jul 2018 16:15:11 -0700</lastBuildDate>
+    <pubDate>Wed, 25 Jul 2018 08:33:12 -0700</pubDate>
+    <lastBuildDate>Wed, 25 Jul 2018 08:33:12 -0700</lastBuildDate>
     <generator>Jekyll v3.6.2</generator>
     
       <item>
@@ -171,7 +171,7 @@ The margin \(\Delta\) is a hyperparameter that needs to be decided on before the
 
 &lt;h3 id=&quot;computing-gradients&quot;&gt;Computing Gradients&lt;/h3&gt;
 
-&lt;p&gt;Every time a user performes a history or bookmark search in the URL bar, we compute the SVM loss on that search.
+&lt;p&gt;Every time a user performs a history or bookmark search in the URL bar, we compute the SVM loss on that search.
 To compute an update, we then try to move the weights a little bit into a direction where this loss is minimized.
 The update corresponds to the gradient of the SVM loss with respect to the weights in the frecency algorithm that we optimize for.&lt;/p&gt;
 

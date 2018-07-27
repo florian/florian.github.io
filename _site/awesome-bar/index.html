@@ -184,7 +184,7 @@ The margin \(\Delta\) is a hyperparameter that needs to be decided on before the
 
 <h3 id="computing-gradients">Computing Gradients</h3>
 
-<p>Every time a user performes a history or bookmark search in the URL bar, we compute the SVM loss on that search.
+<p>Every time a user performs a history or bookmark search in the URL bar, we compute the SVM loss on that search.
 To compute an update, we then try to move the weights a little bit into a direction where this loss is minimized.
 The update corresponds to the gradient of the SVM loss with respect to the weights in the frecency algorithm that we optimize for.</p>
 
