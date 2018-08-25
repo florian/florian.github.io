@@ -49,11 +49,11 @@ For example because the function itself is random or because there is random noi
 
 <h4 id="bias">Bias</h4>
 
-<p>One measure for the quality of an estimator \(\theta\) is its <em>bias</em> or how far off its estimate \(\tilde{X}\) is on average from the true value \(X\):</p>
+<p>One measure for the quality of an estimator \(\tilde{X}\) is its <em>bias</em> or how far off its estimate is on average from the true value \(X\):</p>
 
-<script type="math/tex; mode=display">\operatorname{bias}({\theta}) = \mathbb{E}[\tilde{X}] - X</script>
+<script type="math/tex; mode=display">\operatorname{bias}({\tilde{X}}) = \mathbb{E}[\tilde{X}] - X</script>
 
-<p>where the expected value is over the randomness involved in \(\theta\).</p>
+<p>where the expected value is over the randomness involved in \(\tilde{X}\).</p>
 
 <p>If the bias of an estimator is \(0\), it is called an <em>unbiased estimator</em>.
 This is generally a desirable property to have [3] because it means that the estimator is correct on average.
@@ -85,7 +85,7 @@ The full estimate is given by</p>
 To quantify how consistently an estimator is close to the true value, another statistic is required.
 Commonly, the <em>variance</em> of the estimator is considered here:</p>
 
-<script type="math/tex; mode=display">\operatorname{Var}[\theta] = \mathbb{E}[(\tilde{X} - X)^2]</script>
+<script type="math/tex; mode=display">\operatorname{Var}[\tilde{X}] = \mathbb{E}[(\tilde{X} - X)^2]</script>
 
 <p>It is defined as the mean squared distance between the estimate and the value to be estimated.</p>
 

@@ -31,13 +31,13 @@ For example because the function itself is random or because there is random noi
 
 #### Bias
 
-One measure for the quality of an estimator \\(\theta\\) is its *bias* or how far off its estimate \\(\tilde{X}\\) is on average from the true value \\(X\\):
+One measure for the quality of an estimator \\(\tilde{X}\\) is its *bias* or how far off its estimate is on average from the true value \\(X\\):
 
 $$
-	\operatorname{bias}({\theta}) = \mathbb{E}[\tilde{X}] - X
+	\operatorname{bias}({\tilde{X}}) = \mathbb{E}[\tilde{X}] - X
 $$
 
-where the expected value is over the randomness involved in \\(\theta\\).
+where the expected value is over the randomness involved in \\(\tilde{X}\\).
 
 If the bias of an estimator is \\(0\\), it is called an *unbiased estimator*.
 This is generally a desirable property to have [3] because it means that the estimator is correct on average.
@@ -73,7 +73,7 @@ To quantify how consistently an estimator is close to the true value, another st
 Commonly, the *variance* of the estimator is considered here:
 
 $$
-	\operatorname{Var}[\theta] = \mathbb{E}[(\tilde{X} - X)^2]
+	\operatorname{Var}[\tilde{X}] = \mathbb{E}[(\tilde{X} - X)^2]
 $$
 
 It is defined as the mean squared distance between the estimate and the value to be estimated.
