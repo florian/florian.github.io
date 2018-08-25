@@ -48,20 +48,28 @@ To see that it can work extremely badly, and does not have
 to contain valuable information, we consider a function \(f\).
 The plots below show \(f\) as well as two scaled versions.</p>
 
-<p><img src="/assets/posts/rprop/scales.png" alt="Three functions with the same optima but vastly different gradients" /></p>
+<table class="image">
+	<caption align="bottom" style="">Three functions with the same optima but vastly different gradients</caption>
+	<tr><td><img src="/assets/posts/rprop/scales.png" alt="Three functions with the same optima but vastly different gradients" width="" /></td></tr>
+</table>
 
 <p>All three of these functions have the exact same optima, so the step updates
 using gradient descent should all be similar.
 However, if we determine the step size using the gradient’s
-magnitude, then the step sizes for the three functions are going to differ by
+magnitude, then the step sizes for the three functions differ by
 orders of magnitude.
 Even worse, the gradient virtually vanishes for the second function and explodes
-for the third.</p>
+for the third, as shown below:</p>
 
-<p>This shows that the gradient’s magnitude does not have to contain useful
+<table class="image">
+	<caption align="bottom" style="">The first derivatives of the three functions </caption>
+	<tr><td><img src="/assets/posts/rprop/scales-diff.png" alt="The first derivatives of the three functions " width="" /></td></tr>
+</table>
+
+<p>This shows that the gradient’s magnitude does not necessarily contain useful
 information for determining the step size.
 Even though optima can still be found by choosing appropriate learning rates,
-this should make it clear that using the gradient’s magnitude at all is sometimes questionable.
+this makes it clear that using the gradient’s magnitude at all is sometimes questionable.
 Using a fixed learning rate will also fail if only some parts of the function
 are scaled.</p>
 
@@ -77,7 +85,7 @@ steep areas.</p>
 Let \(\eta_i^{(t)}\) be the step size for the \(i\)-th weight in the \(t\)-th
 iteration of gradient descent.
 The value for the first and second iteration, \(\eta_i^{(0)}\) and
-\(\eta_i^{(1)}\), is a hyperparameter that needs to be chosen up front.
+\(\eta_i^{(1)}\), is a hyperparameter that needs to be chosen in advance.
 This step size is then dynamically adapted for each weight, depending on the gradient.</p>
 
 <p>The weights themselves are updated using</p>
@@ -101,14 +109,17 @@ The idea here is the following:</p>
   <li>When the signs are the same, we go into the same direction as in the
   previous iteration. Since this seems to be a good direction, the step size
   should be increased to go to the optimum more quickly</li>
-  <li>If the sign changed, the new update is going into a different direction.
+  <li>If the sign changed, the new update is moving into a different direction.
   This means that we just jumped over an optimum.
   The step size should be decreased to avoid jumping over the optimum again</li>
 </ul>
 
 <p>A visualization of this idea is shown below.</p>
 
-<p><img src="/assets/posts/rprop/jumps.png" alt="The gradient direction changes when jumping over optima" /></p>
+<table class="image">
+	<caption align="bottom" style="">The gradient direction changes when jumping over optima</caption>
+	<tr><td><img src="/assets/posts/rprop/jumps.png" alt="The gradient direction changes when jumping over optima" width="" /></td></tr>
+</table>
 
 <p>To implement this update scheme, the following formula is used:</p>
 
@@ -122,7 +133,7 @@ The idea here is the following:</p>
 
 <p>where \(\alpha &gt; 1 &gt; \beta\) scale the step size, depending on whether
 the speed should be increased or decreased. The step size is then clipped using
-\(\eta_{\min}\) and \(\eta_{\max}\) to avoid that it becomes too large or small.
+\(\eta_{\min}\) and \(\eta_{\max}\) to avoid it becoming too large or too small.
 If a gradient was zero, a local optimum for this weight was found and the step
 size is not changed.</p>
 
@@ -146,7 +157,7 @@ situation, especially because the gradient magnitudes can be misleading here.</p
 
 <p>While RProp works well in a lot of situations, it is not perfect.
 For instance, RProp generally requires large batch updates.
-If there’s too much randomness in SGD, then the step sizes jump around too much
+If there’s too much randomness in stochastic gradient descent, then the step sizes jump around too much
 and the updates work badly.</p>
 
 <p>Implementing RProp is quite straightforward.

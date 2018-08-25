@@ -5,8 +5,8 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 25 Aug 2018 17:41:48 +0200</pubDate>
-    <lastBuildDate>Sat, 25 Aug 2018 17:41:48 +0200</lastBuildDate>
+    <pubDate>Sat, 25 Aug 2018 18:09:55 +0200</pubDate>
+    <lastBuildDate>Sat, 25 Aug 2018 18:09:55 +0200</lastBuildDate>
     <generator>Jekyll v3.8.3</generator>
     
       <item>
@@ -441,20 +441,28 @@ To see that it can work extremely badly, and does not have
 to contain valuable information, we consider a function \(f\).
 The plots below show \(f\) as well as two scaled versions.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/posts/rprop/scales.png&quot; alt=&quot;Three functions with the same optima but vastly different gradients&quot; /&gt;&lt;/p&gt;
+&lt;table class=&quot;image&quot;&gt;
+	&lt;caption align=&quot;bottom&quot; style=&quot;&quot;&gt;Three functions with the same optima but vastly different gradients&lt;/caption&gt;
+	&lt;tr&gt;&lt;td&gt;&lt;img src=&quot;/assets/posts/rprop/scales.png&quot; alt=&quot;Three functions with the same optima but vastly different gradients&quot; width=&quot;&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
 
 &lt;p&gt;All three of these functions have the exact same optima, so the step updates
 using gradient descent should all be similar.
 However, if we determine the step size using the gradient’s
-magnitude, then the step sizes for the three functions are going to differ by
+magnitude, then the step sizes for the three functions differ by
 orders of magnitude.
 Even worse, the gradient virtually vanishes for the second function and explodes
-for the third.&lt;/p&gt;
+for the third, as shown below:&lt;/p&gt;
 
-&lt;p&gt;This shows that the gradient’s magnitude does not have to contain useful
+&lt;table class=&quot;image&quot;&gt;
+	&lt;caption align=&quot;bottom&quot; style=&quot;&quot;&gt;The first derivatives of the three functions &lt;/caption&gt;
+	&lt;tr&gt;&lt;td&gt;&lt;img src=&quot;/assets/posts/rprop/scales-diff.png&quot; alt=&quot;The first derivatives of the three functions &quot; width=&quot;&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p&gt;This shows that the gradient’s magnitude does not necessarily contain useful
 information for determining the step size.
 Even though optima can still be found by choosing appropriate learning rates,
-this should make it clear that using the gradient’s magnitude at all is sometimes questionable.
+this makes it clear that using the gradient’s magnitude at all is sometimes questionable.
 Using a fixed learning rate will also fail if only some parts of the function
 are scaled.&lt;/p&gt;
 
@@ -470,7 +478,7 @@ steep areas.&lt;/p&gt;
 Let \(\eta_i^{(t)}\) be the step size for the \(i\)-th weight in the \(t\)-th
 iteration of gradient descent.
 The value for the first and second iteration, \(\eta_i^{(0)}\) and
-\(\eta_i^{(1)}\), is a hyperparameter that needs to be chosen up front.
+\(\eta_i^{(1)}\), is a hyperparameter that needs to be chosen in advance.
 This step size is then dynamically adapted for each weight, depending on the gradient.&lt;/p&gt;
 
 &lt;p&gt;The weights themselves are updated using&lt;/p&gt;
@@ -494,14 +502,17 @@ The idea here is the following:&lt;/p&gt;
   &lt;li&gt;When the signs are the same, we go into the same direction as in the
   previous iteration. Since this seems to be a good direction, the step size
   should be increased to go to the optimum more quickly&lt;/li&gt;
-  &lt;li&gt;If the sign changed, the new update is going into a different direction.
+  &lt;li&gt;If the sign changed, the new update is moving into a different direction.
   This means that we just jumped over an optimum.
   The step size should be decreased to avoid jumping over the optimum again&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;A visualization of this idea is shown below.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/posts/rprop/jumps.png&quot; alt=&quot;The gradient direction changes when jumping over optima&quot; /&gt;&lt;/p&gt;
+&lt;table class=&quot;image&quot;&gt;
+	&lt;caption align=&quot;bottom&quot; style=&quot;&quot;&gt;The gradient direction changes when jumping over optima&lt;/caption&gt;
+	&lt;tr&gt;&lt;td&gt;&lt;img src=&quot;/assets/posts/rprop/jumps.png&quot; alt=&quot;The gradient direction changes when jumping over optima&quot; width=&quot;&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
 
 &lt;p&gt;To implement this update scheme, the following formula is used:&lt;/p&gt;
 
@@ -515,7 +526,7 @@ The idea here is the following:&lt;/p&gt;
 
 &lt;p&gt;where \(\alpha &amp;gt; 1 &amp;gt; \beta\) scale the step size, depending on whether
 the speed should be increased or decreased. The step size is then clipped using
-\(\eta_{\min}\) and \(\eta_{\max}\) to avoid that it becomes too large or small.
+\(\eta_{\min}\) and \(\eta_{\max}\) to avoid it becoming too large or too small.
 If a gradient was zero, a local optimum for this weight was found and the step
 size is not changed.&lt;/p&gt;
 
@@ -539,7 +550,7 @@ situation, especially because the gradient magnitudes can be misleading here.&lt
 
 &lt;p&gt;While RProp works well in a lot of situations, it is not perfect.
 For instance, RProp generally requires large batch updates.
-If there’s too much randomness in SGD, then the step sizes jump around too much
+If there’s too much randomness in stochastic gradient descent, then the step sizes jump around too much
 and the updates work badly.&lt;/p&gt;
 
 &lt;p&gt;Implementing RProp is quite straightforward.
