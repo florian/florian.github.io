@@ -5,8 +5,8 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 25 Aug 2018 21:34:42 +0200</pubDate>
-    <lastBuildDate>Sat, 25 Aug 2018 21:34:42 +0200</lastBuildDate>
+    <pubDate>Sat, 25 Aug 2018 21:39:04 +0200</pubDate>
+    <lastBuildDate>Sat, 25 Aug 2018 21:39:04 +0200</lastBuildDate>
     <generator>Jekyll v3.8.3</generator>
     
       <item>
@@ -678,7 +678,7 @@ probabilistic binarization scheme using the two closest values is applied.&lt;/p
 &lt;p&gt;Of course, more bits are required to encode the possible values. The tradeoff is that convergence can be reached much more quickly and that the estimates for the
 largest and smallest possible values may be less accurate. The resulting estimator still computes unbiased estimates.&lt;/p&gt;
 
-&lt;p&gt;Finally, it is worth noting that there are further improvements over this algorithm [2].
+&lt;p&gt;Finally, it is worth noting that there are further improvements to this algorithm [2].
 By applying random rotations, the error when only a few users have sent their
 data can be reduced. Additionally, this method can be combined with other
 compression techniques for Federated Learning [2, 3].&lt;/p&gt;

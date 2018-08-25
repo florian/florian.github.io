@@ -100,7 +100,7 @@ probabilistic binarization scheme using the two closest values is applied.
 Of course, more bits are required to encode the possible values. The tradeoff is that convergence can be reached much more quickly and that the estimates for the
 largest and smallest possible values may be less accurate. The resulting estimator still computes unbiased estimates.
 
-Finally, it is worth noting that there are further improvements over this algorithm [2].
+Finally, it is worth noting that there are further improvements to this algorithm [2].
 By applying random rotations, the error when only a few users have sent their
 data can be reduced. Additionally, this method can be combined with other
 compression techniques for Federated Learning [2, 3].
