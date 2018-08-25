@@ -5,8 +5,8 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 25 Aug 2018 17:23:45 +0200</pubDate>
-    <lastBuildDate>Sat, 25 Aug 2018 17:23:45 +0200</lastBuildDate>
+    <pubDate>Sat, 25 Aug 2018 17:25:55 +0200</pubDate>
+    <lastBuildDate>Sat, 25 Aug 2018 17:25:55 +0200</lastBuildDate>
     <generator>Jekyll v3.8.3</generator>
     
       <item>
@@ -703,7 +703,7 @@ coincidence, and I do feel like the book has helped to improve my thesis a bit.&
 &lt;p&gt;To my surprise however, I also ended up finding the book itself quite enjoyable to read. Partly, this
 is definitely because it is written in great style, by a highly eloquent author.
 While I was reading the book, it also occurred to me that I never really thought
-about the fact that there are style guides for writing prose, similiar to how
+about the fact that there are style guides for writing prose, similar to how
 programmers have style guides for code.&lt;/p&gt;
 
 &lt;p&gt;The book addresses not only stylistic choices but also dives into more psychological
@@ -868,7 +868,7 @@ genres. I also only just noticed that I only read books in English this year.
 I’m pretty sure it was the same for 2016, which means I haven’t read a book in
 German for at least two years.&lt;/p&gt;
 </description>
-        <pubDate>Fri, 30 Dec 2016 13:00:00 +0100</pubDate>
+        <pubDate>Sat, 30 Dec 2017 13:00:00 +0100</pubDate>
         <link>http://localhost:4000/reading-2017/</link>
         <guid isPermaLink="true">http://localhost:4000/reading-2017/</guid>
         
