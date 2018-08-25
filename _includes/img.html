@@ -1,4 +1,4 @@
 <table class="image">
 	<caption align="bottom" style="{{ include.style | default: "" }}">{{ include.description  }}</caption>
-	<tr><td><img src="{{ include.url  }}" alt="{{ include.description }}" width="{{ include.width | default: "" }}"/></td></tr>
+	<tr><td><img src="{{ site.baseurl }}/{{ include.url  }}" alt="{{ include.description }}" width="{{ include.width | default: "" }}"/></td></tr>
 </table>

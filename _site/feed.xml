@@ -5,8 +5,8 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 25 Aug 2018 15:10:17 +0200</pubDate>
-    <lastBuildDate>Sat, 25 Aug 2018 15:10:17 +0200</lastBuildDate>
+    <pubDate>Sat, 25 Aug 2018 15:14:11 +0200</pubDate>
+    <lastBuildDate>Sat, 25 Aug 2018 15:14:11 +0200</lastBuildDate>
     <generator>Jekyll v3.8.3</generator>
     
       <item>
@@ -39,7 +39,7 @@ We tried to optimize the history and bookmark suggestions using our project.&lt;
 
 &lt;table class=&quot;image&quot;&gt;
 	&lt;caption align=&quot;bottom&quot; style=&quot;margin-top:0&quot;&gt;The Firefox URL bar with some suggestions based on the browsing history&lt;/caption&gt;
-	&lt;tr&gt;&lt;td&gt;&lt;img src=&quot;/assets/posts/awesome-bar/bar.png&quot; alt=&quot;The Firefox URL bar with some suggestions based on the browsing history&quot; width=&quot;&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;&lt;img src=&quot;//assets/posts/awesome-bar/bar.png&quot; alt=&quot;The Firefox URL bar with some suggestions based on the browsing history&quot; width=&quot;&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;
 &lt;/table&gt;
 
 &lt;p&gt;Searching for history and bookmark entries in the Firefox URL bar is a two-step process:&lt;/p&gt;
@@ -176,7 +176,7 @@ The margin \(\Delta\) is a hyperparameter that needs to be decided on before the
 
 &lt;table class=&quot;image&quot;&gt;
 	&lt;caption align=&quot;bottom&quot; style=&quot;&quot;&gt;A visualization of the SVM loss when adapted for ranking&lt;/caption&gt;
-	&lt;tr&gt;&lt;td&gt;&lt;img src=&quot;/assets/posts/awesome-bar/svm-loss.png&quot; alt=&quot;A visualization of the SVM loss when adapted for ranking&quot; width=&quot;500&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;&lt;img src=&quot;//assets/posts/awesome-bar/svm-loss.png&quot; alt=&quot;A visualization of the SVM loss when adapted for ranking&quot; width=&quot;500&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;
 &lt;/table&gt;
 
 &lt;p&gt;The image above shows a visualization of this loss function.
@@ -363,7 +363,7 @@ The second goal of the study was thus reached.&lt;/p&gt;
 
 &lt;table class=&quot;image&quot;&gt;
 	&lt;caption align=&quot;bottom&quot; style=&quot;&quot;&gt;The reported loss over time&lt;/caption&gt;
-	&lt;tr&gt;&lt;td&gt;&lt;img src=&quot;/assets/posts/awesome-bar/loss-smooth5.png&quot; alt=&quot;The reported loss over time&quot; width=&quot;&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;&lt;img src=&quot;//assets/posts/awesome-bar/loss-smooth5.png&quot; alt=&quot;The reported loss over time&quot; width=&quot;&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;
 &lt;/table&gt;
 
 &lt;p&gt;After the optimization process ended, an evaluation phase began to determine how well the new model works.
@@ -422,7 +422,7 @@ Furthermore, there could be more iterations during periods with many active user
 
 &lt;table class=&quot;image&quot;&gt;
 	&lt;caption align=&quot;bottom&quot; style=&quot;&quot;&gt;The number of pings sent by clients over time&lt;/caption&gt;
-	&lt;tr&gt;&lt;td&gt;&lt;img src=&quot;/assets/posts/awesome-bar/pings-over-time.png&quot; alt=&quot;The number of pings sent by clients over time&quot; width=&quot;&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;&lt;img src=&quot;//assets/posts/awesome-bar/pings-over-time.png&quot; alt=&quot;The number of pings sent by clients over time&quot; width=&quot;&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;
 &lt;/table&gt;
 
 &lt;p&gt;A more sophisticated protocol could adapt the iteration length depending on how stable the current update estimate is.
@@ -433,7 +433,7 @@ Because of the randomness, the mean and standard deviation after 50 such simulat
 
 &lt;table class=&quot;image&quot;&gt;
 	&lt;caption align=&quot;bottom&quot; style=&quot;&quot;&gt;Mean and std deviation of difference in update quality when using 2,000 updates&lt;/caption&gt;
-	&lt;tr&gt;&lt;td&gt;&lt;img src=&quot;/assets/posts/awesome-bar/update-quality.png&quot; alt=&quot;Mean and std deviation of difference in update quality when using 2,000 updates&quot; width=&quot;&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;&lt;img src=&quot;//assets/posts/awesome-bar/update-quality.png&quot; alt=&quot;Mean and std deviation of difference in update quality when using 2,000 updates&quot; width=&quot;&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;
 &lt;/table&gt;
 
 &lt;p&gt;It can be observed that the estimates become much more stable after iteration 100.
