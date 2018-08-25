@@ -8,7 +8,7 @@ categories: differential-privacy
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
-<span style="opacity:.5">[This post was jointly written with [Alejandro](http://github.com/alexrs/) and also cross-posted on [his blog](http://alexrs.me/2017/rappor/).]</span>
+<span style="opacity:.5">[This post was jointly written with [Alejandro](http://github.com/alexrs/) and also cross-posted on [his blog](https://www.alexrs.me/2017/rappor).]</span>
 
 In 2007 Netflix offered a $1 million prize for a 10% improvement in its recommendation system. They also released a training
 dataset for the competing developers to train their systems. In order to protect their customer's privacy,
