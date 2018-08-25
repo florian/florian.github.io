@@ -11,7 +11,7 @@ categories: machine-learning, federated-learning
 In the past few years, machine learning has led to major breakthroughs in various areas, such as natural language processing, computer vision and speech recognition [1].
 Much of this success has been based on collecting huge amounts of data. For example, one of Facebook's latest [Detectron](https://github.com/facebookresearch/Detectron) models for object detection used [3.5 billion images](https://code.facebook.com/posts/1700437286678763/advancing-state-of-the-art-image-recognition-with-deep-learning-on-hashtags/) from Instagram for training.
 
-For some applications of machine learning this need of collecting data can be incredibly privacy-invasive.
+For some applications of machine learning, this need of collecting data can be incredibly privacy-invasive.
 One such example application is predicting the next word that a person is going to use by considering the previous words.
 This is typically done using machine learning nowadays, e.g. with recurrent neural networks and LSTMs [2].
 Although it is possible to train such a model using a text corpus from Wikipedia, the language found there differs from the one typically used by people in daily life.
@@ -26,7 +26,7 @@ Sending only randomized versions of the original data to the server, based on th
 The second solution is [*Federated Learning*](https://research.googleblog.com/2017/04/federated-learning-collaborative.html), a new approach to machine learning where the training data does not leave the users' computer at all.
 Instead of sharing their data, users compute weight updates themselves using their locally available data.
 It is a way of training a model without directly inspecting users' data on a server.
-This blog posts gives a high-level introduction to Federated Learning and the challenges that arise in this problem setting.
+This blog post gives a high-level introduction to Federated Learning and the challenges that arise in this problem setting.
 
 ### Federated Optimization
 
@@ -55,7 +55,7 @@ For models that we train based on gradient descent, one useful approach is to ta
 
 The hyperparameter that determines how many users are sampled in each communication round also influences how many rounds are required until convergence is reached.
 However, at some point the average that is computed stabilizes and utilizing more users per round does not help to significantly reduce the number of communication rounds further.
-Thus, it makes sense to only query a smaller number of users in each each iteration.
+Thus, it makes sense to only query a smaller number of users in each iteration.
 
 ### Applications
 
@@ -81,9 +81,9 @@ In such a situation, Federated Learning is extremely powerful because models can
 While Federated Learning might sound similar to distributed machine learning on a technical level, there are some major differences to applications in data centers where the training data is distributed among many machines [4].
 
 - **Huge number of clients**: Since machine learning generally requires a lot of data, the applications that use it have to have many users. Every one of these users could theoretically participate in Federated Learning, making it far more distributed than anything in a data center
-- **Non-identical distributions**: In a data center setting, it is possible to make sure that every machine has a representative set of data so that all updates look very similar. In Federated Learning, this can not be guaranteed. We have to expect that users generate data from completely different distributions, i.e. we cannot make [iid](https://en.wikipedia.org/wiki/Independent_and_identically_distributed_random_variables) assumptions. While similar users might have similar local training data, two randomly picked users could produce very different weight updates
+- **Non-identical distributions**: In a data center setting, it is possible to make sure that every machine has a representative set of data so that all updates look very similar. In Federated Learning, this cannot be guaranteed. We have to expect that users generate data from completely different distributions, i.e. we cannot make [iid](https://en.wikipedia.org/wiki/Independent_and_identically_distributed_random_variables) assumptions. While similar users might have similar local training data, two randomly picked users could produce very different weight updates
 - **Unbalanced number of samples**: Along the same lines, we cannot expect most users to have the same number of local training examples. There could be users with only a handful of data points, while others might have thousands
-- **Slow and instable communication**: In a data center, it is expected that nodes can communicate comparatively quickly with each other and that it is ensured that messages do not get lost. In Federated Learning, these assumptions can not be made. Uploads are typically going to be much [slower](http://www.speedtest.net/reports/united-states/) than downloads and, especially if the connection is from a cell phone, it might be extremely slow. Some clients might also currently not be connected to the internet and will not respond at all
+- **Slow and unstable communication**: In a data center, it is expected that nodes can communicate comparatively quickly with each other and that it is ensured that messages do not get lost. In Federated Learning, these assumptions cannot be made. Uploads are typically going to be much [slower](http://www.speedtest.net/reports/united-states/) than downloads and, especially if the connection is from a cell phone, it might be extremely slow. Some clients might also currently not be connected to the internet and will not respond at all
 
 These properties motivate why Federated Learning requires its own specialized algorithms.
 
@@ -126,7 +126,7 @@ By adding noise to update data shared by the user, the reports of individuals be
 
 Concretely, this involves several changes to the previous Federated Learning algorithm [6]:
 1. Users are randomly sampled with some probability instead of always sampling a fixed number of users. This is to make sure that users can still be sampled independently of each other
-2. The updates that users send to the server need to have a limited L2 norm. The motivation for this is that it should prevented that individuals can be identified because they are the only ones that would propose large updates. In the case of neural networks this corresponds to [gradient clipping](https://hackernoon.com/gradient-clipping-57f04f0adae)
+2. The updates that users send to the server need to have a limited L2 norm. The motivation for this is that it should be prevented that individuals can be identified because they are the only ones that would propose large updates. In the case of neural networks, this corresponds to [gradient clipping](https://hackernoon.com/gradient-clipping-57f04f0adae)
 3. Noise is added to the final update for the model, similar to most Differential Privacy algorithms
 
 In experiments, it has been shown that the same accuracy as before can be achieved with these changes.
@@ -163,7 +163,7 @@ Current machine learning approaches require the availability of large datasets.
 These are usually created by collecting huge amounts of data from users.
 Federated Learning is a more flexible technique that allows training a model without directly seeing the data.
 Although it is a distributed algorithm, it is very different from the data center use of machine learning.
-Many guarantees about distributions can not be made and communication is often slow and instable.
+Many guarantees about distributions cannot be made and communication is often slow and unstable.
 
 To be able to perform Federated Learning efficiently, optimization algorithms can be adapted and various compression schemes can be used.
 The privacy aspect can be tackled using differential privacy and encryption.

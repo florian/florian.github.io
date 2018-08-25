@@ -5,8 +5,8 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 25 Aug 2018 18:11:52 +0200</pubDate>
-    <lastBuildDate>Sat, 25 Aug 2018 18:11:52 +0200</lastBuildDate>
+    <pubDate>Sat, 25 Aug 2018 18:44:31 +0200</pubDate>
+    <lastBuildDate>Sat, 25 Aug 2018 18:44:31 +0200</lastBuildDate>
     <generator>Jekyll v3.8.3</generator>
     
       <item>
@@ -220,7 +220,7 @@ By properly choosing the sample size, the optimization process can thus be speed
 &lt;p&gt;In the past few years, machine learning has led to major breakthroughs in various areas, such as natural language processing, computer vision and speech recognition [1].
 Much of this success has been based on collecting huge amounts of data. For example, one of Facebook’s latest &lt;a href=&quot;https://github.com/facebookresearch/Detectron&quot;&gt;Detectron&lt;/a&gt; models for object detection used &lt;a href=&quot;https://code.facebook.com/posts/1700437286678763/advancing-state-of-the-art-image-recognition-with-deep-learning-on-hashtags/&quot;&gt;3.5 billion images&lt;/a&gt; from Instagram for training.&lt;/p&gt;
 
-&lt;p&gt;For some applications of machine learning this need of collecting data can be incredibly privacy-invasive.
+&lt;p&gt;For some applications of machine learning, this need of collecting data can be incredibly privacy-invasive.
 One such example application is predicting the next word that a person is going to use by considering the previous words.
 This is typically done using machine learning nowadays, e.g. with recurrent neural networks and LSTMs [2].
 Although it is possible to train such a model using a text corpus from Wikipedia, the language found there differs from the one typically used by people in daily life.&lt;/p&gt;
@@ -235,7 +235,7 @@ Users do not want that everything they type is sent to a server.&lt;/p&gt;
 The second solution is &lt;a href=&quot;https://research.googleblog.com/2017/04/federated-learning-collaborative.html&quot;&gt;&lt;em&gt;Federated Learning&lt;/em&gt;&lt;/a&gt;, a new approach to machine learning where the training data does not leave the users’ computer at all.
 Instead of sharing their data, users compute weight updates themselves using their locally available data.
 It is a way of training a model without directly inspecting users’ data on a server.
-This blog posts gives a high-level introduction to Federated Learning and the challenges that arise in this problem setting.&lt;/p&gt;
+This blog post gives a high-level introduction to Federated Learning and the challenges that arise in this problem setting.&lt;/p&gt;
 
 &lt;h3 id=&quot;federated-optimization&quot;&gt;Federated Optimization&lt;/h3&gt;
 
@@ -264,7 +264,7 @@ For models that we train based on gradient descent, one useful approach is to ta
 
 &lt;p&gt;The hyperparameter that determines how many users are sampled in each communication round also influences how many rounds are required until convergence is reached.
 However, at some point the average that is computed stabilizes and utilizing more users per round does not help to significantly reduce the number of communication rounds further.
-Thus, it makes sense to only query a smaller number of users in each each iteration.&lt;/p&gt;
+Thus, it makes sense to only query a smaller number of users in each iteration.&lt;/p&gt;
 
 &lt;h3 id=&quot;applications&quot;&gt;Applications&lt;/h3&gt;
 
@@ -291,9 +291,9 @@ In such a situation, Federated Learning is extremely powerful because models can
 
 &lt;ul&gt;
   &lt;li&gt;&lt;strong&gt;Huge number of clients&lt;/strong&gt;: Since machine learning generally requires a lot of data, the applications that use it have to have many users. Every one of these users could theoretically participate in Federated Learning, making it far more distributed than anything in a data center&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Non-identical distributions&lt;/strong&gt;: In a data center setting, it is possible to make sure that every machine has a representative set of data so that all updates look very similar. In Federated Learning, this can not be guaranteed. We have to expect that users generate data from completely different distributions, i.e. we cannot make &lt;a href=&quot;https://en.wikipedia.org/wiki/Independent_and_identically_distributed_random_variables&quot;&gt;iid&lt;/a&gt; assumptions. While similar users might have similar local training data, two randomly picked users could produce very different weight updates&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Non-identical distributions&lt;/strong&gt;: In a data center setting, it is possible to make sure that every machine has a representative set of data so that all updates look very similar. In Federated Learning, this cannot be guaranteed. We have to expect that users generate data from completely different distributions, i.e. we cannot make &lt;a href=&quot;https://en.wikipedia.org/wiki/Independent_and_identically_distributed_random_variables&quot;&gt;iid&lt;/a&gt; assumptions. While similar users might have similar local training data, two randomly picked users could produce very different weight updates&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Unbalanced number of samples&lt;/strong&gt;: Along the same lines, we cannot expect most users to have the same number of local training examples. There could be users with only a handful of data points, while others might have thousands&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Slow and instable communication&lt;/strong&gt;: In a data center, it is expected that nodes can communicate comparatively quickly with each other and that it is ensured that messages do not get lost. In Federated Learning, these assumptions can not be made. Uploads are typically going to be much &lt;a href=&quot;http://www.speedtest.net/reports/united-states/&quot;&gt;slower&lt;/a&gt; than downloads and, especially if the connection is from a cell phone, it might be extremely slow. Some clients might also currently not be connected to the internet and will not respond at all&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Slow and unstable communication&lt;/strong&gt;: In a data center, it is expected that nodes can communicate comparatively quickly with each other and that it is ensured that messages do not get lost. In Federated Learning, these assumptions cannot be made. Uploads are typically going to be much &lt;a href=&quot;http://www.speedtest.net/reports/united-states/&quot;&gt;slower&lt;/a&gt; than downloads and, especially if the connection is from a cell phone, it might be extremely slow. Some clients might also currently not be connected to the internet and will not respond at all&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;These properties motivate why Federated Learning requires its own specialized algorithms.&lt;/p&gt;
@@ -340,7 +340,7 @@ By adding noise to update data shared by the user, the reports of individuals be
 &lt;p&gt;Concretely, this involves several changes to the previous Federated Learning algorithm [6]:&lt;/p&gt;
 &lt;ol&gt;
   &lt;li&gt;Users are randomly sampled with some probability instead of always sampling a fixed number of users. This is to make sure that users can still be sampled independently of each other&lt;/li&gt;
-  &lt;li&gt;The updates that users send to the server need to have a limited L2 norm. The motivation for this is that it should prevented that individuals can be identified because they are the only ones that would propose large updates. In the case of neural networks this corresponds to &lt;a href=&quot;https://hackernoon.com/gradient-clipping-57f04f0adae&quot;&gt;gradient clipping&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;The updates that users send to the server need to have a limited L2 norm. The motivation for this is that it should be prevented that individuals can be identified because they are the only ones that would propose large updates. In the case of neural networks, this corresponds to &lt;a href=&quot;https://hackernoon.com/gradient-clipping-57f04f0adae&quot;&gt;gradient clipping&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;Noise is added to the final update for the model, similar to most Differential Privacy algorithms&lt;/li&gt;
 &lt;/ol&gt;
 
@@ -378,7 +378,7 @@ Over time, the centralized model keeps improving and adapting to changes, while 
 These are usually created by collecting huge amounts of data from users.
 Federated Learning is a more flexible technique that allows training a model without directly seeing the data.
 Although it is a distributed algorithm, it is very different from the data center use of machine learning.
-Many guarantees about distributions can not be made and communication is often slow and instable.&lt;/p&gt;
+Many guarantees about distributions cannot be made and communication is often slow and unstable.&lt;/p&gt;
 
 &lt;p&gt;To be able to perform Federated Learning efficiently, optimization algorithms can be adapted and various compression schemes can be used.
 The privacy aspect can be tackled using differential privacy and encryption.
