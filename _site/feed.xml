@@ -5,8 +5,8 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 25 Aug 2018 17:27:59 +0200</pubDate>
-    <lastBuildDate>Sat, 25 Aug 2018 17:27:59 +0200</lastBuildDate>
+    <pubDate>Sat, 25 Aug 2018 17:34:53 +0200</pubDate>
+    <lastBuildDate>Sat, 25 Aug 2018 17:34:53 +0200</lastBuildDate>
     <generator>Jekyll v3.8.3</generator>
     
       <item>
@@ -878,36 +878,19 @@ German for at least two years.&lt;/p&gt;
       </item>
     
       <item>
-        <title>Add-on recommendations for Firefox users</title>
-        <description>&lt;p&gt;This is a reading suggestion for a very interesting post from the Mozilla Context Graph blog. The
-blog post describes the new prototype of the Firefox add-on recommender
-system: &lt;a href=&quot;https://medium.com/firefox-context-graph/add-on-recommendations-for-firefox-users-7774cc5a5117&quot;&gt;https://medium.com/firefox-context-graph/add-on-recommendations-for-firefox-users-7774cc5a5117&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;It was also cross-posted to &lt;a href=&quot;https://www.a2p.it/wordpress/tech-stuff/mozilla/add-on-recommendations-for-firefox-users-a-prototype-recommender-system-leveraging-existing-data-sources/&quot;&gt;Alessio’s blog&lt;/a&gt;.&lt;/p&gt;
-</description>
-        <pubDate>Fri, 09 Dec 2016 00:23:10 +0100</pubDate>
-        <link>http://localhost:4000/addon-recommender/</link>
-        <guid isPermaLink="true">http://localhost:4000/addon-recommender/</guid>
-        
-        
-        <category>differential-privacy</category>
-        
-      </item>
-    
-      <item>
         <title>Differential Privacy</title>
         <description>&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
 
-&lt;p&gt;&lt;span style=&quot;opacity:.5&quot;&gt;[This post was jointly written with &lt;a href=&quot;http://github.com/alexrs/&quot;&gt;Alejandro&lt;/a&gt; and also cross-posted on &lt;a href=&quot;https://www.alexrs.me/2017/rappor&quot;&gt;his blog&lt;/a&gt;.]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&quot;opacity:.5&quot;&gt;[This post was jointly written with &lt;a href=&quot;http://github.com/alexrs/&quot;&gt;Alejandro&lt;/a&gt; and also cross-posted on &lt;a href=&quot;https://www.alexrs.me/2017/rappor&quot;&gt;his blog&lt;/a&gt;. He wrote the first half, while I contributed the second.]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;In 2007 Netflix offered a $1 million prize for a 10% improvement in its recommendation system. They also released a training
 dataset for the competing developers to train their systems. In order to protect their customer’s privacy,
 &lt;a href=&quot;https://www.cs.utexas.edu/~shmat/shmat_oak08netflix.pdf&quot;&gt;they removed personal information and replaced IDs with random IDs&lt;/a&gt;.
 But Netflix is not the only movie-rating portal out there, there are many others such as IMDb. Researchers linked the
-Netflix dataset with IMDb to de-anonymize the Netflix dataset using the dates on which an user rated certain movies.
+Netflix dataset with IMDb to de-anonymize the Netflix dataset using the dates on which a user rated certain movies.
 This problem isn’t new and remains an important one as today, thanks to computers, we can access larger amounts of data and process them more easily.&lt;/p&gt;
 
-&lt;p&gt;In the mid 90s, The Massachusetts Group Insurance Commission (GIC) released anonymized data on state employees that
+&lt;p&gt;In the mid-90s, The Massachusetts Group Insurance Commission (GIC) released anonymized data on state employees that
 showed every hospital visit. The goal was to help researchers, and the state spent time removing all obvious identifiers
 such as name, address and Social Security number. A graduate student started hunting for the Governor’s hospital records
 in the GIC data. She knew that Governor Weld resided in Cambridge, Massachusetts, a city of 54,000 residents and seven ZIP
@@ -958,9 +941,9 @@ by Google whose main purpose is to collect data while adding random noise to gua
 to report the data. When selecting the bloom filter size we should have in mind how many unique values are expected.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Number of hash functions, \( h \)&lt;/strong&gt;: Bloom filters uses hash functions to encode the values.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Number of cohorts, \( m \)&lt;/strong&gt;: To avoid collisions, RAPPOR divides the population into different cohorts.
-This value must be choosen carefully. If it’s too small, collisions are still quite likely, while if it’s too large then
-each individual cohort provides insufficient signal due to its small sample size.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Probabilities \( p, q, f \)&lt;/strong&gt;: Noise is added to the Bloom filter with different probabilities. This
+This value must be chosen carefully. If it’s too small, collisions are still quite likely, while if it’s too large then
+each individual cohort provides an insufficient signal due to its small sample size.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Probabilities \( p, q, f \)&lt;/strong&gt;: Noise is added to the Bloom filter with different probabilities. These
 probabilities determine the level of Differential Privacy along with the number of hash functions used.&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -1001,7 +984,7 @@ probabilities determine the level of Differential Privacy along with the number 
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bloom&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;The Instantaneus Randomize Response is computed using the probabilities \( p \) and \( q \). The resulting Bloom filter will have the bit in position \( i \) set to 1 with probability \( q \) if its value was 1 in the PRR, or with probability \( p \) if its value was 0. The resulting bloom filter is sent for analysis.&lt;/p&gt;
+&lt;p&gt;The Instantaneous Randomize Response is computed using the probabilities \( p \) and \( q \). The resulting Bloom filter will have the bit in position \( i \) set to 1 with probability \( q \) if its value was 1 in the PRR, or with probability \( p \) if its value was 0. The resulting bloom filter is sent for analysis.&lt;/p&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;get_irr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bloom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prob_p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prob_q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;rand&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SystemRandom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
@@ -1053,10 +1036,10 @@ This server has the task of aggregating the reports and figuring out which answe
 To do this, we make use of statistical techniques that are explained in the remainder of this blog post.&lt;/p&gt;
 
 &lt;p&gt;The bit arrays are the only information we get from the clients. However, because of the Bloom filter, there are generally
-infinitely many answers that lead to the same bits being set. This means that we need some set of answers that we explicitely
+infinitely many answers that lead to the same bits being set. This means that we need some set of answers that we explicitly
 check for. We call this the &lt;em&gt;candidate set&lt;/em&gt;. What values are used as candidates is completely dependent on the data that we’re collecting.&lt;/p&gt;
 
-&lt;p&gt;Of course we know what bits would be set when hashing these candidate values.
+&lt;p&gt;Of course, we know what bits would be set when hashing these candidate values.
 If we would also know how often each bit was truly set in the original Bloom filters, before noise was added, then we
 could model this problem using an equation system. In this system, we’re looking for candidate counts so that the bits set
 equal the true number of times the individual bits were set. In statistics, this corresponds to a &lt;em&gt;regression&lt;/em&gt; problem.&lt;/p&gt;
@@ -1066,7 +1049,7 @@ equal the true number of times the individual bits were set. In statistics, this
 &lt;p&gt;Of course, the whole point of differential privacy is that we don’t have access to the originally set bits, so we can’t
 directly solve this hypothetical equation system. But what we can do is figure out estimates for how often the bits were set.
 This is possible because we can estimate how much noise was added on average. I won’t go into detail for the exact formulas,
-as they help little to build intuition, but they can be found in  the original &lt;a href=&quot;https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/42852.pdf&quot;&gt;RAPPOR paper&lt;/a&gt;.&lt;/p&gt;
+as they help little to build intuition, but they can be found in the original &lt;a href=&quot;https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/42852.pdf&quot;&gt;RAPPOR paper&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;While this approach of making estimates might sound a bit messy, it actually has a fairly good theoretical backing.
 By the &lt;a href=&quot;https://en.wikipedia.org/wiki/Law_of_large_numbers&quot;&gt;&lt;em&gt;law of large numbers&lt;/em&gt;&lt;/a&gt;, the estimate will converge to the true counts with an increasing amount of data.
@@ -1114,7 +1097,7 @@ This is great as there are many well-known ways to solve linear equation systems
 The straightforward solution for this specific system is that answer &lt;em&gt;a&lt;/em&gt; was given 3000 times, &lt;em&gt;b&lt;/em&gt; was never given, while &lt;em&gt;c&lt;/em&gt;
 was given 1000 times.&lt;/p&gt;
 
-&lt;p&gt;Of course this is a very simple and artificially constructed example, it’s just meant to showcase the problem that the RAPPOR
+&lt;p&gt;Of course, this is a very simple and artificially constructed example, it’s just meant to showcase the problem that the RAPPOR
 analysis is being reduced to.&lt;/p&gt;
 
 &lt;h2 id=&quot;creating-the-data-matrix-x&quot;&gt;Creating the data matrix X&lt;/h2&gt;
@@ -1123,7 +1106,7 @@ analysis is being reduced to.&lt;/p&gt;
 \( y \) earlier. What’s left to talk about is the data matrix \( X \). This matrix encodes what bits are set when candidate
 values are hashed in different cohorts.&lt;/p&gt;
 
-&lt;p&gt;The general idea here is that for each bit and cohort we add a row to the matrix. For each candidate value we add a column.
+&lt;p&gt;The general idea here is that for each bit and cohort we add a row to the matrix. For each candidate value, we add a column.
 A cell then has value 1 if the corresponding bit would be set when hashing the corresponding candidate value in the
 respective cohort. Otherwise, it has value 0.&lt;/p&gt;
 
@@ -1175,20 +1158,37 @@ Finally, only the candidate values and frequencies that we have enough confidenc
 We can plot this distribution using a bar plot, where the index of possible answers is on the x-axis and their counts are on the y-axis.
 &lt;img src=&quot;../../assets/posts/differential-privacy/original-distribution.png&quot; alt=&quot;Original distribution&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;The randomization technique is then applied and the randomized reports are analysed by our algorithm. The distribution
+&lt;p&gt;The randomization technique is then applied and the randomized reports are analyzed by our algorithm. The distribution
 generated by the algorithm can then be plotted on top of the previous image.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;../../assets/posts/differential-privacy/reported-distribution.png&quot; alt=&quot;Reported distribution&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;This simulation uses the same parameters that we plan to use in production. As one can see, it works quite well for this
 original distribution. For the common candidate values, the reported counts are very close to the actual ones. However,
-it’s not possible to detect candidate values that only occured very few times. There’s just not enough evidence to report
+it’s not possible to detect candidate values that only occurred very few times. There’s just not enough evidence to report
 them with confidence. Of course only being able to detect common values is not necessarily a bad thing as it means more
 privacy for users that gave unusual answers.&lt;/p&gt;
 </description>
-        <pubDate>Wed, 12 Oct 2016 15:36:20 +0200</pubDate>
+        <pubDate>Thu, 12 Oct 2017 15:36:20 +0200</pubDate>
         <link>http://localhost:4000/differential-privacy/</link>
         <guid isPermaLink="true">http://localhost:4000/differential-privacy/</guid>
+        
+        
+        <category>differential-privacy</category>
+        
+      </item>
+    
+      <item>
+        <title>Add-on recommendations for Firefox users</title>
+        <description>&lt;p&gt;This is a reading suggestion for a very interesting post from the Mozilla Context Graph blog. The
+blog post describes the new prototype of the Firefox add-on recommender
+system: &lt;a href=&quot;https://medium.com/firefox-context-graph/add-on-recommendations-for-firefox-users-7774cc5a5117&quot;&gt;https://medium.com/firefox-context-graph/add-on-recommendations-for-firefox-users-7774cc5a5117&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;It was also cross-posted to &lt;a href=&quot;https://www.a2p.it/wordpress/tech-stuff/mozilla/add-on-recommendations-for-firefox-users-a-prototype-recommender-system-leveraging-existing-data-sources/&quot;&gt;Alessio’s blog&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 09 Dec 2016 00:23:10 +0100</pubDate>
+        <link>http://localhost:4000/addon-recommender/</link>
+        <guid isPermaLink="true">http://localhost:4000/addon-recommender/</guid>
         
         
         <category>differential-privacy</category>

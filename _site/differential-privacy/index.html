@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width initial-scale=1">
 
   <title>Differential Privacy</title>
-  <meta name="description" content="">
+  <meta name="description" content="[This post was jointly written with Alejandro and also cross-posted on his blog. He wrote the first half, while I contributed the second.]In 2007 Netflix off...">
 
   <link rel="stylesheet" href="/css/main.css">
   <link rel="canonical" href="http://localhost:4000/differential-privacy/">
@@ -20,22 +20,22 @@
   <header class="post-header">
       <a href=" /  " class="home-link">← Home</a>
     <h1 class="post-title">Differential Privacy</h1>
-    <p class="post-meta">October 12, 2016</p>
+    <p class="post-meta">October 12, 2017</p>
   </header>
 
   <article class="post-content">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
-<p><span style="opacity:.5">[This post was jointly written with <a href="http://github.com/alexrs/">Alejandro</a> and also cross-posted on <a href="https://www.alexrs.me/2017/rappor">his blog</a>.]</span></p>
+<p><span style="opacity:.5">[This post was jointly written with <a href="http://github.com/alexrs/">Alejandro</a> and also cross-posted on <a href="https://www.alexrs.me/2017/rappor">his blog</a>. He wrote the first half, while I contributed the second.]</span></p>
 
 <p>In 2007 Netflix offered a $1 million prize for a 10% improvement in its recommendation system. They also released a training
 dataset for the competing developers to train their systems. In order to protect their customer’s privacy,
 <a href="https://www.cs.utexas.edu/~shmat/shmat_oak08netflix.pdf">they removed personal information and replaced IDs with random IDs</a>.
 But Netflix is not the only movie-rating portal out there, there are many others such as IMDb. Researchers linked the
-Netflix dataset with IMDb to de-anonymize the Netflix dataset using the dates on which an user rated certain movies.
+Netflix dataset with IMDb to de-anonymize the Netflix dataset using the dates on which a user rated certain movies.
 This problem isn’t new and remains an important one as today, thanks to computers, we can access larger amounts of data and process them more easily.</p>
 
-<p>In the mid 90s, The Massachusetts Group Insurance Commission (GIC) released anonymized data on state employees that
+<p>In the mid-90s, The Massachusetts Group Insurance Commission (GIC) released anonymized data on state employees that
 showed every hospital visit. The goal was to help researchers, and the state spent time removing all obvious identifiers
 such as name, address and Social Security number. A graduate student started hunting for the Governor’s hospital records
 in the GIC data. She knew that Governor Weld resided in Cambridge, Massachusetts, a city of 54,000 residents and seven ZIP
@@ -86,9 +86,9 @@ by Google whose main purpose is to collect data while adding random noise to gua
 to report the data. When selecting the bloom filter size we should have in mind how many unique values are expected.</li>
   <li><strong>Number of hash functions, \( h \)</strong>: Bloom filters uses hash functions to encode the values.</li>
   <li><strong>Number of cohorts, \( m \)</strong>: To avoid collisions, RAPPOR divides the population into different cohorts.
-This value must be choosen carefully. If it’s too small, collisions are still quite likely, while if it’s too large then
-each individual cohort provides insufficient signal due to its small sample size.</li>
-  <li><strong>Probabilities \( p, q, f \)</strong>: Noise is added to the Bloom filter with different probabilities. This
+This value must be chosen carefully. If it’s too small, collisions are still quite likely, while if it’s too large then
+each individual cohort provides an insufficient signal due to its small sample size.</li>
+  <li><strong>Probabilities \( p, q, f \)</strong>: Noise is added to the Bloom filter with different probabilities. These
 probabilities determine the level of Differential Privacy along with the number of hash functions used.</li>
 </ul>
 
@@ -129,7 +129,7 @@ probabilities determine the level of Differential Privacy along with the number 
     <span class="k">return</span> <span class="n">bloom</span>
 </code></pre></div></div>
 
-<p>The Instantaneus Randomize Response is computed using the probabilities \( p \) and \( q \). The resulting Bloom filter will have the bit in position \( i \) set to 1 with probability \( q \) if its value was 1 in the PRR, or with probability \( p \) if its value was 0. The resulting bloom filter is sent for analysis.</p>
+<p>The Instantaneous Randomize Response is computed using the probabilities \( p \) and \( q \). The resulting Bloom filter will have the bit in position \( i \) set to 1 with probability \( q \) if its value was 1 in the PRR, or with probability \( p \) if its value was 0. The resulting bloom filter is sent for analysis.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">get_irr</span><span class="p">(</span><span class="n">bloom</span><span class="p">,</span> <span class="n">prob_p</span><span class="p">,</span> <span class="n">prob_q</span><span class="p">):</span>
     <span class="n">rand</span> <span class="o">=</span> <span class="n">SystemRandom</span><span class="p">()</span>
@@ -181,10 +181,10 @@ This server has the task of aggregating the reports and figuring out which answe
 To do this, we make use of statistical techniques that are explained in the remainder of this blog post.</p>
 
 <p>The bit arrays are the only information we get from the clients. However, because of the Bloom filter, there are generally
-infinitely many answers that lead to the same bits being set. This means that we need some set of answers that we explicitely
+infinitely many answers that lead to the same bits being set. This means that we need some set of answers that we explicitly
 check for. We call this the <em>candidate set</em>. What values are used as candidates is completely dependent on the data that we’re collecting.</p>
 
-<p>Of course we know what bits would be set when hashing these candidate values.
+<p>Of course, we know what bits would be set when hashing these candidate values.
 If we would also know how often each bit was truly set in the original Bloom filters, before noise was added, then we
 could model this problem using an equation system. In this system, we’re looking for candidate counts so that the bits set
 equal the true number of times the individual bits were set. In statistics, this corresponds to a <em>regression</em> problem.</p>
@@ -194,7 +194,7 @@ equal the true number of times the individual bits were set. In statistics, this
 <p>Of course, the whole point of differential privacy is that we don’t have access to the originally set bits, so we can’t
 directly solve this hypothetical equation system. But what we can do is figure out estimates for how often the bits were set.
 This is possible because we can estimate how much noise was added on average. I won’t go into detail for the exact formulas,
-as they help little to build intuition, but they can be found in  the original <a href="https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/42852.pdf">RAPPOR paper</a>.</p>
+as they help little to build intuition, but they can be found in the original <a href="https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/42852.pdf">RAPPOR paper</a>.</p>
 
 <p>While this approach of making estimates might sound a bit messy, it actually has a fairly good theoretical backing.
 By the <a href="https://en.wikipedia.org/wiki/Law_of_large_numbers"><em>law of large numbers</em></a>, the estimate will converge to the true counts with an increasing amount of data.
@@ -242,7 +242,7 @@ This is great as there are many well-known ways to solve linear equation systems
 The straightforward solution for this specific system is that answer <em>a</em> was given 3000 times, <em>b</em> was never given, while <em>c</em>
 was given 1000 times.</p>
 
-<p>Of course this is a very simple and artificially constructed example, it’s just meant to showcase the problem that the RAPPOR
+<p>Of course, this is a very simple and artificially constructed example, it’s just meant to showcase the problem that the RAPPOR
 analysis is being reduced to.</p>
 
 <h2 id="creating-the-data-matrix-x">Creating the data matrix X</h2>
@@ -251,7 +251,7 @@ analysis is being reduced to.</p>
 \( y \) earlier. What’s left to talk about is the data matrix \( X \). This matrix encodes what bits are set when candidate
 values are hashed in different cohorts.</p>
 
-<p>The general idea here is that for each bit and cohort we add a row to the matrix. For each candidate value we add a column.
+<p>The general idea here is that for each bit and cohort we add a row to the matrix. For each candidate value, we add a column.
 A cell then has value 1 if the corresponding bit would be set when hashing the corresponding candidate value in the
 respective cohort. Otherwise, it has value 0.</p>
 
@@ -303,14 +303,14 @@ Finally, only the candidate values and frequencies that we have enough confidenc
 We can plot this distribution using a bar plot, where the index of possible answers is on the x-axis and their counts are on the y-axis.
 <img src="../../assets/posts/differential-privacy/original-distribution.png" alt="Original distribution" /></p>
 
-<p>The randomization technique is then applied and the randomized reports are analysed by our algorithm. The distribution
+<p>The randomization technique is then applied and the randomized reports are analyzed by our algorithm. The distribution
 generated by the algorithm can then be plotted on top of the previous image.</p>
 
 <p><img src="../../assets/posts/differential-privacy/reported-distribution.png" alt="Reported distribution" /></p>
 
 <p>This simulation uses the same parameters that we plan to use in production. As one can see, it works quite well for this
 original distribution. For the common candidate values, the reported counts are very close to the actual ones. However,
-it’s not possible to detect candidate values that only occured very few times. There’s just not enough evidence to report
+it’s not possible to detect candidate values that only occurred very few times. There’s just not enough evidence to report
 them with confidence. Of course only being able to detect common values is not necessarily a bad thing as it means more
 privacy for users that gave unusual answers.</p>
 
