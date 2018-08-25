@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Add-on recommendations for Firefox users"
-date:   2016-12-08 23:23:10
+date:   2017-12-08 23:23:10
 description: "A reading suggestion for the Mozilla Context Graph blog"
 categories: differential-privacy
 ---

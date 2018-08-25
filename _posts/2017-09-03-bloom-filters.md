@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Bloom Filters"
-date:   2016-09-03 19:36:20
+date:   2017-09-03 19:36:20
 description: "A probabilistic data structure for sets"
 categories: probabilistic-data-structures
 ---
