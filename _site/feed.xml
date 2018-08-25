@@ -5,9 +5,58 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 25 Aug 2018 15:50:47 +0200</pubDate>
-    <lastBuildDate>Sat, 25 Aug 2018 15:50:47 +0200</lastBuildDate>
+    <pubDate>Sat, 25 Aug 2018 16:29:14 +0200</pubDate>
+    <lastBuildDate>Sat, 25 Aug 2018 16:29:14 +0200</lastBuildDate>
     <generator>Jekyll v3.8.3</generator>
+    
+      <item>
+        <title>What I read in 2018</title>
+        <description>&lt;p&gt;[Intro]&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;the-three-body-problem&quot;&gt;&lt;a href=&quot;https://www.amazon.com/Three-Body-Problem-Cixin-Liu/dp/0765382032/&quot;&gt;The Three-Body Problem&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/books-2018/three-body.jpg&quot; alt=&quot;The Three-Body Problem cover&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;[Description]&lt;/p&gt;
+
+&lt;h3 id=&quot;the-dark-forest&quot;&gt;&lt;a href=&quot;https://www.amazon.com/Dark-Forest-Remembrance-Earths-Past/dp/0765386690/&quot;&gt;The Dark Forest&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/books-2018/dark-forest.jpg&quot; alt=&quot;The Dark Forest cover&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;[Description]&lt;/p&gt;
+
+&lt;h3 id=&quot;deaths-end&quot;&gt;&lt;a href=&quot;https://www.amazon.com/Deaths-End-Remembrance-Earths-Past/dp/0765386631/&quot;&gt;Death’s End&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/books-2018/deaths-end.jpg&quot; alt=&quot;Death's End cover&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;[Description]&lt;/p&gt;
+
+&lt;h3 id=&quot;cracking-the-coding-interview&quot;&gt;&lt;a href=&quot;https://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/0984782850/&quot;&gt;Cracking the Coding Interview&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/books-2018/ctci.jpg&quot; alt=&quot;Cracking the Coding Interview cover&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;[Description]&lt;/p&gt;
+
+&lt;h3 id=&quot;the-master-algorithm&quot;&gt;&lt;a href=&quot;https://www.amazon.com/Master-Algorithm-Ultimate-Learning-Machine/dp/0465094279/&quot;&gt;The Master Algorithm&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/books-2018/master-algorithm.jpg&quot; alt=&quot;The Master Algorithm cover&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;[Description]&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;[Outro]&lt;/p&gt;
+</description>
+        <pubDate>Fri, 24 Aug 2018 16:00:00 +0200</pubDate>
+        <link>http://localhost:4000/reading-2018/</link>
+        <guid isPermaLink="true">http://localhost:4000/reading-2018/</guid>
+        
+        
+        <category>reading-notes</category>
+        
+      </item>
     
       <item>
         <title>Federated Learning for Firefox</title>
