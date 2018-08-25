@@ -407,7 +407,7 @@ Based on user interactions with Firefox, our system could really optimize anythi
 
 ---
 
-### Open Source
+### Open Source Code
 
 Nearly the entire code of the Federated Learning system is open sourced:
 - [Firefox addon](http://github.com/florian/federated-learning-addon) that implements the client-side part of the system
