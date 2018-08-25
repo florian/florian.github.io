@@ -54,7 +54,7 @@ Below, you can find a live demo that can be used to test how well this works. As
 you will notice, if the bit array is large and we insert relatively few
 elements, then the probability of a hash collision is quite low. Of course, we
 are assuming that the hash function is approximately uniformly distributed. As
-we insert more values, hash collisions get more common and at some point we will
+we insert more values, hash collisions get more common and, at some point, we will
 get too many false positives. Note that the Bloom filter below has only 32 bits
 for visualization purposes.
 This is an extraordinarily small Bloom filter, so we can't add many elements
@@ -71,9 +71,9 @@ low.
 Let's take a moment to reflect on this solution. Under the assumption that we
 choose the array size to be large enough and that some false positives are
 acceptable, we have a very fast way of testing for set membership.
-Conceptionally, this solution is also pretty simple. We can think of it like a
+Conceptionally, this solution is also pretty simple. We can think of it as a
 HashSet that ignores the possibility of collisions. Because we only store a bit
-array, Bloom filters are also quite space efficient, especially when compared to
+array, Bloom filters are also quite space-efficient, especially when compared to
 methods that store the original values, like HashSets.
 
 ### Using multiple hash functions
@@ -99,9 +99,9 @@ most bits are not set.
 
 More hash functions only help until a certain point. As an extreme example,
 using as many hash functions as bits would make a Bloom filter totally
-useless. On a similiar note, when only having 32 bits available, using 3 hash
+useless. On a similar note, when only having 32 bits available, using 3 hash
 functions fills up the bit array too quickly, as you might have noticed in the
-live demo above. In turns out that the optimal number of hash functions depends
+live demo above. It turns out that the optimal number of hash functions depends
 on the bit array size and on how many elements we expect to be added.
 
 For *n* added elements and a bit array size of *m*, the optimal number of hash
@@ -135,12 +135,12 @@ In the next two subsections, we'll go into more detail for two prime examples fo
 #### Spelling correction
 
 To implement spelling correction, we need some way to decide whether a word is
-misspelt. The Oxford English Dictionary contains more than 200,000 words.
+misspelled. The Oxford English Dictionary contains more than 200,000 words.
 Having all these words stored in memory all the time is a bad idea.
 
 Instead, we can insert all words from the dictionary into a Bloom filter to be
 much more space efficient. The fact that false positives are possible means that
-there will be a few misspelt words that will not be detected. However, no
+there will be a few misspelled words that will not be detected. However, no
 correctly written words would be marked as incorrect. This is good because it
 would only annoy users.
 
@@ -159,7 +159,7 @@ not be used at all.
 ### Other set operations
 
 So far we only discussed two operations, adding elements and testing for
-membership. Depending on the appliation, other operations are also interesting.
+membership. Depending on the application, other operations are also interesting.
 In the following, we will focus on the classical set operations, union and
 intersection. Afterwards, we'll also look at removing elements.
 
@@ -192,7 +192,7 @@ intersection.
 ### Removing values
 
 Removing values from standard Bloom filters is difficult. By just setting the
-corresponding bits to 0, we could accidently introduce false negatives. This is
+corresponding bits to 0, we could accidentally introduce false negatives. This is
 due to the fact that a bit maybe also needs to be set for a different added
 element. We generally want to avoid false negatives with Bloom filters, so this
 is not an acceptable solution.
