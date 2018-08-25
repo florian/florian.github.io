@@ -45,7 +45,7 @@ available data to compute a model update \\(H_i\\).
 All these updates are sent back to the server where they are averaged, weighted by the number of training examples that the respective clients used.
 The server then applies this update to the model, typically by using some form of [gradient descent](https://en.wikipedia.org/wiki/Gradient_descent).
 
-{% include img.html url="iteration.png" description="One communication round in a Federated Learning system" %}
+<img src="../../assets/posts/federated-learning/iteration.png" width="600" style="margin: 25px auto; display: block" alt="One iteration of a federated learning system" />
 
 All of this is called a communication round.
 This process is then performed many times until the parameters of the model stabilize.
