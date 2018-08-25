@@ -27,7 +27,7 @@ Here, estimation theory can be used to explain the ideas behind these techniques
 
 An *estimator* is a function that estimates a value based on other observations.
 This process can involve randomness.
-For example because the function itself is random or because there is random noise in the observations it uses.
+For example, because the function itself is random or because there is random noise in the observations it uses.
 
 #### Bias
 
@@ -163,7 +163,7 @@ $$
 
 The computations for SGD can be performed very quickly but still give us an unbiased estimate of the true gradient.
 This property is the reason why optima can be found using this algorithm.
-While individual estimates are off, the randomness averages out over iterations and the parameters still move into a sensible direction overall.
+While individual estimates are off, the randomness averages out over iterations and the parameters still move in a sensible direction overall.
 Since iterations are much cheaper, many more of them can be performed and this is a major improvement to computing the full gradient.
 
 #### Mini-batch gradient descent

@@ -5,8 +5,8 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 25 Aug 2018 16:46:36 +0200</pubDate>
-    <lastBuildDate>Sat, 25 Aug 2018 16:46:36 +0200</lastBuildDate>
+    <pubDate>Sat, 25 Aug 2018 16:52:54 +0200</pubDate>
+    <lastBuildDate>Sat, 25 Aug 2018 16:52:54 +0200</lastBuildDate>
     <generator>Jekyll v3.8.3</generator>
     
       <item>
@@ -32,7 +32,7 @@ Here, estimation theory can be used to explain the ideas behind these techniques
 
 &lt;p&gt;An &lt;em&gt;estimator&lt;/em&gt; is a function that estimates a value based on other observations.
 This process can involve randomness.
-For example because the function itself is random or because there is random noise in the observations it uses.&lt;/p&gt;
+For example, because the function itself is random or because there is random noise in the observations it uses.&lt;/p&gt;
 
 &lt;h4 id=&quot;bias&quot;&gt;Bias&lt;/h4&gt;
 
@@ -153,7 +153,7 @@ The true gradient \(\nabla L\) is then estimated using only this data point and 
 
 &lt;p&gt;The computations for SGD can be performed very quickly but still give us an unbiased estimate of the true gradient.
 This property is the reason why optima can be found using this algorithm.
-While individual estimates are off, the randomness averages out over iterations and the parameters still move into a sensible direction overall.
+While individual estimates are off, the randomness averages out over iterations and the parameters still move in a sensible direction overall.
 Since iterations are much cheaper, many more of them can be performed and this is a major improvement to computing the full gradient.&lt;/p&gt;
 
 &lt;h4 id=&quot;mini-batch-gradient-descent&quot;&gt;Mini-batch gradient descent&lt;/h4&gt;
