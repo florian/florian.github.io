@@ -193,3 +193,27 @@ span.arrow {
     top: 0;
     font-size: 17px;
 }
+
+.image {
+    margin: 0 auto;
+}
+
+caption {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    font-style: italic;
+}
+
+article table:not(.image) {
+ margin: 35px auto;
+
+ td, th {
+  border: 1px solid gray;
+  padding: 3px 17px;
+  text-align: center;
+ }
+
+ th {
+  font-weight: bold;
+ }
+}
