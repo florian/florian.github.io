@@ -62,10 +62,10 @@ The ranking of possible suggestions in the Firefox URL bar is determined using [
 To do this, a frecency score is assigned to each history entry and bookmark entry.
 After computing the score, it is cached.
 When searching, the matched results are then sorted using this score.
-This section introduces the existing frecency algorithm, while the next one explains how we planed to improve it.
+This section introduces the existing frecency algorithm, while the next one explains how we planned to improve it.
 
 Frecency does not only take frecency and recency into account but also other information, such as how the page was visited and whether it is bookmarked.
-It does this by looking at the lastest visits to the respective site.
+It does this by looking at the latest visits to the respective site.
 The value \\(\operatorname{visit}(v)\\) of one single visit \\(v\\) is then defined by how recent that visit was, scaled by the type of visit:
 
 $$
@@ -73,8 +73,8 @@ $$
 $$
 
 Frecency scores have to be cached in order to allow an efficient ranking while the user is typing.
-This means that the recency aspect has to be modelled using time buckets.
-Otherwise the score would change all the time and caching would not work.
+This means that the recency aspect has to be modeled using time buckets.
+Otherwise, the score would change all the time and caching would not work.
 In the current Firefox implementation, there are five time buckets.
 With this approach, the recency score only changes when a visit changes time buckets:
 
@@ -109,7 +109,7 @@ Additionally, user preferences change over time and we might want to decrease th
 
 Instead, we compute the average score of the last 10 visits.
 This score is then scaled by the total number of visits.
-The full frecency score can now be computed efficiently and changes in user behaviour are reflected fairly quickly.
+The full frecency score can now be computed efficiently and changes in user behavior are reflected fairly quickly.
 Let \\(S_x\\) be the set of all visits to page \\(x\\), and let \\(T_x\\) be the set of the last up to 10 of these.
 The full frecency score is then given by:
 
@@ -253,7 +253,7 @@ This optimizer has major advantages in our case:
 - The updates produced by RProp are very interpretable. In our case, we make sure they are 3 at most, so that frecency scores only change slowly
 
 After RProp produces an update, we still apply several constraints to it.
-- Weights have to be nonnegative. This means visiting a site can not directly have a negative effect
+- Weights have to be nonnegative. This means visiting a site cannot directly have a negative effect
 - The time buckets have to be sorted by the last day they take into account. In other words, the \\((i + 1\\))-th time bucket needs to contain older visits than the \\(i\\)-th time bucket. This is to ensure that the client-side frecency implementation continues to work
 
 These essentially act as safeguards to make sure that user experience does not degrade too much if the optimization process fails.
@@ -263,7 +263,7 @@ These essentially act as safeguards to make sure that user experience does not d
 Users in the experiment were split into three groups:
 
 - *treatment*: The full study was shipped to these users. They compute updates, send them to the server, and start using a new model every 30 minutes
-- *control*: This group is solely observatory. No behaviour in the URL bar actually changes. We are just collecting statistics for comparison to treatment
+- *control*: This group is solely for observational purposes. No behavior in the URL bar actually changes. We are just collecting statistics for comparison to treatment
 - *control-no-decay*: Firefox decays frecency scores over time. Our treatment group loses this effect because we are recomputing scores every 30 minutes. To check if the decay is actually useful, this group has no decay effect but uses the same original algorithm otherwise
 
 The study was shipped to 25% of Firefox Beta.
@@ -289,9 +289,9 @@ To measure the quality of history and bookmark suggestions in the URL bar, we us
 
 If the quality of any of these two metrics increases, we consider the stretch goal to be reached.
 We were not entirely sure if both metrics could be improved.
-One theory for this was that maybe users always type a similar number of characters before choosing one the suggestions.
+One theory for this was that maybe users always type a similar number of characters before choosing one of the suggestions.
 The alternative could also be possible, users always type until the first suggestion displayed is the one they were looking for.
-For this reason we decided that for the third goal only of the metrics would need to be improved, while the other should not get much worse.
+For this reason, we decided that for the third goal only of the metrics would need to be improved, while the other should not get much worse.
 The first goal meant that both metrics should not get significantly worse.
 
 ### Power Analysis
@@ -381,7 +381,7 @@ Furthermore, there could be more iterations during periods with many active user
 
 A more sophisticated protocol could adapt the iteration length depending on how stable the current update estimate is.
 We noticed that the later iterations of the optimization process require much fewer reports to compute a good estimate.
-The plot below compares the update we actually used to updates we would get by randomly samply 2,000 of these update reports.
+The plot below compares the update we actually used to updates we would get by randomly sampling 2,000 of these update reports.
 The \\(L_1\\)-distance is used to perform this comparison.
 Because of the randomness, the mean and standard deviation after 50 such simulations per iteration are reported.
 
@@ -422,7 +422,7 @@ Only a few analyses based on Firefox interaction data are not publicly available
 
 This project would not have been possible without the help of many people:
 
-- [Sunah Suh](http://sunahsuh.com/), who planed out the project with me and helped to resolve many blockers along the way
+- [Sunah Suh](http://sunahsuh.com/), who planned out the project with me and helped to resolve many blockers along the way
 - [Arkadiusz Komarzewski](https://github.com/akkomar), who ported the Python optimizer to Scala and implemented the remaining server-side logic
 - [Drew Willcoxon](https://github.com/0c0w3) and [Rob Helmer](https://rhelmer.org/), who helped a lot with Firefox specific parts of the project
 - [Tim Smith](https://tds.xyz/), who provided most of the code for using the Mann-Whitney-U test and who together with [Ilana Segall](https://github.com/ilanasegall) answered many questions related to power analyses
