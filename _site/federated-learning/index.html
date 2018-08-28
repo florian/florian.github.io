@@ -8,9 +8,9 @@
   <title>Federated Learning</title>
   <meta name="description" content="">
 
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://localhost:4000/federated-learning/">
-  <link rel="alternate" type="application/atom+xml" title="Florian Hartmann" href="http://localhost:4000/feed.xml" />
+  <link rel="stylesheet" href="/beta//css/main.css">
+  <link rel="canonical" href="https://florian.github.io//beta//federated-learning/">
+  <link rel="alternate" type="application/atom+xml" title="Florian Hartmann" href="https://florian.github.io//beta//feed.xml" />
 </head>
 
   <body>
@@ -18,7 +18,7 @@
       <div class="page-content">
         <div class="post">
   <header class="post-header">
-      <a href=" /  " class="home-link">← Home</a>
+      <a href=" /beta/ " class="home-link">← Home</a>
     <h1 class="post-title">Federated Learning</h1>
     <p class="post-meta">May 9, 2018</p>
   </header>
@@ -40,7 +40,7 @@ This would allow training a model on the same data distribution that is also use
 However, directly collecting this data is a terrible idea because it is extremely private.
 Users do not want to send everything they type to a server.</p>
 
-<p>Sending only randomized versions of the original data to the server, based on the ideas of <a href="/differential-privacy/">Differential Privacy</a>, is one potential solution to this problem.
+<p>Sending only randomized versions of the original data to the server, based on the ideas of <a href="/beta//differential-privacy/">Differential Privacy</a>, is one potential solution to this problem.
 The second solution is <a href="https://research.googleblog.com/2017/04/federated-learning-collaborative.html"><em>Federated Learning</em></a>, a new approach to machine learning where the training data does not leave the users’ computer at all.
 Instead of sharing their data, users compute weight updates themselves using their locally available data.
 It is a way of training a model without directly inspecting users’ data on a server.
@@ -122,7 +122,7 @@ It is acceptable that individual updates are compressed in a lossy manner, as lo
 
 <p>On a high level, compression algorithms for Federated Learning can be put into two classes:</p>
 <ul>
-  <li><em>Sketched updates</em>: Clients compute a normal weight update and perform a compression afterwards. The compressed update is often an <a href="/estimators/">unbiased estimator</a> of the true update, meaning they are the same on average. One of the more sophisticated such techniques is <a href="/probabilistic-quantization/">Probabilistic Quantization</a>, which I described in more detail in another blog post</li>
+  <li><em>Sketched updates</em>: Clients compute a normal weight update and perform a compression afterwards. The compressed update is often an <a href="/beta//estimators/">unbiased estimator</a> of the true update, meaning they are the same on average. One of the more sophisticated such techniques is <a href="/beta//probabilistic-quantization/">Probabilistic Quantization</a>, which I described in more detail in another blog post</li>
   <li><em>Structured updates</em>: During the optimization process, the update is restricted to be of a form that allows for an efficient compression. For example, the updates might be forced to be sparse or low-rank. The optimization then finds the best possible update of this form</li>
 </ul>
 
@@ -141,7 +141,7 @@ In this case, the user’s data would not be private because it is still represe
 <p>While this might sound unlikely if not done on purpose, there have been experiments that show it is possible to reconstruct some data points.
 In one case, researchers were able to reconstruct images of faces that were used to train a face recognition model [6].</p>
 
-<p><a href="/differential-privacy/">Differential Privacy</a>, which I wrote about in another post, is one solution to this problem.
+<p><a href="/beta//differential-privacy/">Differential Privacy</a>, which I wrote about in another post, is one solution to this problem.
 By formalizing what privacy means, we can analyze how well the learning algorithm respects privacy.
 To employ this technique to Federated Learning, the notion of privacy is adapted to a user level: It should be very hard to tell whether a user contributed to the training of the model.
 This is done using a stochastic framework.
@@ -222,14 +222,14 @@ Communication Association.</p>
   <div class="related">
     <h2>Other Posts</h2>
     
+      <li><a href="/federated-learning-firefox/" title="Federated Learning for Firefox">Federated Learning for Firefox
+       &nbsp; <span class="post-meta">August 24, 2018</span></a>
+    
       <li><a href="/estimators/" title="Estimation Theory and Machine Learning">Estimation Theory and Machine Learning
        &nbsp; <span class="post-meta">July 17, 2018</span></a>
     
       <li><a href="/rprop/" title="RProp">RProp
        &nbsp; <span class="post-meta">April 08, 2018</span></a>
-    
-      <li><a href="/probabilistic-quantization/" title="Probabilistic Quantization">Probabilistic Quantization
-       &nbsp; <span class="post-meta">February 25, 2018</span></a>
     
   </div>
   

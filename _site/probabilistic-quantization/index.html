@@ -8,9 +8,9 @@
   <title>Probabilistic Quantization</title>
   <meta name="description" content="">
 
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://localhost:4000/probabilistic-quantization/">
-  <link rel="alternate" type="application/atom+xml" title="Florian Hartmann" href="http://localhost:4000/feed.xml" />
+  <link rel="stylesheet" href="/beta//css/main.css">
+  <link rel="canonical" href="https://florian.github.io//beta//probabilistic-quantization/">
+  <link rel="alternate" type="application/atom+xml" title="Florian Hartmann" href="https://florian.github.io//beta//feed.xml" />
 </head>
 
   <body>
@@ -18,7 +18,7 @@
       <div class="page-content">
         <div class="post">
   <header class="post-header">
-      <a href=" /  " class="home-link">← Home</a>
+      <a href=" /beta/ " class="home-link">← Home</a>
     <h1 class="post-title">Probabilistic Quantization</h1>
     <p class="post-meta">February 25, 2018</p>
   </header>
@@ -32,7 +32,7 @@ training process is distributed among many users [1]. It is a form of collaborat
 machine learning with the constraint that the communication can be slow and
 unstable.</p>
 
-<p>This is easily worth its <a href="/federated-learning/">own post</a> but in a nutshell Federated
+<p>This is easily worth its <a href="/beta//federated-learning/">own post</a> but in a nutshell Federated
 Learning works like this: A central server maintains a machine learning model.
 Training data is only available locally on the users’ devices, so from time to
 time they get a copy of the model and improve it using their locally available
@@ -53,12 +53,12 @@ very elegant, so I decided it would be worth writing a blog post about.
 Fundamentally, it removes a lot of information from individual updates which
 allows us to encode them using much fewer bits. Still, by taking into account
 the aggregated weight updates from a lot of users, not much information is lost.
-This concept reminds me a lot of <a href="/differential-privacy/">Differential Privacy</a>.</p>
+This concept reminds me a lot of <a href="/beta//differential-privacy/">Differential Privacy</a>.</p>
 
 <p>To understand the idea, it is important to realize that only the average is
 important. If a weight update \(h\) is randomized to a compressed version \(h’\),
 then \(E[h’] = h\) needs to hold. In other words, the compressed estimate needs to
-be correct on average. This is called an <a href="/estimators/">unbiased estimator</a> in statistics.</p>
+be correct on average. This is called an <a href="/beta//estimators/">unbiased estimator</a> in statistics.</p>
 
 <p>Having an unbiased estimator allows us to approximate the true weight update
 more closely and closely as more weight updates are sent. This is known as the <a href="https://en.wikipedia.org/wiki/Law_of_large_numbers">law of
@@ -81,7 +81,7 @@ higher probability.</p>
 
 <table class="image">
 	<caption align="bottom" style="">A visualization of the probabilities in probabilistic binarization, assuming normalized distances</caption>
-	<tr><td><img src="/assets/posts/probabilistic-quantization/distances.png" alt="A visualization of the probabilities in probabilistic binarization, assuming normalized distances" width="400" /></td></tr>
+	<tr><td><img src="/beta//assets/posts/probabilistic-quantization/distances.png" alt="A visualization of the probabilities in probabilistic binarization, assuming normalized distances" width="400" /></td></tr>
 </table>
 
 <p>The visualization above shows how the probabilities relate to \(h_{\min}\) and \(h_{\max}\).</p>
@@ -97,7 +97,7 @@ server.</p>
 
 <table class="image">
 	<caption align="bottom" style="">The average of compressed values stabilizes after around 200 users</caption>
-	<tr><td><img src="/assets/posts/probabilistic-quantization/law-of-large-numbers.png" alt="The average of compressed values stabilizes after around 200 users" width="400" /></td></tr>
+	<tr><td><img src="/beta//assets/posts/probabilistic-quantization/law-of-large-numbers.png" alt="The average of compressed values stabilizes after around 200 users" width="400" /></td></tr>
 </table>
 
 <p>As shown, both mean estimates converge to 0.4. The randomized estimate has a slower convergence but it is worth noting that 500 users are not a lot when requiring data for machine learning. Still, the formal guarantee for convergence is a bit weaker since the training data of users is generally differently distributed.</p>
@@ -143,14 +143,14 @@ compression techniques for Federated Learning [2, 3].</p>
   <div class="related">
     <h2>Other Posts</h2>
     
+      <li><a href="/federated-learning-firefox/" title="Federated Learning for Firefox">Federated Learning for Firefox
+       &nbsp; <span class="post-meta">August 24, 2018</span></a>
+    
       <li><a href="/estimators/" title="Estimation Theory and Machine Learning">Estimation Theory and Machine Learning
        &nbsp; <span class="post-meta">July 17, 2018</span></a>
     
       <li><a href="/federated-learning/" title="Federated Learning">Federated Learning
        &nbsp; <span class="post-meta">May 09, 2018</span></a>
-    
-      <li><a href="/rprop/" title="RProp">RProp
-       &nbsp; <span class="post-meta">April 08, 2018</span></a>
     
   </div>
   

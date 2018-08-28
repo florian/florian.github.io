@@ -8,8 +8,14 @@ categories: machine-learning, federated-learning
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
-Large parts of machine learning nowadays are based on collecting a lot of data.
-This data is then put on a powerful server where the training is performed.
+*To improve the Firefox URL bar, we used Federated Learning, a new privacy-preserving machine learning technique.
+Our results show that the implemented optimization process worked well.
+This posts explains the decisions we made and shows the study results.
+Since Federated Learning is still a young technique, this is one of the very first implementations in a major software project.*
+
+---
+
+Most of machine learning nowadays is based on collecting a lot of data which is then put on a powerful server where the training is performed.
 If the data is considered private by people, using machine learning this way is not possible or a bad idea.
 The entirely opposite approach, a completely decentralized system where individual models are trained for each user locally, generally works badly.
 Individuals by themselves often do not have enough data to fit good models.
@@ -230,7 +236,7 @@ There is a lot of infrastructure around using it and dealing with the data on th
 
 All messages sent by clients are stored in a [Parquet](https://parquet.apache.org/) data store.
 Every 30 minutes, a [Spark](https://spark.apache.org/) MapReduce job reads the new updates and averages them.
-The average update is then given to an optimizer and applied to the update.
+The average update is then given to an optimizer and applied to the model.
 The resulting model is published to S3 and fetched by clients.
 
 ### Updating the Model
@@ -266,8 +272,9 @@ Users in the experiment were split into three groups:
 - *control*: This group is solely for observational purposes. No behavior in the URL bar actually changes. We are just collecting statistics for comparison to treatment
 - *control-no-decay*: Firefox decays frecency scores over time. Our treatment group loses this effect because we are recomputing scores every 30 minutes. To check if the decay is actually useful, this group has no decay effect but uses the same original algorithm otherwise
 
-The study was shipped to 25% of Firefox Beta.
-60% of these users were assigned to the treatment group, while the other 40% were split among the two control groups.
+The study was shipped to 25% of Firefox Beta users who had Telemetry enabled.
+As with all other SHIELD studies, only users with Telemetry enabled were eligible for enrollment.
+60% of the users in our study were assigned to the treatment group, while the other 40% were split among the two control groups.
 
 ### Metrics
 
@@ -291,7 +298,7 @@ If the quality of any of these two metrics increases, we consider the stretch go
 We were not entirely sure if both metrics could be improved.
 One theory for this was that maybe users always type a similar number of characters before choosing one of the suggestions.
 The alternative could also be possible, users always type until the first suggestion displayed is the one they were looking for.
-For this reason, we decided that for the third goal only of the metrics would need to be improved, while the other should not get much worse.
+For this reason, we decided that for the third goal only one of the metrics would need to be improved, while the other should not get much worse.
 The first goal meant that both metrics should not get significantly worse.
 
 ### Power Analysis
@@ -342,7 +349,7 @@ This shows that the optimization process generally worked.
 After 40 iterations, less than one day of optimization, the loss of the treatment group is significantly below the loss of the control groups.
 The second goal of the study was thus reached.
 
-{% include img.html url="loss-smooth5.png" description="The reported loss over time" %}
+{% include img.html url="loss-smooth5.png" description="Rolling average of reported loss over the last 5 iterations" %}
 
 After the optimization process ended, an evaluation phase began to determine how well the new model works.
 This is equivalent to the testing phase in machine learning.
@@ -351,7 +358,7 @@ The table below shows the results.
 On average, users in the treatment group type about half a character less to find what they are looking for.
 This is a strong improvement over both control groups.
 However, users in the treatment group also choose suggestions that were ranked slightly worse.
-Hypothesis testing determined that the changes in the treatment group were highly significant.
+Hypothesis testing determined that the changes in the treatment group were highly significant, with p-values being below 1e-75.
 
 | study variation  | mean characters typed | mean selected rank |
 |------------------|------------------|---------------|
@@ -371,7 +378,7 @@ Since the optimization process works well, one would only need to find a loss fu
 We consider goal 1 to be reached since at least one of the metrics improved.
 
 To learn from this experiment for further Federated Learning studies, we additionally analyzed all the update data later on.
-In retrospective, the Federated Learning protocol we used was too simple.
+In retrospect, the Federated Learning protocol we used was too simple.
 The plot below shows how Firefox beta activity in our study varies over time.
 The protocol could be improved by dynamically determining the iteration length depending on how many updates were sent to the server so far.
 This way, there would be no iterations with very few updates.
@@ -393,7 +400,7 @@ We observed similar results for the loss estimates.
 
 ### Future Work
 
-There are still a lot of low-hanging fruits in this Federated Learning system.
+There is still a lot of low-hanging fruit in this Federated Learning system.
 For one, the protocol could be made much more sophisticated, as explained above.
 Furthermore, when trying to interpret the new weights, it seems like it would be a good idea to introduce additional weight constraints to make better use of the time buckets.
 
@@ -422,9 +429,11 @@ Only a few analyses based on Firefox interaction data are not publicly available
 
 This project would not have been possible without the help of many people:
 
-- [Sunah Suh](http://sunahsuh.com/), who planned out the project with me and helped to resolve many blockers along the way
-- [Arkadiusz Komarzewski](https://github.com/akkomar), who ported the Python optimizer to Scala and implemented the remaining server-side logic
-- [Drew Willcoxon](https://github.com/0c0w3) and [Rob Helmer](https://rhelmer.org/), who helped a lot with Firefox specific parts of the project
-- [Tim Smith](https://tds.xyz/), who provided most of the code for using the Mann-Whitney-U test and who together with [Ilana Segall](https://github.com/ilanasegall) answered many questions related to power analyses
+- [Sunah Suh](http://sunahsuh.com/) planned out the project with me and helped to resolve many blockers along the way
+- [Arkadiusz Komarzewski](https://github.com/akkomar) ported the Python optimizer to Scala and implemented the remaining server-side logic
+- [Drew Willcoxon](https://github.com/0c0w3) and [Rob Helmer](https://rhelmer.org/) helped a lot with Firefox specific parts of the project
+- [Tim Smith](https://tds.xyz/) provided most of the code for using the Mann-Whitney-U test and along with [Ilana Segall](https://github.com/ilanasegall) answered many questions related to power analyses
+- [Jeff Klukas](https://jeff.klukas.net) always had an open ear when I ran into problems and helped out when Sunah was on vacation
+- [Katie Parlante](https://github.com/kparlante) made it possible for me to return to Mozilla to work on this and was very open to my ideas for projects
 
-Thanks a lot for all your help!
+Thanks a lot for all your help and support!
