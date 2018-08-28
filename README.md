@@ -14,3 +14,19 @@ gem install jekyll jekyll-paginate
 
 - All references are in Harvard citation style
 - Book covers in the "What I read" posts are scaled to a width of 300px
+
+## Custom Includes
+
+### Images
+
+To add an image from the image asset folder of the current post, with a given caption:
+
+```
+{% include img.html url="x.png" description="caption" %}
+```
+
+Optionally, there's a `style` attribute for the caption and a `width` attribute for the image itself:
+
+```
+{% include img.html url="x.png" description="caption" style="margin-top:0" width="200px" %}
+```
