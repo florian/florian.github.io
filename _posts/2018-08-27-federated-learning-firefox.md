@@ -70,7 +70,7 @@ After computing the score, it is cached.
 When searching, the matched results are then sorted using this score.
 This section introduces the existing frecency algorithm, while the next one explains how we planned to improve it.
 
-Frecency does not only take frecency and recency into account but also other information, such as how the page was visited and whether it is bookmarked.
+Frecency does not only take frequency and recency into account but also other information, such as how the page was visited and whether it is bookmarked.
 It does this by looking at the latest visits to the respective site.
 The value \\(\operatorname{visit}(v)\\) of one single visit \\(v\\) is then defined by how recent that visit was, scaled by the type of visit:
 

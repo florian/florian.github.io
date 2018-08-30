@@ -5,8 +5,8 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 30 Aug 2018 19:09:13 +0200</pubDate>
-    <lastBuildDate>Thu, 30 Aug 2018 19:09:13 +0200</lastBuildDate>
+    <pubDate>Thu, 30 Aug 2018 21:03:51 +0200</pubDate>
+    <lastBuildDate>Thu, 30 Aug 2018 21:03:51 +0200</lastBuildDate>
     <generator>Jekyll v3.8.3</generator>
     
       <item>
@@ -82,7 +82,7 @@ After computing the score, it is cached.
 When searching, the matched results are then sorted using this score.
 This section introduces the existing frecency algorithm, while the next one explains how we planned to improve it.&lt;/p&gt;
 
-&lt;p&gt;Frecency does not only take frecency and recency into account but also other information, such as how the page was visited and whether it is bookmarked.
+&lt;p&gt;Frecency does not only take frequency and recency into account but also other information, such as how the page was visited and whether it is bookmarked.
 It does this by looking at the latest visits to the respective site.
 The value \(\operatorname{visit}(v)\) of one single visit \(v\) is then defined by how recent that visit was, scaled by the type of visit:&lt;/p&gt;
 
