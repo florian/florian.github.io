@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Federated Learning for Firefox"
-date:   2018-08-24 13:59:59
+date:   2018-08-27 13:59:59
 description: "Distributed machine learning for the Firefox URL bar"
 categories: machine-learning, federated-learning
 ---

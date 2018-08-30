@@ -5,8 +5,8 @@
     <description></description>
     <link>http://localhost:4000/beta//</link>
     <atom:link href="http://localhost:4000/beta//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 30 Aug 2018 16:55:49 +0200</pubDate>
-    <lastBuildDate>Thu, 30 Aug 2018 16:55:49 +0200</lastBuildDate>
+    <pubDate>Thu, 30 Aug 2018 19:03:32 +0200</pubDate>
+    <lastBuildDate>Thu, 30 Aug 2018 19:03:32 +0200</lastBuildDate>
     <generator>Jekyll v3.8.3</generator>
     
       <item>
@@ -491,7 +491,7 @@ Based on user interactions with Firefox, our system could really optimize anythi
 
 &lt;p&gt;Thanks a lot for all your help and support!&lt;/p&gt;
 </description>
-        <pubDate>Fri, 24 Aug 2018 15:59:59 +0200</pubDate>
+        <pubDate>Mon, 27 Aug 2018 15:59:59 +0200</pubDate>
         <link>http://localhost:4000/beta//federated-learning-firefox/</link>
         <guid isPermaLink="true">http://localhost:4000/beta//federated-learning-firefox/</guid>
         
