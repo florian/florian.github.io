@@ -9,7 +9,7 @@ categories: machine-learning, federated-learning
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
 *To improve the Firefox URL bar, we used Federated Learning, a new privacy-preserving machine learning technique.
-Our results show that the implemented optimization process worked well.
+Roughly 360,000 users helped to train and evaluate a model in a distributed way, and our results show that this optimization process worked well.
 This posts explains the decisions we made and shows the study results.
 Since Federated Learning is still a young technique, this is one of the very first implementations in a major software project.*
 

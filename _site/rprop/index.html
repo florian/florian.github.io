@@ -8,9 +8,9 @@
   <title>RProp</title>
   <meta name="description" content="RProp is a popular gradient descent algorithm that only uses the signs ofgradients to compute updates. It stands for Resilient Propagation and workswell in m...">
 
-  <link rel="stylesheet" href="/beta//css/main.css">
-  <link rel="canonical" href="http://localhost:4000/beta//rprop/">
-  <link rel="alternate" type="application/atom+xml" title="Florian Hartmann" href="http://localhost:4000/beta//feed.xml" />
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/rprop/">
+  <link rel="alternate" type="application/atom+xml" title="Florian Hartmann" href="http://localhost:4000/feed.xml" />
 </head>
 
   <body>
@@ -18,7 +18,7 @@
       <div class="page-content">
         <div class="post">
   <header class="post-header">
-      <a href=" /beta/ " class="home-link">← Home</a>
+      <a href=" /  " class="home-link">← Home</a>
     <h1 class="post-title">RProp</h1>
     <p class="post-meta">April 8, 2018</p>
   </header>
@@ -50,7 +50,7 @@ The plots below show \(f\) as well as two scaled versions.</p>
 
 <table class="image">
 	<caption align="bottom" style="">Three functions with the same optima but vastly different gradients</caption>
-	<tr><td><img src="/beta//assets/posts/rprop/scales.png" alt="Three functions with the same optima but vastly different gradients" width="" /></td></tr>
+	<tr><td><img src="/assets/posts/rprop/scales.png" alt="Three functions with the same optima but vastly different gradients" width="" /></td></tr>
 </table>
 
 <p>All three of these functions have the exact same optima, so the step updates
@@ -63,7 +63,7 @@ for the third, as shown below:</p>
 
 <table class="image">
 	<caption align="bottom" style="">The first derivatives of the three functions </caption>
-	<tr><td><img src="/beta//assets/posts/rprop/scales-diff.png" alt="The first derivatives of the three functions " width="" /></td></tr>
+	<tr><td><img src="/assets/posts/rprop/scales-diff.png" alt="The first derivatives of the three functions " width="" /></td></tr>
 </table>
 
 <p>This shows that the gradient’s magnitude does not necessarily contain useful
@@ -118,7 +118,7 @@ The idea here is the following:</p>
 
 <table class="image">
 	<caption align="bottom" style="">The gradient direction changes when jumping over optima</caption>
-	<tr><td><img src="/beta//assets/posts/rprop/jumps.png" alt="The gradient direction changes when jumping over optima" width="" /></td></tr>
+	<tr><td><img src="/assets/posts/rprop/jumps.png" alt="The gradient direction changes when jumping over optima" width="" /></td></tr>
 </table>
 
 <p>To implement this update scheme, the following formula is used:</p>
