@@ -13,10 +13,13 @@
 
 .header-intro a, .header-intro a:visited {
     color: #666;
-    text-decoration: underline;
+    border-bottom: 1px dotted rgb(142, 142, 142);
 }
+
 .header-intro a:hover {
     color: $brand-color;
+    border-bottom-color: $brand-color;
+    text-decoration: none;
 }
 
 .page-link {
