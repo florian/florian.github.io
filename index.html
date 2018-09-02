@@ -31,9 +31,10 @@ layout: default
     {% for post in paginator.posts %}
       <li>
         <a href="{{ post.url | prepend: site.baseurl }}">
-        <aside class="dates">{{ post.date | date: "%b %-d" }}</aside>
+          <aside class="dates">{{ post.date | date: "%b %Y" }}</aside>
+          {{ post.title }}
+          <h2>{{ post.description }}</h2>
         </a>
-        <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }} <h2>{{ post.description }}</h2></a>
       </li>
     {% endfor %}
   </ul>
