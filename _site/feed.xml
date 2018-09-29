@@ -5,8 +5,8 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 29 Sep 2018 15:55:30 +0200</pubDate>
-    <lastBuildDate>Sat, 29 Sep 2018 15:55:30 +0200</lastBuildDate>
+    <pubDate>Sat, 29 Sep 2018 18:34:57 +0200</pubDate>
+    <lastBuildDate>Sat, 29 Sep 2018 18:34:57 +0200</lastBuildDate>
     <generator>Jekyll v3.8.3</generator>
     
       <item>
@@ -710,12 +710,14 @@ By properly choosing the sample size, the optimization process can thus be speed
         <title>Federated Learning</title>
         <description>&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
 
-&lt;p&gt;In the past few years, machine learning has led to major breakthroughs in various areas, such as natural language processing, computer vision and speech recognition [1].
+&lt;p&gt;In the past few years, machine learning has led to major breakthroughs in various areas, such as natural language processing, computer vision and speech recognition &lt;a href=&quot;#citation-1&quot; id=&quot;ref-1&quot; class=&quot;ref-link&quot;&gt;[1]&lt;/a&gt;
+.
 Much of this success has been based on collecting huge amounts of data. For example, one of Facebook’s latest &lt;a href=&quot;https://github.com/facebookresearch/Detectron&quot;&gt;Detectron&lt;/a&gt; models for object detection was trained on &lt;a href=&quot;https://code.facebook.com/posts/1700437286678763/advancing-state-of-the-art-image-recognition-with-deep-learning-on-hashtags/&quot;&gt;3.5 billion images&lt;/a&gt; from Instagram.&lt;/p&gt;
 
 &lt;p&gt;For some applications of machine learning, this need of collecting data can be incredibly privacy-invasive.
 One such example application is predicting the next word that a person is going to use by considering the previous words.
-This is typically done using machine learning nowadays, e.g. with recurrent neural networks and LSTMs [2].
+This is typically done using machine learning nowadays, e.g. with recurrent neural networks and LSTMs &lt;a href=&quot;#citation-2&quot; id=&quot;ref-2&quot; class=&quot;ref-link&quot;&gt;[2]&lt;/a&gt;
+.
 Although it is possible to train such a model using a text corpus from Wikipedia, the language found there differs from the one typically used by people in daily life.&lt;/p&gt;
 
 &lt;p&gt;One potential use case for such a model is to improve the results of speech recognition, another one to predict the next word that is typed on a mobile phone to help people type more quickly.
@@ -753,7 +755,8 @@ The server then applies this update to the model, typically by using some form o
 This process is then performed many times until the parameters of the model stabilize.
 Ideally, this happens after as few communication rounds as possible.
 To this end, it helps if the updates given by the users have a high quality.
-For models that we train based on gradient descent, one useful approach is to take several steps of stochastic gradient descent locally on the user’s computer before sending the weight update back to the server [3].&lt;/p&gt;
+For models that we train based on gradient descent, one useful approach is to take several steps of stochastic gradient descent locally on the user’s computer before sending the weight update back to the server &lt;a href=&quot;#citation-3&quot; id=&quot;ref-3&quot; class=&quot;ref-link&quot;&gt;[3]&lt;/a&gt;
+.&lt;/p&gt;
 
 &lt;p&gt;The hyperparameter that determines how many users are sampled in each communication round also influences how many rounds are required until convergence is reached.
 However, at some point the average that is computed stabilizes and utilizing more users per round does not help to significantly reduce the number of communication rounds further.
@@ -781,7 +784,8 @@ We can thus make use of a lot of data that we could otherwise not have used with
 
 &lt;h3 id=&quot;unique-characteristics&quot;&gt;Unique Characteristics&lt;/h3&gt;
 
-&lt;p&gt;While Federated Learning might sound similar to distributed machine learning on a technical level, there are some major differences to applications in data centers where the training data is distributed among many machines [4].&lt;/p&gt;
+&lt;p&gt;While Federated Learning might sound similar to distributed machine learning on a technical level, there are some major differences to applications in data centers where the training data is distributed among many machines &lt;a href=&quot;#citation-4&quot; id=&quot;ref-4&quot; class=&quot;ref-link&quot;&gt;[4]&lt;/a&gt;
+.&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;strong&gt;Huge number of clients&lt;/strong&gt;: Since machine learning generally requires a lot of data, the applications that use it have to have many users. Every one of these users could theoretically participate in Federated Learning, making it far more distributed than anything in a data center&lt;/li&gt;
@@ -800,7 +804,8 @@ Thus, a naive approach to sharing weight updates is not feasible for larger mode
 Since uploads are typically much slower than downloads, it is acceptable that users have to download the current model, while compression methods should be applied to the uploaded data.&lt;/p&gt;
 
 &lt;p&gt;Of course, lossless compression techniques can be used and it might make sense to only send updates once a good network connection is possible.
-Additionally, specialized compression techniques for Federated Learning can be applied [4].
+Additionally, specialized compression techniques for Federated Learning can be applied &lt;a href=&quot;#citation-4&quot; id=&quot;ref-4&quot; class=&quot;ref-link&quot;&gt;[4]&lt;/a&gt;
+.
 Since only the average update is required to compute the next model, these compression methods try to encode updates with fewer bits while keeping the average stable.
 It is acceptable that individual updates are compressed in a lossy manner, as long as the overall average does not change too much.&lt;/p&gt;
 
@@ -817,13 +822,15 @@ Like in many parts of machine learning, different methods just have to be tested
 &lt;h3 id=&quot;privacy&quot;&gt;Privacy&lt;/h3&gt;
 
 &lt;p&gt;On a first look, Federated Learning seems like a method that it is very privacy-friendly.
-However, one could think about an attacker that analyzes the weights to make conclusions about the data of users [5].
+However, one could think about an attacker that analyzes the weights to make conclusions about the data of users &lt;a href=&quot;#citation-5&quot; id=&quot;ref-5&quot; class=&quot;ref-link&quot;&gt;[5]&lt;/a&gt;
+.
 If the behavior of the coordinating server is also adversarial, the model could be a neural network with so much capacity that it overfits badly.
 Since neural networks are &lt;a href=&quot;https://en.wikipedia.org/wiki/Universal_approximation_theorem&quot;&gt;universal function approximators&lt;/a&gt;, this model might just learn to approximate the function that directly acts as a look-up table to the data used for training.
 In this case, the user’s data would not be private because it is still represented more or less clearly in the model.&lt;/p&gt;
 
 &lt;p&gt;While this might sound unlikely if not done on purpose, there have been experiments that show it is possible to reconstruct some data points.
-In one case, researchers were able to reconstruct images of faces that were used to train a face recognition model [6].&lt;/p&gt;
+In one case, researchers were able to reconstruct images of faces that were used to train a face recognition model &lt;a href=&quot;#citation-6&quot; id=&quot;ref-6&quot; class=&quot;ref-link&quot;&gt;[6]&lt;/a&gt;
+.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;/differential-privacy/&quot;&gt;Differential Privacy&lt;/a&gt;, which I wrote about in another post, is one solution to this problem.
 By formalizing what privacy means, we can analyze how well the learning algorithm respects privacy.
@@ -831,21 +838,24 @@ To employ this technique to Federated Learning, the notion of privacy is adapted
 This is done using a stochastic framework.
 By adding noise to update data shared by the user, the reports of individuals become much harder to analyze, while the noise can be estimated well for the aggregated data.&lt;/p&gt;
 
-&lt;p&gt;Concretely, this involves several changes to the previous Federated Learning algorithm [6]:&lt;/p&gt;
+&lt;p&gt;Concretely, this involves several changes to the previous Federated Learning algorithm &lt;a href=&quot;#citation-6&quot; id=&quot;ref-6&quot; class=&quot;ref-link&quot;&gt;[6]&lt;/a&gt;
+:&lt;/p&gt;
 &lt;ol&gt;
   &lt;li&gt;Users are randomly sampled with some probability instead of always sampling a fixed number of users. This is to ensure that users can still be sampled independently of each other. More sophisticated techniques than simple sampling should not be used because they might add a bias for certain users, which makes it more difficult to ensure their privacy&lt;/li&gt;
   &lt;li&gt;The updates that users send to the server need to have a bounded L2 norm. This limits how much individuals can influence the final weights. The motivation is that it should be prevented that individuals can be identified because they are the only ones who would propose large updates. In the case of neural networks, bounding the norm corresponds to &lt;a href=&quot;https://hackernoon.com/gradient-clipping-57f04f0adae&quot;&gt;gradient clipping&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;Noise is added to the final update for the model, similar to most Differential Privacy algorithms&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;In experiments, it has been shown that the same accuracy as before can be achieved with these changes [6].
+&lt;p&gt;In experiments, it has been shown that the same accuracy as before can be achieved with these changes &lt;a href=&quot;#citation-6&quot; id=&quot;ref-6&quot; class=&quot;ref-link&quot;&gt;[6]&lt;/a&gt;
+.
 However, the computational cost to get there is much higher.
 In a real implementation, this could correspond to a slower convergence rate.&lt;/p&gt;
 
 &lt;h3 id=&quot;encryption&quot;&gt;Encryption&lt;/h3&gt;
 
 &lt;p&gt;Encryption for Federated Learning is a topic that is close to the privacy aspect previously discussed.
-By using cryptography techniques, it is possible to ensure that the updates of individuals can only be read when enough users submitted updates [7].
+By using cryptography techniques, it is possible to ensure that the updates of individuals can only be read when enough users submitted updates &lt;a href=&quot;#citation-7&quot; id=&quot;ref-7&quot; class=&quot;ref-link&quot;&gt;[7]&lt;/a&gt;
+.
 This makes man-in-the-middle attacks much harder: An attacker cannot make conclusions about the training data based on the intercepted network activity of an individual user.
 To be able to do that, they would need to intercept the messages of many users.&lt;/p&gt;
 
@@ -881,22 +891,25 @@ Although there have been several papers about Federated Learning, it is still qu
 
 &lt;h3 id=&quot;references&quot;&gt;References&lt;/h3&gt;
 
-&lt;p&gt;[1] LeCun, Y., Bengio, Y. and Hinton, G., 2015. Deep learning. nature,
-521(7553), p.436.&lt;/p&gt;
+&lt;ol class=&quot;references-list&quot;&gt;
+	
+	&lt;li&gt;&lt;span id=&quot;citation-1&quot;&gt;LeCun, Y., Bengio, Y. and Hinton, G., 2015. Deep learning. nature, 521(7553), p.436. &lt;a href=&quot;#ref-1&quot; class=&quot;&quot;&gt;[↩]&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
 
-&lt;p&gt;[2] Sundermeyer, M., Schlüter, R. and Ney, H., 2012. LSTM neural networks for
-language modeling. In Thirteenth Annual Conference of the International Speech
-Communication Association.&lt;/p&gt;
+	&lt;li&gt;&lt;span id=&quot;citation-2&quot;&gt;Sundermeyer, M., Schlüter, R. and Ney, H., 2012. LSTM neural networks for language modeling. In Thirteenth Annual Conference of the International Speech Communication Association. &lt;a href=&quot;#ref-2&quot; class=&quot;&quot;&gt;[↩]&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
 
-&lt;p&gt;[3] McMahan, H.B., Moore, E., Ramage, D. and Hampson, S., 2016. Communication-efficient learning of deep networks from decentralized data. arXiv preprint arXiv:1602.05629.&lt;/p&gt;
+	&lt;li&gt;&lt;span id=&quot;citation-3&quot;&gt;McMahan, H.B., Moore, E., Ramage, D. and Hampson, S., 2016. Communication-efficient learning of deep networks from decentralized data. arXiv preprint arXiv:1602.05629. &lt;a href=&quot;#ref-3&quot; class=&quot;&quot;&gt;[↩]&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
 
-&lt;p&gt;[4] Konečný, J., McMahan, H.B., Yu, F.X., Richtárik, P., Suresh, A.T. and Bacon, D., 2016. Federated learning: Strategies for improving communication efficiency. arXiv preprint arXiv:1610.05492.&lt;/p&gt;
+	&lt;li&gt;&lt;span id=&quot;citation-4&quot;&gt;Konečný, J., McMahan, H.B., Yu, F.X., Richtárik, P., Suresh, A.T. and Bacon, D., 2016. Federated learning: Strategies for improving communication efficiency. arXiv preprint arXiv:1610.05492. &lt;a href=&quot;#ref-4&quot; class=&quot;&quot;&gt;[↩]&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
 
-&lt;p&gt;[5] McMahan, H.B., Ramage, D., Talwar, K. and Zhang, L., 2017. Learning differentially private language models without losing accuracy. arXiv preprint arXiv:1710.06963.&lt;/p&gt;
+	&lt;li&gt;&lt;span id=&quot;citation-5&quot;&gt;McMahan, H.B., Ramage, D., Talwar, K. and Zhang, L., 2017. Learning differentially private language models without losing accuracy. arXiv preprint arXiv:1710.06963. &lt;a href=&quot;#ref-5&quot; class=&quot;&quot;&gt;[↩]&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
 
-&lt;p&gt;[6] Fredrikson, M., Jha, S. and Ristenpart, T., 2015, October. Model inversion attacks that exploit confidence information and basic countermeasures. In Proceedings of the 22nd ACM SIGSAC Conference on Computer and Communications Security (pp. 1322-1333). ACM.&lt;/p&gt;
+	&lt;li&gt;&lt;span id=&quot;citation-6&quot;&gt;Fredrikson, M., Jha, S. and Ristenpart, T., 2015, October. Model inversion attacks that exploit confidence information and basic countermeasures. In Proceedings of the 22nd ACM SIGSAC Conference on Computer and Communications Security (pp. 1322-1333). ACM. &lt;a href=&quot;#ref-6&quot; class=&quot;&quot;&gt;[↩]&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
 
-&lt;p&gt;[7] Bonawitz, K., Ivanov, V., Kreuter, B., Marcedone, A., McMahan, H.B., Patel, S., Ramage, D., Segal, A. and Seth, K., 2017, October. Practical Secure Aggregation for Privacy-Preserving Machine Learning. In Proceedings of the 2017 ACM SIGSAC Conference on Computer and Communications Security (pp. 1175-1191). ACM.&lt;/p&gt;
+	&lt;li&gt;&lt;span id=&quot;citation-7&quot;&gt;Bonawitz, K., Ivanov, V., Kreuter, B., Marcedone, A., McMahan, H.B., Patel, S., Ramage, D., Segal, A. and Seth, K., 2017, October. Practical Secure Aggregation for Privacy-Preserving Machine Learning. In Proceedings of the 2017 ACM SIGSAC Conference on Computer and Communications Security (pp. 1175-1191). ACM. &lt;a href=&quot;#ref-7&quot; class=&quot;&quot;&gt;[↩]&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+
+
+&lt;/ol&gt;
+
 </description>
         <pubDate>Wed, 09 May 2018 09:54:00 +0200</pubDate>
         <link>http://localhost:4000/federated-learning/</link>

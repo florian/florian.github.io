@@ -286,13 +286,6 @@ article .MathJax_Display {
   margin-bottom: 30px;
 }
 
-@include media-query(300px) {
-  article .MathJax_Display {
-   overflow-x: scroll;
-   overflow-y: hidden;
-  }
-}
-
 .references-list {
     counter-reset: list;
     margin-top: 0;
@@ -314,7 +307,6 @@ article .MathJax_Display {
   left: 15px;
 }
 
-.ref-link {
-  padding-top: -50px;
-  margin-top: 50px;
+.ref-pointer {
+  padding-top: 100px;
 }
