@@ -10,7 +10,7 @@ categories: federated-learning
 
 [Federated Learning](https://research.googleblog.com/2017/04/federated-learning-collaborative.html)
 is an exciting new subarea of machine learning where the
-training process is distributed among many users [1]. It is a form of collaborative
+training process is distributed among many users {% include ref.html i=1 %}. It is a form of collaborative
 machine learning with the constraint that the communication can be slow and
 unstable.
 
@@ -31,7 +31,7 @@ of weights from a mobile device to a server is not really desirable.
 
 ### Probabilistic Binarization
 
-*Probabilistic binarization*, or *quantization*, is one solution to this problem. I found it to be
+*Probabilistic binarization*, or *quantization* {% include ref.html i=2 %}, is one solution to this problem. I found it to be
 very elegant, so I decided it would be worth writing a blog post about.
 Fundamentally, it removes a lot of information from individual updates which
 allows us to encode them using much fewer bits. Still, by taking into account
@@ -100,15 +100,14 @@ probabilistic binarization scheme using the two closest values is applied.
 Of course, more bits are required to encode the possible values. The tradeoff is that convergence can be reached much more quickly and that the estimates for the
 largest and smallest possible values may be less accurate. The resulting estimator still computes unbiased estimates.
 
-Finally, it is worth noting that there are further improvements to this algorithm [2].
+Finally, it is worth noting that there are further improvements to this algorithm {% include ref.html i=3 %}.
 By applying random rotations, the error when only a few users have sent their
 data can be reduced. Additionally, this method can be combined with other
-compression techniques for Federated Learning [2, 3].
+compression techniques for Federated Learning {% include ref.html i=2 %}.
 
-### References
-
-[1] McMahan, H.B., Moore, E., Ramage, D. and Hampson, S., 2016. Communication-efficient learning of deep networks from decentralized data.
-
-[2] Suresh, A.T., Yu, F.X., McMahan, H.B. and Kumar, S., 2016. Distributed mean estimation with limited communication.
-
-[3] Konečný, J., McMahan, H.B., Yu, F.X., Richtárik, P., Suresh, A.T. and Bacon, D., 2016. Federated learning: Strategies for improving communication efficiency.
+{% capture references %}
+	{% include cite.html i=1 acm="McMahan, H.B., Moore, E., Ramage, D. and Hampson, S., 2016. Communication-efficient learning of deep networks from decentralized data." %}
+	{% include cite.html i=2 acm="Konečný, J., McMahan, H.B., Yu, F.X., Richtárik, P., Suresh, A.T. and Bacon, D., 2016. Federated learning: Strategies for improving communication efficiency." %}
+	{% include cite.html i=3 acm="Suresh, A.T., Yu, F.X., McMahan, H.B. and Kumar, S., 2016. Distributed mean estimation with limited communication." %}
+{% endcapture %}
+{% include references-list.html content=references %}

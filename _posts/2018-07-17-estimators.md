@@ -12,7 +12,7 @@ Often it is not possible or simply impractical to compute certain values exactly
 This might be because it is too expensive computationally or because not enough information is available.
 Instead, these values can be estimated.
 The quality of estimates varies.
-In statistics, this concept is formalized in estimation theory [1, 2].
+In statistics, this concept is formalized in estimation theory {% include ref.html i=1 %} {% include ref.html i=2 %}.
 
 The first part of this blog post introduces the fundamentals behind estimators.
 In the second part, it is shown how they can be applied to machine learning in two different ways.
@@ -40,7 +40,7 @@ $$
 where the expected value is over the randomness involved in \\(\tilde{X}\\).
 
 If the bias of an estimator is \\(0\\), it is called an *unbiased estimator*.
-This is generally a desirable property to have [3] because it means that the estimator is correct on average.
+This is generally a desirable property to have {% include ref.html i=3 %} because it means that the estimator is correct on average.
 If one samples for long enough from the estimator, the average converges to the true value \\(X\\).
 This is due to the [law of large numbers](https://en.wikipedia.org/wiki/Law_of_large_numbers).
 
@@ -91,7 +91,7 @@ If the training data is just memorized, the model does not generalize well to ne
 This is a case of overfitting.
 The opposite issue, only barely matching the pattern in the training data, is called underfitting.
 
-This problem is also known as the [*bias-variance tradeoff*](https://en.wikipedia.org/wiki/Bias–variance_tradeoff) [4, 5].
+This problem is also known as the [*bias-variance tradeoff*](https://en.wikipedia.org/wiki/Bias–variance_tradeoff) {% include ref.html i=4 %} {% include ref.html i=5 %}.
 If the model has a high bias, its predictions are off, which corresponds to underfitting.
 If overfitting occurred, i.e. the data is matched too well, the estimates have a high variance.
 By resampling the data that the model was built on, totally different estimates are generated.
@@ -181,7 +181,7 @@ Mini-batch gradient descent does have much less variance, however, because more 
 This makes the optimization process more stable compared to using SGD.
 
 Most gradient computations can be formulated using linear algebra operations.
-These calculations can be parallelized very well on GPUs [6].
+These calculations can be parallelized very well on GPUs {% include ref.html i=6 %}.
 So with appropriate hardware there is no significant performance penalty for using \\(1 < k \ll n\\) data points to compute the estimate.
 Thus mini-batch gradient descent is typically not much slower than SGD but leads to a more stable optimization process.
 
@@ -198,16 +198,12 @@ By randomly sampling them, we can compute unbiased estimates in a much faster wa
 If this is done using a large enough sample, the variance of these estimates does not have to be large.
 By properly choosing the sample size, the optimization process can thus be speeded up significantly.
 
-### References
-
-[1] Diez, D.M., Barr, C.D. and Cetinkaya-Rundel, M., 2012. OpenIntro statistics (Vol. 12). CreateSpace.
-
-[2] Härdle, W. and Simar, L., 2007. Applied multivariate statistical analysis (Vol. 22007, pp. 1051-8215). Berlin: Springer. Vancouver
-
-[3] Voinov, V.G. and Nikulin, M.S., 2012. Unbiased Estimators and Their Applications: Volume 1: Univariate Case (Vol. 263). Springer Science & Business Media.
-
-[4] Raul Rojas. The bias-variance dilemma. Freie University, Berlin, Tech. Rep, 2015.
-
-[5] Friedman, J., Hastie, T. and Tibshirani, R., 2001. The elements of statistical learning (Vol. 1, No. 10). New York, NY, USA:: Springer series in statistics.
-
-[6] Navarro, C.A., Hitschfeld-Kahler, N. and Mateu, L., 2014. A survey on parallel computing and its applications in data-parallel problems using GPU architectures. Communications in Computational Physics, 15(2), pp.285-329.
+{% capture references %}
+	{% include cite.html i=1 acm="Diez, D.M., Barr, C.D. and Cetinkaya-Rundel, M., 2012. OpenIntro statistics (Vol. 12). CreateSpace." %}
+	{% include cite.html i=2 acm="Härdle, W. and Simar, L., 2007. Applied multivariate statistical analysis (Vol. 22007, pp. 1051-8215). Berlin: Springer. Vancouver" %}
+	{% include cite.html i=3 acm="Voinov, V.G. and Nikulin, M.S., 2012. Unbiased Estimators and Their Applications: Volume 1: Univariate Case (Vol. 263). Springer Science & Business Media." %}
+	{% include cite.html i=4 acm="Raul Rojas. The bias-variance dilemma. Freie University, Berlin, Tech. Rep, 2015." %}
+	{% include cite.html i=5 acm="Friedman, J., Hastie, T. and Tibshirani, R., 2001. The elements of statistical learning (Vol. 1, No. 10). New York, NY, USA:: Springer series in statistics." %}
+	{% include cite.html i=6 acm="Navarro, C.A., Hitschfeld-Kahler, N. and Mateu, L., 2014. A survey on parallel computing and its applications in data-parallel problems using GPU architectures. Communications in Computational Physics, 15(2), pp.285-329." %}
+{% endcapture %}
+{% include references-list.html content=references %}

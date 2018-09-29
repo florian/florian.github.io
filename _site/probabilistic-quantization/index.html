@@ -29,7 +29,8 @@
 
 <p><a href="https://research.googleblog.com/2017/04/federated-learning-collaborative.html">Federated Learning</a>
 is an exciting new subarea of machine learning where the
-training process is distributed among many users [1]. It is a form of collaborative
+training process is distributed among many users <a href="#citation-1" id="ref-1" class="ref-link">[1]</a>
+. It is a form of collaborative
 machine learning with the constraint that the communication can be slow and
 unstable.</p>
 
@@ -49,7 +50,8 @@ of weights from a mobile device to a server is not really desirable.</p>
 
 <h3 id="probabilistic-binarization">Probabilistic Binarization</h3>
 
-<p><em>Probabilistic binarization</em>, or <em>quantization</em>, is one solution to this problem. I found it to be
+<p><em>Probabilistic binarization</em>, or <em>quantization</em> <a href="#citation-2" id="ref-2" class="ref-link">[2]</a>
+, is one solution to this problem. I found it to be
 very elegant, so I decided it would be worth writing a blog post about.
 Fundamentally, it removes a lot of information from individual updates which
 allows us to encode them using much fewer bits. Still, by taking into account
@@ -123,18 +125,26 @@ probabilistic binarization scheme using the two closest values is applied.</p>
 <p>Of course, more bits are required to encode the possible values. The tradeoff is that convergence can be reached much more quickly and that the estimates for the
 largest and smallest possible values may be less accurate. The resulting estimator still computes unbiased estimates.</p>
 
-<p>Finally, it is worth noting that there are further improvements to this algorithm [2].
+<p>Finally, it is worth noting that there are further improvements to this algorithm <a href="#citation-3" id="ref-3" class="ref-link">[3]</a>
+.
 By applying random rotations, the error when only a few users have sent their
 data can be reduced. Additionally, this method can be combined with other
-compression techniques for Federated Learning [2, 3].</p>
+compression techniques for Federated Learning <a href="#citation-2" id="ref-2" class="ref-link">[2]</a>
+.</p>
 
 <h3 id="references">References</h3>
 
-<p>[1] McMahan, H.B., Moore, E., Ramage, D. and Hampson, S., 2016. Communication-efficient learning of deep networks from decentralized data.</p>
+<ol class="references-list">
+	
+	<li><span id="citation-1">McMahan, H.B., Moore, E., Ramage, D. and Hampson, S., 2016. Communication-efficient learning of deep networks from decentralized data. <a href="#ref-1">[↩]</a></span></li>
 
-<p>[2] Suresh, A.T., Yu, F.X., McMahan, H.B. and Kumar, S., 2016. Distributed mean estimation with limited communication.</p>
+	<li><span id="citation-2">Konečný, J., McMahan, H.B., Yu, F.X., Richtárik, P., Suresh, A.T. and Bacon, D., 2016. Federated learning: Strategies for improving communication efficiency. <a href="#ref-2">[↩]</a></span></li>
 
-<p>[3] Konečný, J., McMahan, H.B., Yu, F.X., Richtárik, P., Suresh, A.T. and Bacon, D., 2016. Federated learning: Strategies for improving communication efficiency.</p>
+	<li><span id="citation-3">Suresh, A.T., Yu, F.X., McMahan, H.B. and Kumar, S., 2016. Distributed mean estimation with limited communication. <a href="#ref-3">[↩]</a></span></li>
+
+
+</ol>
+
 
   </article>
 
@@ -185,10 +195,23 @@ document.onreadystatechange = function () {
 </script>
 
 <script>
+var alreadySeenRefs = {};
+
 document.querySelectorAll(".ref-link").forEach(function (a) {
   var id = a.getAttribute("id");
+
+  if (id in alreadySeenRefs) return;
+
   var p = a.closest("p");
-  p.setAttribute("id", id)
+  var currentId = p.getAttribute("id");
+
+  if (currentId == null) {
+    p.setAttribute("id", id)
+  } else {
+    document.querySelector("#" + id.replace("ref", "citation") + " a").setAttribute("href", "#" + currentId)
+  }
+
+  alreadySeenRefs[id] = true;
   a.removeAttribute("id")
 })
 </script>

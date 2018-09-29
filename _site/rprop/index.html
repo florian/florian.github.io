@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width initial-scale=1">
 
   <title>RProp</title>
-  <meta name="description" content="RProp is a popular gradient descent algorithm that only uses the signs ofgradients to compute updates. It stands for Resilient Propagation and workswell in m...">
+  <meta name="description" content="RProp is a popular gradient descent algorithm that only uses the signs ofgradients to compute updates [1] [2]. It stands for Resilient Propagation and worksw...">
 
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
   <link rel="stylesheet" href="/css/main.css">
@@ -28,7 +28,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
 <p><em>RProp</em> is a popular gradient descent algorithm that only uses the signs of
-gradients to compute updates. It stands for <em>Resilient Propagation</em> and works
+gradients to compute updates <a href="#citation-1" id="ref-1" class="ref-link">[1]</a>
+ <a href="#citation-2" id="ref-2" class="ref-link">[2]</a>
+. It stands for <em>Resilient Propagation</em> and works
 well in many situations because it adapts the step size dynamically for each
 weight independently. This blog posts gives an introduction to RProp
 and motivates its design choice of ignoring gradient magnitudes.</p>
@@ -167,12 +169,15 @@ implementation</a> can also be helpful.</p>
 
 <h3 id="references">References</h3>
 
-<p>[1] Rojas, R., 2013. Neural networks: a systematic introduction. Springer
-Science &amp; Business Media.</p>
+<ol class="references-list">
+	
+	<li><span id="citation-1">Rojas, R., 2013. Neural networks: a systematic introduction. Springer Science &amp; Business Media. <a href="#ref-1">[↩]</a></span></li>
 
-<p>[2] Riedmiller, M. and Braun, H., 1993. A direct adaptive method for faster
-backpropagation learning: The RPROP algorithm. In Neural Networks, 1993., IEEE
-International Conference on (pp. 586-591). IEEE.</p>
+	<li><span id="citation-2">Riedmiller, M. and Braun, H., 1993. A direct adaptive method for faster backpropagation learning: The RPROP algorithm. In Neural Networks, 1993., IEEE International Conference on (pp. 586-591). IEEE. <a href="#ref-2">[↩]</a></span></li>
+
+
+</ol>
+
 
   </article>
 
@@ -223,10 +228,23 @@ document.onreadystatechange = function () {
 </script>
 
 <script>
+var alreadySeenRefs = {};
+
 document.querySelectorAll(".ref-link").forEach(function (a) {
   var id = a.getAttribute("id");
+
+  if (id in alreadySeenRefs) return;
+
   var p = a.closest("p");
-  p.setAttribute("id", id)
+  var currentId = p.getAttribute("id");
+
+  if (currentId == null) {
+    p.setAttribute("id", id)
+  } else {
+    document.querySelector("#" + id.replace("ref", "citation") + " a").setAttribute("href", "#" + currentId)
+  }
+
+  alreadySeenRefs[id] = true;
   a.removeAttribute("id")
 })
 </script>

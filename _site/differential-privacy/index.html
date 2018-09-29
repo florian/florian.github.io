@@ -364,10 +364,23 @@ document.onreadystatechange = function () {
 </script>
 
 <script>
+var alreadySeenRefs = {};
+
 document.querySelectorAll(".ref-link").forEach(function (a) {
   var id = a.getAttribute("id");
+
+  if (id in alreadySeenRefs) return;
+
   var p = a.closest("p");
-  p.setAttribute("id", id)
+  var currentId = p.getAttribute("id");
+
+  if (currentId == null) {
+    p.setAttribute("id", id)
+  } else {
+    document.querySelector("#" + id.replace("ref", "citation") + " a").setAttribute("href", "#" + currentId)
+  }
+
+  alreadySeenRefs[id] = true;
   a.removeAttribute("id")
 })
 </script>
