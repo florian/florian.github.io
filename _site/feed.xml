@@ -5,8 +5,8 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 29 Sep 2018 20:09:53 +0200</pubDate>
-    <lastBuildDate>Sat, 29 Sep 2018 20:09:53 +0200</lastBuildDate>
+    <pubDate>Sat, 29 Sep 2018 20:34:03 +0200</pubDate>
+    <lastBuildDate>Sat, 29 Sep 2018 20:34:03 +0200</lastBuildDate>
     <generator>Jekyll v3.8.3</generator>
     
       <item>
@@ -706,6 +706,33 @@ By properly choosing the sample size, the optimization process can thus be speed
 
 &lt;/ol&gt;
 
+&lt;script src=&quot;https://unpkg.com/tippy.js@3/dist/tippy.all.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;script&gt;
+var alreadySeenRefs = {};
+
+document.querySelectorAll(&quot;.ref-link&quot;).forEach(function (a) {
+  var id = a.getAttribute(&quot;id&quot;);
+  var citationPath = &quot;#&quot; + id.replace(&quot;ref&quot;, &quot;citation&quot;);
+
+  tippy(a, { content: document.querySelector(citationPath).textContent, placement: &quot;bottom&quot;  })
+
+  if (id in alreadySeenRefs) return;
+
+  var p = a.closest(&quot;p&quot;);
+  var currentId = p.getAttribute(&quot;id&quot;);
+
+  if (currentId == null) {
+    p.setAttribute(&quot;id&quot;, id)
+  } else {
+    document.querySelector(citationPath + &quot; a.ref-backlink&quot;).setAttribute(&quot;href&quot;, &quot;#&quot; + currentId)
+  }
+
+  alreadySeenRefs[id] = true;
+  a.removeAttribute(&quot;id&quot;)
+})
+&lt;/script&gt;
+
 </description>
         <pubDate>Tue, 17 Jul 2018 00:00:00 +0200</pubDate>
         <link>http://localhost:4000/estimators/</link>
@@ -922,6 +949,33 @@ Although there have been several papers about Federated Learning, it is still qu
 
 &lt;/ol&gt;
 
+&lt;script src=&quot;https://unpkg.com/tippy.js@3/dist/tippy.all.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;script&gt;
+var alreadySeenRefs = {};
+
+document.querySelectorAll(&quot;.ref-link&quot;).forEach(function (a) {
+  var id = a.getAttribute(&quot;id&quot;);
+  var citationPath = &quot;#&quot; + id.replace(&quot;ref&quot;, &quot;citation&quot;);
+
+  tippy(a, { content: document.querySelector(citationPath).textContent, placement: &quot;bottom&quot;  })
+
+  if (id in alreadySeenRefs) return;
+
+  var p = a.closest(&quot;p&quot;);
+  var currentId = p.getAttribute(&quot;id&quot;);
+
+  if (currentId == null) {
+    p.setAttribute(&quot;id&quot;, id)
+  } else {
+    document.querySelector(citationPath + &quot; a.ref-backlink&quot;).setAttribute(&quot;href&quot;, &quot;#&quot; + currentId)
+  }
+
+  alreadySeenRefs[id] = true;
+  a.removeAttribute(&quot;id&quot;)
+})
+&lt;/script&gt;
+
 </description>
         <pubDate>Wed, 09 May 2018 09:54:00 +0200</pubDate>
         <link>http://localhost:4000/federated-learning/</link>
@@ -1089,6 +1143,33 @@ implementation&lt;/a&gt; can also be helpful.&lt;/p&gt;
 
 &lt;/ol&gt;
 
+&lt;script src=&quot;https://unpkg.com/tippy.js@3/dist/tippy.all.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;script&gt;
+var alreadySeenRefs = {};
+
+document.querySelectorAll(&quot;.ref-link&quot;).forEach(function (a) {
+  var id = a.getAttribute(&quot;id&quot;);
+  var citationPath = &quot;#&quot; + id.replace(&quot;ref&quot;, &quot;citation&quot;);
+
+  tippy(a, { content: document.querySelector(citationPath).textContent, placement: &quot;bottom&quot;  })
+
+  if (id in alreadySeenRefs) return;
+
+  var p = a.closest(&quot;p&quot;);
+  var currentId = p.getAttribute(&quot;id&quot;);
+
+  if (currentId == null) {
+    p.setAttribute(&quot;id&quot;, id)
+  } else {
+    document.querySelector(citationPath + &quot; a.ref-backlink&quot;).setAttribute(&quot;href&quot;, &quot;#&quot; + currentId)
+  }
+
+  alreadySeenRefs[id] = true;
+  a.removeAttribute(&quot;id&quot;)
+})
+&lt;/script&gt;
+
 </description>
         <pubDate>Sun, 08 Apr 2018 12:54:00 +0200</pubDate>
         <link>http://localhost:4000/rprop/</link>
@@ -1222,6 +1303,33 @@ compression techniques for Federated Learning &lt;a href=&quot;#citation-2&quot;
 
 
 &lt;/ol&gt;
+
+&lt;script src=&quot;https://unpkg.com/tippy.js@3/dist/tippy.all.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;script&gt;
+var alreadySeenRefs = {};
+
+document.querySelectorAll(&quot;.ref-link&quot;).forEach(function (a) {
+  var id = a.getAttribute(&quot;id&quot;);
+  var citationPath = &quot;#&quot; + id.replace(&quot;ref&quot;, &quot;citation&quot;);
+
+  tippy(a, { content: document.querySelector(citationPath).textContent, placement: &quot;bottom&quot;  })
+
+  if (id in alreadySeenRefs) return;
+
+  var p = a.closest(&quot;p&quot;);
+  var currentId = p.getAttribute(&quot;id&quot;);
+
+  if (currentId == null) {
+    p.setAttribute(&quot;id&quot;, id)
+  } else {
+    document.querySelector(citationPath + &quot; a.ref-backlink&quot;).setAttribute(&quot;href&quot;, &quot;#&quot; + currentId)
+  }
+
+  alreadySeenRefs[id] = true;
+  a.removeAttribute(&quot;id&quot;)
+})
+&lt;/script&gt;
 
 </description>
         <pubDate>Sun, 25 Feb 2018 17:03:00 +0100</pubDate>

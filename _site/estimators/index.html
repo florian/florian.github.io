@@ -227,6 +227,33 @@ By properly choosing the sample size, the optimization process can thus be speed
 
 </ol>
 
+<script src="https://unpkg.com/tippy.js@3/dist/tippy.all.min.js"></script>
+
+<script>
+var alreadySeenRefs = {};
+
+document.querySelectorAll(".ref-link").forEach(function (a) {
+  var id = a.getAttribute("id");
+  var citationPath = "#" + id.replace("ref", "citation");
+
+  tippy(a, { content: document.querySelector(citationPath).textContent, placement: "bottom"  })
+
+  if (id in alreadySeenRefs) return;
+
+  var p = a.closest("p");
+  var currentId = p.getAttribute("id");
+
+  if (currentId == null) {
+    p.setAttribute("id", id)
+  } else {
+    document.querySelector(citationPath + " a.ref-backlink").setAttribute("href", "#" + currentId)
+  }
+
+  alreadySeenRefs[id] = true;
+  a.removeAttribute("id")
+})
+</script>
+
 
   </article>
 
@@ -274,28 +301,6 @@ document.onreadystatechange = function () {
     linkifyAnchors(3, document.body);
   }
 };
-</script>
-
-<script>
-var alreadySeenRefs = {};
-
-document.querySelectorAll(".ref-link").forEach(function (a) {
-  var id = a.getAttribute("id");
-
-  if (id in alreadySeenRefs) return;
-
-  var p = a.closest("p");
-  var currentId = p.getAttribute("id");
-
-  if (currentId == null) {
-    p.setAttribute("id", id)
-  } else {
-    document.querySelector("#" + id.replace("ref", "citation") + " a.ref-backlink").setAttribute("href", "#" + currentId)
-  }
-
-  alreadySeenRefs[id] = true;
-  a.removeAttribute("id")
-})
 </script>
 
       </div>
