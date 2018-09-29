@@ -52,7 +52,7 @@
     color: $brand-color;
 }
 
-#post-list a {
+#post-list * {
     -webkit-transition: all 0.15s ease;
     -moz-transition: all 0.15s ease;
     -ms-transition: all 0.15s ease;
