@@ -154,7 +154,10 @@ document.querySelectorAll(".ref-link").forEach(function (a) {
   var id = a.getAttribute("id");
   var citationPath = "#" + id.replace("ref", "citation");
 
-  tippy(a, { content: document.querySelector(citationPath).textContent, placement: "bottom"  })
+  tippy(a, {
+  	  content: document.querySelector(citationPath).textContent, placement: "bottom",
+  	  arrow: true
+  })
 
   if (id in alreadySeenRefs) return;
 

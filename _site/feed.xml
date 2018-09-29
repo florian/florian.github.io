@@ -5,8 +5,8 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 29 Sep 2018 20:34:03 +0200</pubDate>
-    <lastBuildDate>Sat, 29 Sep 2018 20:34:03 +0200</lastBuildDate>
+    <pubDate>Sat, 29 Sep 2018 20:41:59 +0200</pubDate>
+    <lastBuildDate>Sat, 29 Sep 2018 20:41:59 +0200</lastBuildDate>
     <generator>Jekyll v3.8.3</generator>
     
       <item>
@@ -715,7 +715,10 @@ document.querySelectorAll(&quot;.ref-link&quot;).forEach(function (a) {
   var id = a.getAttribute(&quot;id&quot;);
   var citationPath = &quot;#&quot; + id.replace(&quot;ref&quot;, &quot;citation&quot;);
 
-  tippy(a, { content: document.querySelector(citationPath).textContent, placement: &quot;bottom&quot;  })
+  tippy(a, {
+  	  content: document.querySelector(citationPath).textContent, placement: &quot;bottom&quot;,
+  	  arrow: true
+  })
 
   if (id in alreadySeenRefs) return;
 
@@ -958,7 +961,10 @@ document.querySelectorAll(&quot;.ref-link&quot;).forEach(function (a) {
   var id = a.getAttribute(&quot;id&quot;);
   var citationPath = &quot;#&quot; + id.replace(&quot;ref&quot;, &quot;citation&quot;);
 
-  tippy(a, { content: document.querySelector(citationPath).textContent, placement: &quot;bottom&quot;  })
+  tippy(a, {
+  	  content: document.querySelector(citationPath).textContent, placement: &quot;bottom&quot;,
+  	  arrow: true
+  })
 
   if (id in alreadySeenRefs) return;
 
@@ -1152,7 +1158,10 @@ document.querySelectorAll(&quot;.ref-link&quot;).forEach(function (a) {
   var id = a.getAttribute(&quot;id&quot;);
   var citationPath = &quot;#&quot; + id.replace(&quot;ref&quot;, &quot;citation&quot;);
 
-  tippy(a, { content: document.querySelector(citationPath).textContent, placement: &quot;bottom&quot;  })
+  tippy(a, {
+  	  content: document.querySelector(citationPath).textContent, placement: &quot;bottom&quot;,
+  	  arrow: true
+  })
 
   if (id in alreadySeenRefs) return;
 
@@ -1313,7 +1322,10 @@ document.querySelectorAll(&quot;.ref-link&quot;).forEach(function (a) {
   var id = a.getAttribute(&quot;id&quot;);
   var citationPath = &quot;#&quot; + id.replace(&quot;ref&quot;, &quot;citation&quot;);
 
-  tippy(a, { content: document.querySelector(citationPath).textContent, placement: &quot;bottom&quot;  })
+  tippy(a, {
+  	  content: document.querySelector(citationPath).textContent, placement: &quot;bottom&quot;,
+  	  arrow: true
+  })
 
   if (id in alreadySeenRefs) return;
 
