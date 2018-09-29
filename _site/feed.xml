@@ -5,8 +5,8 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 29 Sep 2018 19:51:28 +0200</pubDate>
-    <lastBuildDate>Sat, 29 Sep 2018 19:51:28 +0200</lastBuildDate>
+    <pubDate>Sat, 29 Sep 2018 19:57:10 +0200</pubDate>
+    <lastBuildDate>Sat, 29 Sep 2018 19:57:10 +0200</lastBuildDate>
     <generator>Jekyll v3.8.3</generator>
     
       <item>
@@ -691,17 +691,17 @@ By properly choosing the sample size, the optimization process can thus be speed
 
 &lt;ol class=&quot;references-list&quot;&gt;
 	
-	&lt;li&gt;&lt;span id=&quot;citation-1&quot;&gt;Diez, D.M., Barr, C.D. and Cetinkaya-Rundel, M., 2012. OpenIntro statistics (Vol. 12). CreateSpace. &lt;a href=&quot;#ref-1&quot;&gt;[↩]&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;span id=&quot;citation-1&quot;&gt;Diez, D.M., Barr, C.D. and Cetinkaya-Rundel, M., 2012. OpenIntro statistics (Vol. 12). CreateSpace. &lt;a href=&quot;#ref-1&quot; class=&quot;ref-backlink&quot;&gt;[↩]&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
 
-	&lt;li&gt;&lt;span id=&quot;citation-2&quot;&gt;Härdle, W. and Simar, L., 2007. Applied multivariate statistical analysis (Vol. 22007, pp. 1051-8215). Berlin: Springer. Vancouver &lt;a href=&quot;#ref-2&quot;&gt;[↩]&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;span id=&quot;citation-2&quot;&gt;Härdle, W. and Simar, L., 2007. Applied multivariate statistical analysis (Vol. 22007, pp. 1051-8215). Berlin: Springer. Vancouver &lt;a href=&quot;#ref-2&quot; class=&quot;ref-backlink&quot;&gt;[↩]&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
 
-	&lt;li&gt;&lt;span id=&quot;citation-3&quot;&gt;Voinov, V.G. and Nikulin, M.S., 2012. Unbiased Estimators and Their Applications: Volume 1: Univariate Case (Vol. 263). Springer Science &amp;amp; Business Media. &lt;a href=&quot;#ref-3&quot;&gt;[↩]&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;span id=&quot;citation-3&quot;&gt;Voinov, V.G. and Nikulin, M.S., 2012. Unbiased Estimators and Their Applications: Volume 1: Univariate Case (Vol. 263). Springer Science &amp;amp; Business Media. &lt;a href=&quot;#ref-3&quot; class=&quot;ref-backlink&quot;&gt;[↩]&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
 
-	&lt;li&gt;&lt;span id=&quot;citation-4&quot;&gt;Raul Rojas. The bias-variance dilemma. Freie University, Berlin, Tech. Rep, 2015. &lt;a href=&quot;#ref-4&quot;&gt;[↩]&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;span id=&quot;citation-4&quot;&gt;Raul Rojas. The bias-variance dilemma. Freie University, Berlin, Tech. Rep, 2015. &lt;a href=&quot;#ref-4&quot; class=&quot;ref-backlink&quot;&gt;[↩]&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
 
-	&lt;li&gt;&lt;span id=&quot;citation-5&quot;&gt;Friedman, J., Hastie, T. and Tibshirani, R., 2001. The elements of statistical learning (Vol. 1, No. 10). New York, NY, USA:: Springer series in statistics. &lt;a href=&quot;#ref-5&quot;&gt;[↩]&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;span id=&quot;citation-5&quot;&gt;Friedman, J., Hastie, T. and Tibshirani, R., 2001. The elements of statistical learning (Vol. 1, No. 10). New York, NY, USA:: Springer series in statistics. &lt;a href=&quot;#ref-5&quot; class=&quot;ref-backlink&quot;&gt;[↩]&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
 
-	&lt;li&gt;&lt;span id=&quot;citation-6&quot;&gt;Navarro, C.A., Hitschfeld-Kahler, N. and Mateu, L., 2014. A survey on parallel computing and its applications in data-parallel problems using GPU architectures. Communications in Computational Physics, 15(2), pp.285-329. &lt;a href=&quot;#ref-6&quot;&gt;[↩]&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;span id=&quot;citation-6&quot;&gt;Navarro, C.A., Hitschfeld-Kahler, N. and Mateu, L., 2014. A survey on parallel computing and its applications in data-parallel problems using GPU architectures. Communications in Computational Physics, 15(2), pp.285-329. &lt;a href=&quot;#ref-6&quot; class=&quot;ref-backlink&quot;&gt;[↩]&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
 
 
 &lt;/ol&gt;
@@ -905,19 +905,19 @@ Although there have been several papers about Federated Learning, it is still qu
 
 &lt;ol class=&quot;references-list&quot;&gt;
 	
-	&lt;li&gt;&lt;span id=&quot;citation-1&quot;&gt;LeCun, Y., Bengio, Y. and Hinton, G., 2015. Deep learning. nature, 521(7553), p.436. &lt;a href=&quot;#ref-1&quot;&gt;[↩]&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;span id=&quot;citation-1&quot;&gt;LeCun, Y., Bengio, Y. and Hinton, G., 2015. Deep learning. nature, 521(7553), p.436. &lt;a href=&quot;#ref-1&quot; class=&quot;ref-backlink&quot;&gt;[↩]&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
 
-	&lt;li&gt;&lt;span id=&quot;citation-2&quot;&gt;Sundermeyer, M., Schlüter, R. and Ney, H., 2012. LSTM neural networks for language modeling. In Thirteenth Annual Conference of the International Speech Communication Association. &lt;a href=&quot;#ref-2&quot;&gt;[↩]&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;span id=&quot;citation-2&quot;&gt;Sundermeyer, M., Schlüter, R. and Ney, H., 2012. LSTM neural networks for language modeling. In Thirteenth Annual Conference of the International Speech Communication Association. &lt;a href=&quot;#ref-2&quot; class=&quot;ref-backlink&quot;&gt;[↩]&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
 
-	&lt;li&gt;&lt;span id=&quot;citation-3&quot;&gt;McMahan, H.B., Moore, E., Ramage, D. and Hampson, S., 2016. Communication-efficient learning of deep networks from decentralized data. arXiv preprint arXiv:1602.05629. &lt;a href=&quot;#ref-3&quot;&gt;[↩]&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;span id=&quot;citation-3&quot;&gt;McMahan, H.B., Moore, E., Ramage, D. and Hampson, S., 2016. Communication-efficient learning of deep networks from decentralized data. arXiv preprint arXiv:1602.05629. &lt;a href=&quot;#ref-3&quot; class=&quot;ref-backlink&quot;&gt;[↩]&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
 
-	&lt;li&gt;&lt;span id=&quot;citation-4&quot;&gt;Konečný, J., McMahan, H.B., Yu, F.X., Richtárik, P., Suresh, A.T. and Bacon, D., 2016. Federated learning: Strategies for improving communication efficiency. arXiv preprint arXiv:1610.05492. &lt;a href=&quot;#ref-4&quot;&gt;[↩]&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;span id=&quot;citation-4&quot;&gt;Konečný, J., McMahan, H.B., Yu, F.X., Richtárik, P., Suresh, A.T. and Bacon, D., 2016. Federated learning: Strategies for improving communication efficiency. arXiv preprint arXiv:1610.05492. &lt;a href=&quot;#ref-4&quot; class=&quot;ref-backlink&quot;&gt;[↩]&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
 
-	&lt;li&gt;&lt;span id=&quot;citation-5&quot;&gt;McMahan, H.B., Ramage, D., Talwar, K. and Zhang, L., 2017. Learning differentially private language models without losing accuracy. arXiv preprint arXiv:1710.06963. &lt;a href=&quot;#ref-5&quot;&gt;[↩]&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;span id=&quot;citation-5&quot;&gt;McMahan, H.B., Ramage, D., Talwar, K. and Zhang, L., 2017. Learning differentially private language models without losing accuracy. arXiv preprint arXiv:1710.06963. &lt;a href=&quot;#ref-5&quot; class=&quot;ref-backlink&quot;&gt;[↩]&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
 
-	&lt;li&gt;&lt;span id=&quot;citation-6&quot;&gt;Fredrikson, M., Jha, S. and Ristenpart, T., 2015, October. Model inversion attacks that exploit confidence information and basic countermeasures. In Proceedings of the 22nd ACM SIGSAC Conference on Computer and Communications Security (pp. 1322-1333). ACM. &lt;a href=&quot;#ref-6&quot;&gt;[↩]&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;span id=&quot;citation-6&quot;&gt;Fredrikson, M., Jha, S. and Ristenpart, T., 2015, October. Model inversion attacks that exploit confidence information and basic countermeasures. In Proceedings of the 22nd ACM SIGSAC Conference on Computer and Communications Security (pp. 1322-1333). ACM. &lt;a href=&quot;#ref-6&quot; class=&quot;ref-backlink&quot;&gt;[↩]&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
 
-	&lt;li&gt;&lt;span id=&quot;citation-7&quot;&gt;Bonawitz, K., Ivanov, V., Kreuter, B., Marcedone, A., McMahan, H.B., Patel, S., Ramage, D., Segal, A. and Seth, K., 2017, October. Practical Secure Aggregation for Privacy-Preserving Machine Learning. In Proceedings of the 2017 ACM SIGSAC Conference on Computer and Communications Security (pp. 1175-1191). ACM. &lt;a href=&quot;#ref-7&quot;&gt;[↩]&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;span id=&quot;citation-7&quot;&gt;Bonawitz, K., Ivanov, V., Kreuter, B., Marcedone, A., McMahan, H.B., Patel, S., Ramage, D., Segal, A. and Seth, K., 2017, October. Practical Secure Aggregation for Privacy-Preserving Machine Learning. In Proceedings of the 2017 ACM SIGSAC Conference on Computer and Communications Security (pp. 1175-1191). ACM. &lt;a href=&quot;#ref-7&quot; class=&quot;ref-backlink&quot;&gt;[↩]&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
 
 
 &lt;/ol&gt;
@@ -1082,9 +1082,9 @@ implementation&lt;/a&gt; can also be helpful.&lt;/p&gt;
 
 &lt;ol class=&quot;references-list&quot;&gt;
 	
-	&lt;li&gt;&lt;span id=&quot;citation-1&quot;&gt;Rojas, R., 2013. Neural networks: a systematic introduction. Springer Science &amp;amp; Business Media. &lt;a href=&quot;#ref-1&quot;&gt;[↩]&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;span id=&quot;citation-1&quot;&gt;Rojas, R., 2013. Neural networks: a systematic introduction. Springer Science &amp;amp; Business Media. &lt;a href=&quot;#ref-1&quot; class=&quot;ref-backlink&quot;&gt;[↩]&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
 
-	&lt;li&gt;&lt;span id=&quot;citation-2&quot;&gt;Riedmiller, M. and Braun, H., 1993. A direct adaptive method for faster backpropagation learning: The RPROP algorithm. In Neural Networks, 1993., IEEE International Conference on (pp. 586-591). IEEE. &lt;a href=&quot;#ref-2&quot;&gt;[↩]&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;span id=&quot;citation-2&quot;&gt;Riedmiller, M. and Braun, H., 1993. A direct adaptive method for faster backpropagation learning: The RPROP algorithm. In Neural Networks, 1993., IEEE International Conference on (pp. 586-591). IEEE. &lt;a href=&quot;#ref-2&quot; class=&quot;ref-backlink&quot;&gt;[↩]&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
 
 
 &lt;/ol&gt;
@@ -1214,11 +1214,11 @@ compression techniques for Federated Learning &lt;a href=&quot;#citation-2&quot;
 
 &lt;ol class=&quot;references-list&quot;&gt;
 	
-	&lt;li&gt;&lt;span id=&quot;citation-1&quot;&gt;McMahan, H.B., Moore, E., Ramage, D. and Hampson, S., 2016. Communication-efficient learning of deep networks from decentralized data. &lt;a href=&quot;#ref-1&quot;&gt;[↩]&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;span id=&quot;citation-1&quot;&gt;McMahan, H.B., Moore, E., Ramage, D. and Hampson, S., 2016. Communication-efficient learning of deep networks from decentralized data. &lt;a href=&quot;#ref-1&quot; class=&quot;ref-backlink&quot;&gt;[↩]&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
 
-	&lt;li&gt;&lt;span id=&quot;citation-2&quot;&gt;Konečný, J., McMahan, H.B., Yu, F.X., Richtárik, P., Suresh, A.T. and Bacon, D., 2016. Federated learning: Strategies for improving communication efficiency. &lt;a href=&quot;#ref-2&quot;&gt;[↩]&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;span id=&quot;citation-2&quot;&gt;Konečný, J., McMahan, H.B., Yu, F.X., Richtárik, P., Suresh, A.T. and Bacon, D., 2016. Federated learning: Strategies for improving communication efficiency. &lt;a href=&quot;#ref-2&quot; class=&quot;ref-backlink&quot;&gt;[↩]&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
 
-	&lt;li&gt;&lt;span id=&quot;citation-3&quot;&gt;Suresh, A.T., Yu, F.X., McMahan, H.B. and Kumar, S., 2016. Distributed mean estimation with limited communication. &lt;a href=&quot;#ref-3&quot;&gt;[↩]&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;span id=&quot;citation-3&quot;&gt;Suresh, A.T., Yu, F.X., McMahan, H.B. and Kumar, S., 2016. Distributed mean estimation with limited communication. &lt;a href=&quot;#ref-3&quot; class=&quot;ref-backlink&quot;&gt;[↩]&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
 
 
 &lt;/ol&gt;

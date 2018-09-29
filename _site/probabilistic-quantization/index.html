@@ -136,11 +136,11 @@ compression techniques for Federated Learning <a href="#citation-2" id="ref-2" c
 
 <ol class="references-list">
 	
-	<li><span id="citation-1">McMahan, H.B., Moore, E., Ramage, D. and Hampson, S., 2016. Communication-efficient learning of deep networks from decentralized data. <a href="#ref-1">[↩]</a></span></li>
+	<li><span id="citation-1">McMahan, H.B., Moore, E., Ramage, D. and Hampson, S., 2016. Communication-efficient learning of deep networks from decentralized data. <a href="#ref-1" class="ref-backlink">[↩]</a></span></li>
 
-	<li><span id="citation-2">Konečný, J., McMahan, H.B., Yu, F.X., Richtárik, P., Suresh, A.T. and Bacon, D., 2016. Federated learning: Strategies for improving communication efficiency. <a href="#ref-2">[↩]</a></span></li>
+	<li><span id="citation-2">Konečný, J., McMahan, H.B., Yu, F.X., Richtárik, P., Suresh, A.T. and Bacon, D., 2016. Federated learning: Strategies for improving communication efficiency. <a href="#ref-2" class="ref-backlink">[↩]</a></span></li>
 
-	<li><span id="citation-3">Suresh, A.T., Yu, F.X., McMahan, H.B. and Kumar, S., 2016. Distributed mean estimation with limited communication. <a href="#ref-3">[↩]</a></span></li>
+	<li><span id="citation-3">Suresh, A.T., Yu, F.X., McMahan, H.B. and Kumar, S., 2016. Distributed mean estimation with limited communication. <a href="#ref-3" class="ref-backlink">[↩]</a></span></li>
 
 
 </ol>
@@ -208,7 +208,7 @@ document.querySelectorAll(".ref-link").forEach(function (a) {
   if (currentId == null) {
     p.setAttribute("id", id)
   } else {
-    document.querySelector("#" + id.replace("ref", "citation") + " a").setAttribute("href", "#" + currentId)
+    document.querySelector("#" + id.replace("ref", "citation") + " a.ref-backlink").setAttribute("href", "#" + currentId)
   }
 
   alreadySeenRefs[id] = true;

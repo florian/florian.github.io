@@ -171,9 +171,9 @@ implementation</a> can also be helpful.</p>
 
 <ol class="references-list">
 	
-	<li><span id="citation-1">Rojas, R., 2013. Neural networks: a systematic introduction. Springer Science &amp; Business Media. <a href="#ref-1">[↩]</a></span></li>
+	<li><span id="citation-1">Rojas, R., 2013. Neural networks: a systematic introduction. Springer Science &amp; Business Media. <a href="#ref-1" class="ref-backlink">[↩]</a></span></li>
 
-	<li><span id="citation-2">Riedmiller, M. and Braun, H., 1993. A direct adaptive method for faster backpropagation learning: The RPROP algorithm. In Neural Networks, 1993., IEEE International Conference on (pp. 586-591). IEEE. <a href="#ref-2">[↩]</a></span></li>
+	<li><span id="citation-2">Riedmiller, M. and Braun, H., 1993. A direct adaptive method for faster backpropagation learning: The RPROP algorithm. In Neural Networks, 1993., IEEE International Conference on (pp. 586-591). IEEE. <a href="#ref-2" class="ref-backlink">[↩]</a></span></li>
 
 
 </ol>
@@ -241,7 +241,7 @@ document.querySelectorAll(".ref-link").forEach(function (a) {
   if (currentId == null) {
     p.setAttribute("id", id)
   } else {
-    document.querySelector("#" + id.replace("ref", "citation") + " a").setAttribute("href", "#" + currentId)
+    document.querySelector("#" + id.replace("ref", "citation") + " a.ref-backlink").setAttribute("href", "#" + currentId)
   }
 
   alreadySeenRefs[id] = true;
