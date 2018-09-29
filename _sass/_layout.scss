@@ -255,8 +255,10 @@ a.header-link {
   display: inline-block;
   position: absolute;
   left: -35px;
-  padding-right: 35px;
-  top: 47px;
+  top: -1px;
+  padding-right: 17px;
+  padding-top: 47px;
+  padding-bottom: 20px;
   opacity: 0;
   font-size: 0.8em;
   -webkit-transition: opacity 0.2s ease-in-out 0.1s;
