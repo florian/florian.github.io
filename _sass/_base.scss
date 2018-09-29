@@ -37,7 +37,7 @@ ul, ol, dl, figure,
 
 article h2, h3, h4, h5, h6 {
   margin: 0;
-  padding-top: 40px;
+  padding-top: 15px;
   padding-bottom: 13px;
 }
 
@@ -78,6 +78,11 @@ figcaption {
  */
 ul, ol {
     margin-left: $spacing-unit;
+}
+
+article ul, ol {
+ margin-top: -20px;
+ margin-left: 40px;
 }
 
 li {

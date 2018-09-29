@@ -213,6 +213,7 @@ p, article li {
 
 article p {
  line-height: 33px;
+ margin-bottom: 28px;
 }
 
 article table:not(.image) {
@@ -257,7 +258,7 @@ a.header-link {
   left: -35px;
   top: -1px;
   padding-right: 17px;
-  padding-top: 47px;
+  padding-top: 22px;
   padding-bottom: 20px;
   opacity: 0;
   font-size: 0.8em;
@@ -278,4 +279,11 @@ h4:hover .header-link,
 h5:hover .header-link,
 h6:hover .header-link {
   opacity: 1;
+}
+
+article .MathJax_Display {
+  margin-top: -5px;
+  margin-bottom: 30px;
+  overflow-x: scroll;
+  overflow-y: hidden;
 }
