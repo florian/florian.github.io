@@ -287,3 +287,36 @@ article .MathJax_Display {
   overflow-x: scroll;
   overflow-y: hidden;
 }
+
+@include media-query(300px) {
+  article .MathJax_Display {
+   overflow-x: scroll;
+   overflow-y: hidden;
+  }
+}
+
+.references-list {
+    counter-reset: list;
+    margin-top: 0;
+    margin-left: 20px;
+}
+
+.references-list > li {
+    list-style: none;
+}
+
+.references-list > li:before {
+    counter-increment: list;
+    content: "[" counter(list) "]";
+    opacity: .75;
+}
+
+.references-list li span {
+  position: relative;
+  left: 15px;
+}
+
+.ref-link {
+  margin-top: -50px;
+  padding-top: 50px;
+}
