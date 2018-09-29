@@ -32,7 +32,13 @@ h1, h2, h3, h4, h5, h6,
 p, blockquote, pre,
 ul, ol, dl, figure,
 %vertical-rhythm {
-    margin-bottom: $spacing-unit / 2;
+  margin-bottom: $spacing-unit / 2;
+}
+
+article h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding-top: 40px;
+  padding-bottom: 13px;
 }
 
 
@@ -110,7 +116,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: 30px;
+    font-size: 28px;
     letter-spacing: -1px;
     color: #222;
     font-weight: bold;;

@@ -144,10 +144,10 @@ a.home-link {
     }
 
     h3 {
-        font-size: 26px;
+        font-size: 25px;
 
         @include media-query($on-laptop) {
-            font-size: 22px;
+            font-size: 21px;
         }
     }
 
@@ -207,8 +207,12 @@ caption {
     font-style: italic;
 }
 
-p {
+p, article li {
  text-align: justify
+}
+
+article p {
+ line-height: 33px;
 }
 
 article table:not(.image) {
@@ -223,4 +227,53 @@ article table:not(.image) {
  th {
   font-weight: bold;
  }
+}
+
+.fa {
+  display: inline-block;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.fa-link:before {
+  content: "\f0c1";
+}
+
+/*
+ * This code is courtesy Ben Balter, modified by Parker Moore for jekyllrb.com
+ * http://ben.balter.com/2014/03/13/pages-anchor-links/
+ */
+
+h3 {
+ position: relative
+}
+
+a.header-link {
+  display: inline-block;
+  position: absolute;
+  left: -35px;
+  padding-right: 35px;
+  top: 47px;
+  opacity: 0;
+  font-size: 0.8em;
+  -webkit-transition: opacity 0.2s ease-in-out 0.1s;
+  -moz-transition: opacity 0.2s ease-in-out 0.1s;
+  -ms-transition: opacity 0.2s ease-in-out 0.1s;
+  color: #777;
+  font-size: 17px;
+
+  &:hover {
+   color: #222;
+  }
+}
+
+h2:hover .header-link,
+h3:hover .header-link,
+h4:hover .header-link,
+h5:hover .header-link,
+h6:hover .header-link {
+  opacity: 1;
 }

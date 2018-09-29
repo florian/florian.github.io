@@ -8,9 +8,10 @@
   <title>What I read in 2017</title>
   <meta name="description" content="Whenever I’m looking for a new book to read, I really enjoy looking at lists ofbooks other people read. Since I started reading more again this year, I thoug...">
 
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://florian.github.io//reading-2017/">
-  <link rel="alternate" type="application/atom+xml" title="Florian Hartmann" href="https://florian.github.io//feed.xml" />
+  <link rel="canonical" href="http://localhost:4000/reading-2017/">
+  <link rel="alternate" type="application/atom+xml" title="Florian Hartmann" href="http://localhost:4000/feed.xml" />
 </head>
 
   <body>
@@ -229,6 +230,33 @@ German for at least two years.</p>
   </div>
   
 </div>
+
+<script>
+var anchorForId = function (id) {
+  var anchor = document.createElement("a");
+  anchor.className = "header-link";
+  anchor.href      = "#" + id;
+  anchor.innerHTML = "<i class=\"fas fa-link\"></i>";
+  return anchor;
+};
+
+var linkifyAnchors = function (level, containingElement) {
+  var headers = containingElement.getElementsByTagName("h" + level);
+  for (var h = 0; h < headers.length; h++) {
+    var header = headers[h];
+
+    if (typeof header.id !== "undefined" && header.id !== "") {
+      header.appendChild(anchorForId(header.id));
+    }
+  }
+};
+
+document.onreadystatechange = function () {
+  if (this.readyState === "complete") {
+    linkifyAnchors(3, document.body);
+  }
+};
+</script>
 
       </div>
     </div>
