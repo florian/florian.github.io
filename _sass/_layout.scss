@@ -213,7 +213,12 @@ p, article li {
 
 article p {
  line-height: 33px;
- margin-bottom: 28px;
+ margin-bottom: 15px;
+ padding-top: 13px;
+
+ &:first-of-type {
+  padding-top: 0;
+ }
 }
 
 article table:not(.image) {
@@ -282,8 +287,7 @@ h6:hover .header-link {
 }
 
 article .MathJax_Display {
-  margin-top: -5px;
-  margin-bottom: 30px;
+  margin: 20px 0;
 }
 
 .references-list {
@@ -305,6 +309,7 @@ article .MathJax_Display {
 .references-list li span {
   position: relative;
   left: 15px;
+  padding-top: 25px;
 }
 
 .ref-pointer {

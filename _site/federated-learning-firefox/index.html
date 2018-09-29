@@ -553,6 +553,15 @@ document.onreadystatechange = function () {
 };
 </script>
 
+<script>
+document.querySelectorAll(".ref-link").forEach(function (a) {
+  var id = a.getAttribute("id");
+  var p = a.closest("p");
+  p.setAttribute("id", id)
+  a.removeAttribute("id")
+})
+</script>
+
       </div>
     </div>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124645768-1"></script>

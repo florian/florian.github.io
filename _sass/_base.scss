@@ -38,7 +38,7 @@ ul, ol, dl, figure,
 article h2, h3, h4, h5, h6 {
   margin: 0;
   padding-top: 15px;
-  padding-bottom: 13px;
+  //padding-bottom: 13px;
 }
 
 
@@ -81,8 +81,9 @@ ul, ol {
 }
 
 article ul, article ol {
- margin-top: -20px;
+ margin-top: -7px;
  margin-left: 40px;
+ margin-bottom: 3px;
 }
 
 li {

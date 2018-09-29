@@ -8,7 +8,7 @@ categories: machine-learning, federated-learning
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
-In the past few years, machine learning has led to major breakthroughs in various areas, such as natural language processing, computer vision and speech recognition {% include ref.html i=1 %}.
+<span id="ref-1"></span>In the past few years, machine learning has led to major breakthroughs in various areas, such as natural language processing, computer vision and speech recognition {% include ref.html i=1 %}.
 Much of this success has been based on collecting huge amounts of data. For example, one of Facebook's latest [Detectron](https://github.com/facebookresearch/Detectron) models for object detection was trained on [3.5 billion images](https://code.facebook.com/posts/1700437286678763/advancing-state-of-the-art-image-recognition-with-deep-learning-on-hashtags/) from Instagram.
 
 For some applications of machine learning, this need of collecting data can be incredibly privacy-invasive.
@@ -45,7 +45,7 @@ available data to compute a model update \\(H_i\\).
 All these updates are sent back to the server where they are averaged, weighted by the number of training examples that the respective clients used.
 The server then applies this update to the model, typically by using some form of [gradient descent](https://en.wikipedia.org/wiki/Gradient_descent).
 
-<img src="../../assets/posts/federated-learning/iteration.png" width="600" style="margin: 25px auto; display: block" alt="One iteration of a federated learning system" />
+<img src="../../assets/posts/federated-learning/iteration.png" width="600" style="margin: 25px auto; margin-top: 5px; display: block" alt="One iteration of a federated learning system" />
 
 All of this is called a communication round.
 This process is then performed many times until the parameters of the model stabilize.

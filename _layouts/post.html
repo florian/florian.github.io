@@ -51,3 +51,12 @@ document.onreadystatechange = function () {
   }
 };
 </script>
+
+<script>
+document.querySelectorAll(".ref-link").forEach(function (a) {
+  var id = a.getAttribute("id");
+  var p = a.closest("p");
+  p.setAttribute("id", id)
+  a.removeAttribute("id")
+})
+</script>
