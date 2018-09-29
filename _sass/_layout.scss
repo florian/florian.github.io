@@ -284,8 +284,6 @@ h6:hover .header-link {
 article .MathJax_Display {
   margin-top: -5px;
   margin-bottom: 30px;
-  overflow-x: scroll;
-  overflow-y: hidden;
 }
 
 @include media-query(300px) {
@@ -317,6 +315,6 @@ article .MathJax_Display {
 }
 
 .ref-link {
-  margin-top: -50px;
-  padding-top: 50px;
+  padding-top: -50px;
+  margin-top: 50px;
 }
