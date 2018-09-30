@@ -134,40 +134,150 @@ It is worth noting that variables maintain state during separate executions of t
 We describe the graph in a declarative style but it contains state, in the form of variables.
 This makes sense for ML: We iteratively want to improve our weights, variables here, step by step.
 
-### Executing a Graph
+### Sessions
 
-#### Sessions
+Once the graph is fully constructed, we want to execute it.
+This is where TensorFlow's other major abstraction, a *session*, comes into play.
+A session represents an execution environment in which we can evaluate nodes of computational graphs.
+This might be a cluster of GPUs or just our local development environment.
 
-- After having constructed the graph, we want to execute it
-- TensorFlow's other major abstraction, a *session*, comes into play here
-- A session represents an environment in which we can run computational graphs
-- This might be a cluster of GPUs or just our local development environment
-- By adding this abstraction, we do not have to worry about how it is executed
-- Sessions are created using `tf.Session`. We can then run the graph and get the resulting values of the nodes we are interested in
-- Placeholders values are passed in when the graph is executed, by passing a `feed_dict` argument to sess.run
+This abstraction is crucial to TensorFlow:
+By describing what we want to compute using a declarative style, in the form of a computational graph, TensorFlow is able to do the work of figuring out how to perform the computation in an efficient way in various environments.
+For example, in the case of matrix multiplication, it can make use of special instructions on GPUs or at least use efficiently implemented system libraries for CPUs.
 
-#### Putting it all together
+Sessions are created using the `tf.Session` constructor.
+We can then evaluate individual nodes:
 
-The following is a minimal example.
-We create a computational graph representing the function f(x) = 3 * x + 5 and then evaluate f(4)
+```
+a = tf.constant(3)
+b = a * 2
+
+sess = tf.Session()
+sess.run(b) # => 6
+```
+
+TensorFlow evaluates the graph in a lazy way.
+If we add additional nodes to the computational graph above, calling `sess.run(b)` would only evaluate the nodes that are required the compute the value of `b`.
+To do this, TensorFlow searches through the graph backwards from `b` on and finds all required nodes.
+
+If our graph contains placeholders, we need to pass in their values using the `feed_dict` argument of `sess.run`.
+We can also fetch the value of several nodes using a single graph evaluation:
 
 ```
 x = tf.placeholder(tf.float32)
-a = tf.constant(3)
-b = tf.constant(5)
-output = a * x + b
+g = x * 5
+h = x * 6
 
 sess = tf.Session()
-sess.run(output, feed_dict={ x: 4 }) # f(4) = 3 * 4 + 5 = 17
+sess.run([g, h], feed_dict={ x: 2. }) # => [10., 12.]
+```
+
+When using variables, we need to initialize them before they are first used.
+A simple way of doing this is using the `tf.global_variables_initializer`:
+
+```
+x = tf.Variable(3.)
+loss = tf.abs(2 + x)
+
+sess = tf.Session()
+sess.run(tf.global_variables_initializer())
+sess.run(loss) # => 5.
 ```
 
 ### Optimization
 
-#### Optimizers
+At this point we are able to perform arbitrary computations using TensorFlow, and can automatically distribute them on clusters.
+The missing component for ML is optimization: To be able to do any sort of training, we need to optimize for our weights.
+This is where the automatic differentiation and the `tf.train` library come in.
 
-#### Simple example
+Optimization is just another operation in a computational graph, albeit a fairly complex one.
+It is parameterized by the node whose value we want to optimize.
+When the resulting optimization operation is called, it automatically computes required gradients and uses them to update all variables.
+
+A simple example is the vanilla `tf.train.GradientDescentOptimizer`.
+We need to provide the learning rate using the first argument and define what we want to optimize for:
+
+```
+x = tf.Variable(3.)
+loss = tf.abs(2 + x)
+
+opt = tf.train.GradientDescentOptimizer(0.5).minimize(loss)
+
+sess = tf.Session()
+sess.run(tf.global_variables_initializer())
+sess.run([loss, opt, x]) # => [5., None, 2.5]
+```
+
+In the above example, we called the `opt` operation to optimize our variable `x`.
+While this operation has no return value, it changed the value of the variable as a side effect.
+This effectively corresponds to one step of gradient descent.
+To fully minimize the loss, we need to take more than one step:
+
+```
+x = tf.Variable(3.)
+loss = tf.abs(2 + x)
+
+opt = tf.train.GradientDescentOptimizer(1.).minimize(loss)
+
+sess = tf.Session()
+sess.run(tf.global_variables_initializer())
+
+for _ in range(7):
+  print(sess.run([loss, opt, x]))
+```
+
+This is a standard pattern in TensorFlow code: We iteratively optimize our weights by calling `sess.run` several times.
+The resulting output shows that we reached the optimal value for `x` after five iterations:
+
+```
+[5.0, None, 2.0]
+[4.0, None, 1.0]
+[3.0, None, 0.0]
+[2.0, None, -1.0]
+[1.0, None, -2.0]
+[0.0, None, -2.0]
+[0.0, None, -2.0]
+```
+
+The `tf.train` library contains many [other popular optimization algorithms](https://www.tensorflow.org/api_docs/python/tf/train).
 
 ### Matrix Factorization
+
+The code above is the minimal example for optimization in TensorFlow.
+Another easy, but a bit more interesting one, is matrix factorization.
+Given a matrix `C`, we want to find two matrices `A` and `B` with `A * B = C`.
+The common dimension of `A` and `B` is a hyperparameter, called `dims` below.
+
+One way of finding an approximate solution for the factorization task is gradient descent.
+TensorFlow makes this fairly easy:
+
+```
+def factorize(C_val, dims):
+  A = tf.Variable(tf.random_uniform([C_val.shape[0], dims], -1, 1))
+  B = tf.Variable(tf.random_uniform([dims, C_val.shape[1]], -1, 1))
+
+  C = tf.constant(C_val)
+  C_hat = tf.matmul(A, B)
+
+  loss = tf.losses.mean_squared_error(C, C_hat)
+  opt = tf.train.GradientDescentOptimizer(5.).minimize(loss)
+
+  sess = tf.Session()
+  sess.run(tf.global_variables_initializer())
+
+  A_val, B_val = None, None
+
+  for _ in range(100):
+    A_val, B_val, loss_val, _ = sess.run([A, B, loss, opt])
+
+  return A_val, B_val
+
+factorize(np.random.uniform(size=(10, 10)), dims=5)
+```
+
+The result is pretty cool.
+We can now factorize arbitrary matrices.
+When checking the loss, we can see that it works fairly well for most random matrices.
 
 ### Linear Regression
 
@@ -176,6 +286,8 @@ sess.run(output, feed_dict={ x: 4 }) # f(4) = 3 * 4 + 5 = 17
 #### Printing
 
 #### Global Graph
+
+#### Naming
 
 ### PyTorch
 
