@@ -1,1 +1,5 @@
-<li><span id="citation-{{ include.i }}">{{ include.acm }} <a href="#ref-{{ include.i }}" class="ref-backlink"></a></span></li>
+<li><span id="citation-{{ include.i }}">{{ include.acm }}
+		{% if include.pdf %} <a href="{{ include.pdf }}" class="pdf-link"></a> {% endif %}
+		<a href="#ref-{{ include.i }}" class="ref-backlink"></a>
+	</span>
+</li>
