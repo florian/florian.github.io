@@ -15,6 +15,15 @@ gem install jekyll jekyll-paginate
 - All references are in Harvard citation style
 - Book covers in the "What I read" posts are scaled to a width of 300px
 
+## Spell Checking
+
+After [aspell](http://aspell.net) was installed, all `_posts` and `_drafts` can be spell-checked automatically:
+
+```sh
+make spellcheck
+make s # as a shortcut
+```
+
 ## Custom Includes
 
 ### Images
