@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width initial-scale=1">
+
+  <title>Probabilistic Quantization</title>
+  <meta name="description" content="">
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://florian.github.io//probabilistic-quantization/">
+  <link rel="alternate" type="application/atom+xml" title="Florian Hartmann" href="https://florian.github.io//feed.xml" />
+</head>
+
+  <body>
+    <div class="wrapper">
+      <div class="page-content">
+        <div class="post">
+  <header class="post-header">
+      <a href=" /  " class="home-link">← Home</a>
+    <h1 class="post-title">Probabilistic Quantization</h1>
+    <p class="post-meta">February 25, 2018</p>
+  </header>
+
+  <article class="post-content">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+<p><a href="https://research.googleblog.com/2017/04/federated-learning-collaborative.html">Federated Learning</a>
+is an exciting new subarea of machine learning where the
+training process is distributed among many users <a href="#citation-1" id="ref-1" class="ref-link">[1]</a>
+. It is a form of collaborative
+machine learning with the constraint that the communication can be slow and
+unstable.</p>
+
+<p>This is easily worth its <a href="/federated-learning/">own post</a> but in a nutshell Federated
+Learning works like this: A central server maintains a machine learning model.
+Training data is only available locally on the users’ devices, so from time to
+time they get a copy of the model and improve it using their locally available
+data. The weight updates are sent back to the server where they are averaged
+and the model is updated. This process is then repeated from time to time.</p>
+
+<p>Federated Learning is an incredibly interesting topic because it allows users to
+keep their data private while a high-quality model can still be trained using
+it. There are, however, some challenges for making this work. One of them is
+that a naive approach leads to extremely high communication costs. Neural networks
+nowadays commonly have millions of parameters and sending updates for millions
+of weights from a mobile device to a server is not really desirable.</p>
+
+<h3 id="probabilistic-binarization">Probabilistic Binarization</h3>
+
+<p><em>Probabilistic binarization</em>, or <em>quantization</em> <a href="#citation-2" id="ref-2" class="ref-link">[2]</a>
+, is one solution to this problem. I found it to be
+very elegant, so I decided it would be worth writing a blog post about.
+Fundamentally, it removes a lot of information from individual updates which
+allows us to encode them using much fewer bits. Still, by taking into account
+the aggregated weight updates from a lot of users, not much information is lost.
+This concept reminds me a lot of <a href="/differential-privacy/">Differential Privacy</a>.</p>
+
+<p>To understand the idea, it is important to realize that only the average is
+important. If a weight update \(h\) is randomized to a compressed version \(h’\),
+then \(E[h’] = h\) needs to hold. In other words, the compressed estimate needs to
+be correct on average. This is called an <a href="/estimators/">unbiased estimator</a> in statistics.</p>
+
+<p>Having an unbiased estimator allows us to approximate the true weight update
+more closely and closely as more weight updates are sent. This is known as the <a href="https://en.wikipedia.org/wiki/Law_of_large_numbers">law of
+large numbers</a>.
+A binarization scheme that implements this idea looks as follows:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+h' = \begin{cases}
+		h_{\min} & \text{with probability } (h_{\max} - h) / (h_{\max} - h_{\min})  \\
+		h_{\max} & \text{with probability } (h - h_{\min}) / (h_{\max} - h_{\min})
+	\end{cases}
+    \label{eq:probailistic-binarization} %]]></script>
+
+<p>where \(h_{\min}\) and \(h_{\max}\) are the smallest and largest values of the weight update.</p>
+
+<p>The denominator in the formula is a normalization factor to make sure that all
+probabilities are between 0 and 1. The numerators compute the distances between
+\(h\) and the two bounds. The bound that is closer to \(h\) is chosen with a
+higher probability.</p>
+
+<table class="image">
+	<caption align="bottom" style="">A visualization of the probabilities in probabilistic binarization, assuming normalized distances</caption>
+	<tr><td><img src="/assets/posts/probabilistic-quantization/distances.png" alt="A visualization of the probabilities in probabilistic binarization, assuming normalized distances" width="400" /></td></tr>
+</table>
+
+<p>The visualization above shows how the probabilities relate to \(h_{\min}\) and \(h_{\max}\).</p>
+
+<h3 id="convergence">Convergence</h3>
+
+<p>By using this randomization technique, the estimates converge slowly to the true
+mean. I implemented some simulations to play with this. In the simulation shown below, 500
+users sent random updates sampled from a normal distribution centered around 0.4 with
+a standard deviation of 0.3. Each simulated user sent their true update and the
+randomized one. The plot shows the average after \(x\) reports arrived at the
+server.</p>
+
+<table class="image">
+	<caption align="bottom" style="">The average of compressed values stabilizes after around 200 users</caption>
+	<tr><td><img src="/assets/posts/probabilistic-quantization/law-of-large-numbers.png" alt="The average of compressed values stabilizes after around 200 users" width="400" /></td></tr>
+</table>
+
+<p>As shown, both mean estimates converge to 0.4. The randomized estimate has a slower convergence but it is worth noting that 500 users are not a lot when requiring data for machine learning. Still, the formal guarantee for convergence is a bit weaker since the training data of users is generally differently distributed.</p>
+
+<p>But all in all, this is a remarkable result: Just by querying some more users,
+we got the same information while each client needed to send much fewer bits.
+The compressed weight update \(h’\) can be encoded using one bit (1 for \(h_{\max}\), 0 for \(h_{\min}\))
+whereas the original update \(h\) was a 32- or 64-bit float. This is a
+huge compression factor.</p>
+
+<p>In Federated Learning, not all users are sampling updates from the same distribution.
+However, we can assume that some users are going to generate similar updates.
+By using the compression idea above, we can encode all updates with fewer bits and the hope is that the randomness averages out by querying enough users.</p>
+
+<h3 id="probabilistic-quantization">Probabilistic Quantization</h3>
+
+<p>The algorithm shown so far could be called <em>probabilistic binarization</em>.
+Quantization takes the idea one step further: Instead of sending one of two
+possible values, several values are possible. To encode an update \(h\), the
+probabilistic binarization scheme using the two closest values is applied.</p>
+
+<p>Of course, more bits are required to encode the possible values. The tradeoff is that convergence can be reached much more quickly and that the estimates for the
+largest and smallest possible values may be less accurate. The resulting estimator still computes unbiased estimates.</p>
+
+<p>Finally, it is worth noting that there are further improvements to this algorithm <a href="#citation-3" id="ref-3" class="ref-link">[3]</a>
+.
+By applying random rotations, the error when only a few users have sent their
+data can be reduced. Additionally, this method can be combined with other
+compression techniques for Federated Learning <a href="#citation-2" id="ref-2" class="ref-link">[2]</a>
+.</p>
+
+<h3 id="references">References</h3>
+
+<ol class="references-list">
+	
+	<li><span id="citation-1">McMahan, H.B., Moore, E., Ramage, D. and Hampson, S., 2016. Communication-efficient learning of deep networks from decentralized data.
+		
+		<a href="#ref-1" class="ref-backlink"></a>
+	</span>
+</li>
+
+	<li><span id="citation-2">Konečný, J., McMahan, H.B., Yu, F.X., Richtárik, P., Suresh, A.T. and Bacon, D., 2016. Federated learning: Strategies for improving communication efficiency.
+		
+		<a href="#ref-2" class="ref-backlink"></a>
+	</span>
+</li>
+
+	<li><span id="citation-3">Suresh, A.T., Yu, F.X., McMahan, H.B. and Kumar, S., 2016. Distributed mean estimation with limited communication.
+		
+		<a href="#ref-3" class="ref-backlink"></a>
+	</span>
+</li>
+
+
+</ol>
+
+<script src="https://unpkg.com/tippy.js@3/dist/tippy.all.min.js"></script>
+
+<script>
+var alreadySeenRefs = {};
+
+document.querySelectorAll(".ref-link").forEach(function (a) {
+  var id = a.getAttribute("id");
+  var citationPath = "#" + id.replace("ref", "citation");
+
+  tippy(a, {
+  	  content: document.querySelector(citationPath).textContent, placement: "bottom",
+  	  arrow: true
+  })
+
+  if (id in alreadySeenRefs) return;
+
+  var p = a.closest("p");
+  var currentId = p.getAttribute("id");
+
+  if (currentId == null) {
+    p.setAttribute("id", id)
+  } else {
+    document.querySelector(citationPath + " a.ref-backlink").setAttribute("href", "#" + currentId)
+  }
+
+  alreadySeenRefs[id] = true;
+  a.removeAttribute("id")
+})
+</script>
+
+
+  </article>
+
+  
+  <hr>
+
+  <div class="related">
+    <h2>Other Posts</h2>
+    
+      <li><a href="/federated-learning-firefox.md/" title="Federated Learning for Firefox">Federated Learning for Firefox
+       &nbsp; <span class="post-meta">August 27, 2018</span></a>
+    
+      <li><a href="/federated-learning-firefox/" title="Federated Learning for Firefox">Federated Learning for Firefox
+       &nbsp; <span class="post-meta">August 27, 2018</span></a>
+    
+      <li><a href="/estimators/" title="Estimation Theory and Machine Learning">Estimation Theory and Machine Learning
+       &nbsp; <span class="post-meta">July 17, 2018</span></a>
+    
+  </div>
+  
+</div>
+
+<script>
+var anchorForId = function (id) {
+  var anchor = document.createElement("a");
+  anchor.className = "header-link";
+  anchor.href      = "#" + id;
+  anchor.innerHTML = "<i class=\"fas fa-link\"></i>";
+  return anchor;
+};
+
+var linkifyAnchors = function (level, containingElement) {
+  var headers = containingElement.getElementsByTagName("h" + level);
+  for (var h = 0; h < headers.length; h++) {
+    var header = headers[h];
+
+    if (typeof header.id !== "undefined" && header.id !== "") {
+      header.appendChild(anchorForId(header.id));
+    }
+  }
+};
+
+document.onreadystatechange = function () {
+  if (this.readyState === "complete") {
+    linkifyAnchors(3, document.body);
+    linkifyAnchors(4, document.body);
+    linkifyAnchors(5, document.body);
+    linkifyAnchors(6, document.body);
+  }
+};
+</script>
+
+      </div>
+    </div>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124645768-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-124645768-1');
+</script>
+
+  </body>
+</html>
