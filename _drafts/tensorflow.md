@@ -38,11 +38,11 @@ Tensors are *n*-dimensional arrays that represent all data in TensorFlow.
 Similarly to how we can go from scalars to vectors, and from vectors to matrices, we can create differently structured data by adding more dimensions.
 This, for example, allows us to represent RGB images.
 If there are three channels (red, green, blue) and the image has a width of `w` and a height of `h`, then we want to store the image as a `w × h × 3` tensor.
-It is similar to a `w × h` matrix, except that each pixel has three values associated with it.
+This is similar to a `w × h` matrix, except that each pixel has three values associated with it.
 
 Conceptually, tensors are nearly equivalent to NumPy's `np.array` function.
 This is really just a helper function for creating `np.ndarray`s, which are *n*-dimensional arrays.
-Even though the term tensor is not as used much in NumPy documents, NumPy users will already be familiar with the idea of tensors.
+Even though the term tensor is not used as much in NumPy documents, NumPy users will already be familiar with the idea of tensors.
 
 To understand the terminology used around tensors in ML, it is useful to know the following two terms:
 - The *shape* of a tensor is an array detailing the number of values in each dimension. In the case of the image described above, the shape would be `[w, h, 3]`
@@ -63,7 +63,7 @@ Using TensorFlow is generally a two-step process:
 1. Construct a graph that represents a function we want to compute
 2. Execute the graph in a given environment
 
-The TensorFlow library has implemented most low-level functions one might want to use.
+The core TensorFlow library has implemented most low-level functions one might want to use.
 This naturally includes common linear algebra functions, like matrix multiplication.
 Python operators like `+` or `*` are overloaded to use internal TensorFlow operations if necessary.
 This means if you have two tensors `a` and `b`, calling `a + b` or `a * 3` will automatically use the appropriate TensorFlow operations `tf.add` and `tf.multiply`.
@@ -98,14 +98,14 @@ In the last line, TensorFlow implicitly creates a constant node, holding the val
 #### Placeholders
 
 *Placeholders* are similar to constants in the sense that they always have a constant value during the execution of a graph.
-However, the value is only determined before the graph is executed.
+However, the value is only determined just before the graph is executed.
 It does not have to be known when the graph is constructed.
-If we think of our graph as one huge function that we are computing, then placeholders represent the inputs to that function, while constants are just values used inside of it.
+If we think of our graph as one huge function that we are computing, then placeholders represent the inputs to that function, while constants are just values encapsulated inside the function.
 
-In ML, we typically represent our feature tensor `X` and the label vector `y` as placeholders in the graph.
-Values for them are only passed in when the training starts, i.e. the graph is executed.
+In ML, we typically represent our training data, e.g. a feature tensor `X` and a label vector `y`, using placeholders.
+Values for them are only passed in when the training starts, i.e. when the graph is executed.
 
-To create a placeholder, we use `tf.placeholder` and pass in the type of data that it will hold.
+To create a placeholder, we use `tf.placeholder` and declare the type of data that it will hold.
 Optionally, the shape of the data can be fixed as well.
 
 ```
@@ -117,11 +117,11 @@ y = tf.placeholder(tf.float32, shape=[128, 10])
 
 Finally, *variables* represent values that can change during the execution of the graph.
 This is typically because we want to optimize them.
-Thus, all weights are typically represented using variables.
+Thus, all weights are generally represented using variables.
 
 This in contrast to our input data.
 We typically do not want to optimize the inputs to the model, so they are just represented using placeholders.
-If placeholders are the input to our function, or model, then variables are parameters of the function that we want to choose as well as possible.
+If placeholders are the input to our function, or model, then variables are parameters of the function that we want to select as well as possible.
 
 To create a new variable, we use `tf.Variable` and pass in a default value.
 This could be any NumPy array, but in this case we directly create a random tensor of shape `[128, 50]`:
@@ -131,8 +131,8 @@ W = tf.Variable(tf.random_uniform([128, 50], -1, 1))
 ```
 
 It is worth noting that variables maintain state during separate executions of the graph.
-We describe the graph in a declarative style but it actually is stateful.
-This makes sense for ML: We iteratively want to improve our weights, variables in this case, step by step.
+We describe the graph in a declarative style but it contains state, in the form of variables.
+This makes sense for ML: We iteratively want to improve our weights, variables here, step by step.
 
 ### Executing a Graph
 
