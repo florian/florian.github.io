@@ -253,8 +253,9 @@ article table:not(.image) {
  * http://ben.balter.com/2014/03/13/pages-anchor-links/
  */
 
-h3 {
- position: relative
+h2, h3, h4, h5, h6 {
+ position: relative;
+ //border: 1px solid;
 }
 
 a.header-link {
@@ -266,6 +267,7 @@ a.header-link {
   padding-top: 22px;
   padding-bottom: 20px;
   opacity: 0;
+  //border: 1px solid;
   font-size: 0.8em;
   -webkit-transition: opacity 0.2s ease-in-out 0.1s;
   -moz-transition: opacity 0.2s ease-in-out 0.1s;
@@ -276,6 +278,11 @@ a.header-link {
   &:hover {
    color: #222;
   }
+}
+
+h4 a.header-link {
+ padding-top: 18px;
+ padding-bottom: 3px;
 }
 
 h2:hover .header-link,
