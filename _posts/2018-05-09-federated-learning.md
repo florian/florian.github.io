@@ -8,7 +8,7 @@ categories: machine-learning, federated-learning
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
-<span id="ref-1"></span>In the past few years, machine learning has led to major breakthroughs in various areas, such as natural language processing, computer vision and speech recognition {% include ref.html i=1 %}.
+In the past few years, machine learning has led to major breakthroughs in various areas, such as natural language processing, computer vision and speech recognition {% include ref.html i=1 %}.
 Much of this success has been based on collecting huge amounts of data. For example, one of Facebook's latest [Detectron](https://github.com/facebookresearch/Detectron) models for object detection was trained on [3.5 billion images](https://code.facebook.com/posts/1700437286678763/advancing-state-of-the-art-image-recognition-with-deep-learning-on-hashtags/) from Instagram.
 
 For some applications of machine learning, this need of collecting data can be incredibly privacy-invasive.
