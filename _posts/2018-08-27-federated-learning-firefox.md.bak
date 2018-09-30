@@ -235,7 +235,7 @@ It is a well-designed system with clear rules about what can be collected.
 There is a lot of infrastructure around using it and dealing with the data on the server.
 
 All messages sent by clients are stored in a [Parquet](https://parquet.apache.org/) data store.
- A [Spark](https://spark.apache.org/) MapReduce job reads the new updates and averages them in real-time.
+ A [Spark](https://spark.apache.org/) MapReduce job reads the new updates and averages them in realtime.
 Every 30 minutes, the average update is then given to an optimizer and applied to the model.
 The resulting model is published to S3 and fetched by clients.
 

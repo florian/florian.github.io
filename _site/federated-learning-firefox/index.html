@@ -256,7 +256,7 @@ It is a well-designed system with clear rules about what can be collected.
 There is a lot of infrastructure around using it and dealing with the data on the server.</p>
 
 <p>All messages sent by clients are stored in a <a href="https://parquet.apache.org/">Parquet</a> data store.
- A <a href="https://spark.apache.org/">Spark</a> MapReduce job reads the new updates and averages them in realtime.
+ A <a href="https://spark.apache.org/">Spark</a> MapReduce job reads the new updates and averages them in real-time.
 Every 30 minutes, the average update is then given to an optimizer and applied to the model.
 The resulting model is published to S3 and fetched by clients.</p>
 
@@ -513,14 +513,14 @@ Based on user interactions with Firefox, our system could really optimize anythi
   <div class="related">
     <h2>Other Posts</h2>
     
+      <li><a href="/federated-learning-firefox.md/" title="Federated Learning for Firefox">Federated Learning for Firefox
+       &nbsp; <span class="post-meta">August 27, 2018</span></a>
+    
       <li><a href="/estimators/" title="Estimation Theory and Machine Learning">Estimation Theory and Machine Learning
        &nbsp; <span class="post-meta">July 17, 2018</span></a>
     
       <li><a href="/federated-learning/" title="Federated Learning">Federated Learning
        &nbsp; <span class="post-meta">May 09, 2018</span></a>
-    
-      <li><a href="/rprop/" title="RProp">RProp
-       &nbsp; <span class="post-meta">April 08, 2018</span></a>
     
   </div>
   
@@ -549,6 +549,9 @@ var linkifyAnchors = function (level, containingElement) {
 document.onreadystatechange = function () {
   if (this.readyState === "complete") {
     linkifyAnchors(3, document.body);
+    linkifyAnchors(4, document.body);
+    linkifyAnchors(5, document.body);
+    linkifyAnchors(6, document.body);
   }
 };
 </script>

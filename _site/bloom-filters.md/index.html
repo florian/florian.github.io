@@ -1,12 +1,31 @@
----
-layout: post
-title:  "Bloom Filters"
-date:   2017-09-03 19:36:20
-description: "A probabilistic data structure for sets"
-categories: probabilistic-data-structures
----
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width initial-scale=1">
 
-<!-- http://jsbin.com/bocovofixo/edit?html,css,js,output -->
+  <title>Bloom Filters</title>
+  <meta name="description" content="Probabilistic data structures are great. They allow us to be more efficient interms of time or space at the cost of only returning an approximate result.Bloo...">
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://florian.github.io//bloom-filters.md/">
+  <link rel="alternate" type="application/atom+xml" title="Florian Hartmann" href="https://florian.github.io//feed.xml" />
+</head>
+
+  <body>
+    <div class="wrapper">
+      <div class="page-content">
+        <div class="post">
+  <header class="post-header">
+      <a href=" /  " class="home-link">← Home</a>
+    <h1 class="post-title">Bloom Filters</h1>
+    <p class="post-meta">September 3, 2017</p>
+  </header>
+
+  <article class="post-content">
+    <!-- http://jsbin.com/bocovofixo/edit?html,css,js,output -->
 
 Probabilistic data structures are great. They allow us to be more efficient in
 terms of time or space at the cost of only returning an approximate result.
@@ -71,7 +90,7 @@ low.
 Let's take a moment to reflect on this solution. Under the assumption that we
 choose the array size to be large enough and that some false positives are
 acceptable, we have a very fast way of testing for set membership.
-Conceptually, this solution is also pretty simple. We can think of it as a
+Conceptionally, this solution is also pretty simple. We can think of it as a
 HashSet that ignores the possibility of collisions. Because we only store a bit
 array, Bloom filters are also quite space-efficient, especially when compared to
 methods that store the original values, like HashSets.
@@ -198,12 +217,12 @@ element. We generally want to avoid false negatives with Bloom filters, so this
 is not an acceptable solution.
 
 One possible solution is introducing a second Bloom filter that keeps track of
-the removed values. This only works if values cannot be re-added. Still, this is
+the removed values. This only works if values cannot be readded. Still, this is
 not a satisfying solution since false positives in this second Bloom filter
 become false negatives in the first Bloom filter.
 
 *Counting Bloom Filters* are a more sophisticated alternative. Instead of just
-using bits as Boolean indicators, enough bits to keep a count at each index are
+using bits as boolean indicators, enough bits to keep a count at each index are
 used. Then, instead of setting a bit, the count at the respective position is
 increased by 1. For removing an element, the counter is decreased by 1. This
 works well as long as an element is not added more than once before removing it.
@@ -651,3 +670,67 @@ ReactDOM.render(React.createElement(BloomFilterVisualization, { bits: 32, hash_f
 ReactDOM.render(React.createElement(BloomFilterVisualization, { bits: 32, hash_functions: 3 }), document.getElementById("bloom-normal"));
 ReactDOM.render(React.createElement(BloomFilterVisualization, { bits: 32, hash_functions: 3, counting: true }), document.getElementById("bloom-counting"));
 </script>
+
+  </article>
+
+  
+  <hr>
+
+  <div class="related">
+    <h2>Other Posts</h2>
+    
+      <li><a href="/federated-learning-firefox.md/" title="Federated Learning for Firefox">Federated Learning for Firefox
+       &nbsp; <span class="post-meta">August 27, 2018</span></a>
+    
+      <li><a href="/federated-learning-firefox/" title="Federated Learning for Firefox">Federated Learning for Firefox
+       &nbsp; <span class="post-meta">August 27, 2018</span></a>
+    
+      <li><a href="/estimators/" title="Estimation Theory and Machine Learning">Estimation Theory and Machine Learning
+       &nbsp; <span class="post-meta">July 17, 2018</span></a>
+    
+  </div>
+  
+</div>
+
+<script>
+var anchorForId = function (id) {
+  var anchor = document.createElement("a");
+  anchor.className = "header-link";
+  anchor.href      = "#" + id;
+  anchor.innerHTML = "<i class=\"fas fa-link\"></i>";
+  return anchor;
+};
+
+var linkifyAnchors = function (level, containingElement) {
+  var headers = containingElement.getElementsByTagName("h" + level);
+  for (var h = 0; h < headers.length; h++) {
+    var header = headers[h];
+
+    if (typeof header.id !== "undefined" && header.id !== "") {
+      header.appendChild(anchorForId(header.id));
+    }
+  }
+};
+
+document.onreadystatechange = function () {
+  if (this.readyState === "complete") {
+    linkifyAnchors(3, document.body);
+    linkifyAnchors(4, document.body);
+    linkifyAnchors(5, document.body);
+    linkifyAnchors(6, document.body);
+  }
+};
+</script>
+
+      </div>
+    </div>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124645768-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-124645768-1');
+</script>
+
+  </body>
+</html>

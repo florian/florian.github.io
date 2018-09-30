@@ -90,7 +90,7 @@ low.</p>
 <p>Let’s take a moment to reflect on this solution. Under the assumption that we
 choose the array size to be large enough and that some false positives are
 acceptable, we have a very fast way of testing for set membership.
-Conceptionally, this solution is also pretty simple. We can think of it as a
+Conceptually, this solution is also pretty simple. We can think of it as a
 HashSet that ignores the possibility of collisions. Because we only store a bit
 array, Bloom filters are also quite space-efficient, especially when compared to
 methods that store the original values, like HashSets.</p>
@@ -215,12 +215,12 @@ element. We generally want to avoid false negatives with Bloom filters, so this
 is not an acceptable solution.</p>
 
 <p>One possible solution is introducing a second Bloom filter that keeps track of
-the removed values. This only works if values cannot be readded. Still, this is
+the removed values. This only works if values cannot be re-added. Still, this is
 not a satisfying solution since false positives in this second Bloom filter
 become false negatives in the first Bloom filter.</p>
 
 <p><em>Counting Bloom Filters</em> are a more sophisticated alternative. Instead of just
-using bits as boolean indicators, enough bits to keep a count at each index are
+using bits as Boolean indicators, enough bits to keep a count at each index are
 used. Then, instead of setting a bit, the count at the respective position is
 increased by 1. For removing an element, the counter is decreased by 1. This
 works well as long as an element is not added more than once before removing it.</p>
@@ -682,14 +682,14 @@ ReactDOM.render(React.createElement(BloomFilterVisualization, { bits: 32, hash_f
   <div class="related">
     <h2>Other Posts</h2>
     
+      <li><a href="/federated-learning-firefox.md/" title="Federated Learning for Firefox">Federated Learning for Firefox
+       &nbsp; <span class="post-meta">August 27, 2018</span></a>
+    
       <li><a href="/federated-learning-firefox/" title="Federated Learning for Firefox">Federated Learning for Firefox
        &nbsp; <span class="post-meta">August 27, 2018</span></a>
     
       <li><a href="/estimators/" title="Estimation Theory and Machine Learning">Estimation Theory and Machine Learning
        &nbsp; <span class="post-meta">July 17, 2018</span></a>
-    
-      <li><a href="/federated-learning/" title="Federated Learning">Federated Learning
-       &nbsp; <span class="post-meta">May 09, 2018</span></a>
     
   </div>
   
@@ -718,6 +718,9 @@ var linkifyAnchors = function (level, containingElement) {
 document.onreadystatechange = function () {
   if (this.readyState === "complete") {
     linkifyAnchors(3, document.body);
+    linkifyAnchors(4, document.body);
+    linkifyAnchors(5, document.body);
+    linkifyAnchors(6, document.body);
   }
 };
 </script>

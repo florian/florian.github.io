@@ -71,7 +71,7 @@ low.
 Let's take a moment to reflect on this solution. Under the assumption that we
 choose the array size to be large enough and that some false positives are
 acceptable, we have a very fast way of testing for set membership.
-Conceptually, this solution is also pretty simple. We can think of it as a
+Conceptionally, this solution is also pretty simple. We can think of it as a
 HashSet that ignores the possibility of collisions. Because we only store a bit
 array, Bloom filters are also quite space-efficient, especially when compared to
 methods that store the original values, like HashSets.
@@ -198,12 +198,12 @@ element. We generally want to avoid false negatives with Bloom filters, so this
 is not an acceptable solution.
 
 One possible solution is introducing a second Bloom filter that keeps track of
-the removed values. This only works if values cannot be re-added. Still, this is
+the removed values. This only works if values cannot be readded. Still, this is
 not a satisfying solution since false positives in this second Bloom filter
 become false negatives in the first Bloom filter.
 
 *Counting Bloom Filters* are a more sophisticated alternative. Instead of just
-using bits as Boolean indicators, enough bits to keep a count at each index are
+using bits as boolean indicators, enough bits to keep a count at each index are
 used. Then, instead of setting a bit, the count at the respective position is
 increased by 1. For removing an element, the counter is decreased by 1. This
 works well as long as an element is not added more than once before removing it.
