@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "TensorFlow"
-date:   2018-09-01 14:00:00
+date:   2019-09-01 14:00:00
 description: "A bottom-up guide to computational graphs and tensors"
 categories: machine-learning
 ---
@@ -303,7 +303,7 @@ Learning about this turned out to be a lot of fun and also made me understand so
 Reading notes
 
 {% capture refs %}
-	{% include cite.html i=1 acm="Abadi, Martín, et al. \"TensorFlow: Large-scale machine learning on heterogeneous distributed systems.\" Preliminary White Paper 2015" pdf="https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/45166.pdf" %}
-	{% include cite.html i=2 acm="Abadi, Martín, et al. \"TensorFlow: a system for large-scale machine learning.\" OSDI. Vol. 16. 2016." pdf="https://www.usenix.org/system/files/conference/osdi16/osdi16-abadi.pdf" %}
+	{% include cite.html i=1 acm="Abadi, Martín, et al. \"TensorFlow: Large-scale machine learning on heterogeneous distributed systems.\" Preliminary White Paper 2015" pdf="https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/45166.pdf" notes="papers/007_TensorFlow_Large-Scale_Machine_Learning_on_Heterogeneous_Distributed_Systems.md" %}
+	{% include cite.html i=2 acm="Abadi, Martín, et al. \"TensorFlow: a system for large-scale machine learning.\" OSDI. Vol. 16. 2016." pdf="https://www.usenix.org/system/files/conference/osdi16/osdi16-abadi.pdf" notes="papers/006_TensorFlow_A_system_for_large-scale_machine_learning.md" %}
 {% endcapture refs %}
 {% include references-list.html content=refs %}
