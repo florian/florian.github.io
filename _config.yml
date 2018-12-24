@@ -14,7 +14,7 @@ highlighter: rouge
 plugins: [jekyll-paginate]
 
 # Pagination
-paginate: 10
+paginate: 100
 paginate_path: "blog/page/:num/"
 
 # Minification
