@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Count-Min Sketch"
-date:   2018-11-29 19:36:20
+date:   2019-04-01 19:36:20
 description: "A probabilistic data structure for data stream summaries"
 categories: probabilistic-data-structures
 ---
