@@ -198,7 +198,10 @@ The data structure is designed in a way that allows freely trading off accuracy 
 
 .cms table {
   border-collapse: collapse;
+}
 
+.cms tr {
+  line-height: 0;
 }
 
 .cms td {
@@ -206,13 +209,14 @@ The data structure is designed in a way that allows freely trading off accuracy 
   border-bottom: 0;
   border-right: 0;
   display: inline-block;
-  padding: 6px 0px;
+  padding: 7px 0px;
   font-family: monospace;
   font-size: 15px;
   color: #222;
   width: 39px;
   text-align: center;
   overflow: hidden;
+  line-height: 22px;
 }
 
 .cms tr:last-child td {
@@ -468,16 +472,12 @@ function (_React$Component) {
       if (cell >= 1000) {
         style = {
           fontSize: "13px",
-          paddingTop: "8px",
-          paddingBottom: "7px"
         };
       }
 
       if (cell >= 10000) {
         style = {
-          fontSize: "11px",
-          paddingTop: "11px",
-          paddingBottom: "8px"
+          fontSize: "12px",
         };
       }
 
