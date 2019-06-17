@@ -451,7 +451,7 @@ function (_React$Component) {
     value: function render() {
       return React.createElement("div", {
         className: "cms"
-      }, React.createElement("h3", null, "Live Demo: Count-Min Sketch (w=", this.props.w, ", d=", this.props.d, ")"), React.createElement("table", null, React.createElement("tbody", null, this.state.matrix.map(this.renderRow.bind(this)))), this.renderForm(), this.renderResult());
+      }, React.createElement("h3", null, "Live Demo: Count-Min Sketch (w = ", this.props.w, ", d = ", this.props.d, ")"), React.createElement("table", null, React.createElement("tbody", null, this.state.matrix.map(this.renderRow.bind(this)))), this.renderForm(), this.renderResult());
     }
   }, {
     key: "renderRow",
@@ -468,7 +468,7 @@ function (_React$Component) {
       if (cell >= 1000) {
         style = {
           fontSize: "13px",
-          paddingTop: "7px",
+          paddingTop: "8px",
           paddingBottom: "7px"
         };
       }
@@ -476,7 +476,7 @@ function (_React$Component) {
       if (cell >= 10000) {
         style = {
           fontSize: "11px",
-          paddingTop: "8px",
+          paddingTop: "11px",
           paddingBottom: "8px"
         };
       }
