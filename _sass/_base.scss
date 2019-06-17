@@ -461,6 +461,10 @@ span.arrow {
 
 .image {
     margin: 0 auto;
+
+    &.nocaption img {
+      padding: 30px 0;
+    }
 }
 
 caption {
