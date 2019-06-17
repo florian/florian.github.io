@@ -6,7 +6,8 @@ description: "A probabilistic data structure for sets"
 categories: probabilistic-data-structures
 ---
 
-<!-- http://jsbin.com/bocovofixo/edit?html,css,js,output -->
+{% comment %} http://jsbin.com/bocovofixo/edit?html,css,js,output {% endcomment %}
+
 
 Probabilistic data structures are great. They allow us to be more efficient in
 terms of time or space at the cost of only returning an approximate result.
