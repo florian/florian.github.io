@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Count-Min Sketch"
-date:   2019-06-17 19:36:20
+date:   2019-06-17 18:36:20
 description: "A probabilistic data structure for data stream summaries"
 categories: probabilistic-data-structures
 ---
@@ -451,7 +451,7 @@ function (_React$Component) {
     value: function render() {
       return React.createElement("div", {
         className: "cms"
-      }, React.createElement("h2", null, "Live Demo: Count-Min Sketch (w=", this.props.w, ", d=", this.props.d, ")"), React.createElement("table", null, React.createElement("tbody", null, this.state.matrix.map(this.renderRow.bind(this)))), this.renderForm(), this.renderResult());
+      }, React.createElement("h3", null, "Live Demo: Count-Min Sketch (w=", this.props.w, ", d=", this.props.d, ")"), React.createElement("table", null, React.createElement("tbody", null, this.state.matrix.map(this.renderRow.bind(this)))), this.renderForm(), this.renderResult());
     }
   }, {
     key: "renderRow",
