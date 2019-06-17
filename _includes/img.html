@@ -1,4 +1,8 @@
+{% if include.description %}
 <table class="image">
 	<caption align="bottom" style="{{ include.style | default: "" }}">{{ include.description  }}</caption>
-	<tr><td><img src="{{ site.baseurl }}/assets/posts/{{ page.slug }}/{{ include.url  }}" alt="{{ include.description }}" width="{{ include.width | default: "" }}"/></td></tr>
+{% else %}
+<table class="image nocaption">
+{% endif %}
+<tr><td><img src="{{ site.baseurl }}/assets/posts/{{ page.slug }}/{{ include.url  }}" alt="{{ include.description }}" width="{{ include.width | default: "" }}" style="{{ include.style }}"/></td></tr>
 </table>
