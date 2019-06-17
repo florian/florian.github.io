@@ -12,7 +12,7 @@ gem install jekyll jekyll-paginate
 
 ## Conventions
 
-- All references are in Harvard citation style
+- All references are in ACM format
 - Book covers in the "What I read" posts are scaled to a width of 300px
 
 ## Spell Checking
@@ -48,16 +48,16 @@ The [Federated Learning](https://florian.github.io/federated-learning/#reference
 #### Adding a citation
 
 ```
-{% include cite.html i=1 h="LeCun, Y., Bengio, Y. and Hinton, G., 2015. Deep learning. nature, 521(7553), p.436." %}
+{% include cite.html i=1 acm="LeCun, Y., Bengio, Y. and Hinton, G., 2015. Deep learning. nature, 521(7553), p.436." %}
 ```
 
-The format has to be in the Harvard (`h`) citation style, as mentioned earlier.
+The format has to be in the ACM (`acm`) citation style, as mentioned earlier.
 The attribute `i` is the identifier for the citation and is used by the `ref` command to link to a citation.
 It usually is a number, but does not have to be in theory.
 
 It is possible to add more meta data to the citation, such as a PDF link:
 ```
-{% include cite.html i=1 h="TensorFlow: …" pdf="https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/45166.pdf" %}
+{% include cite.html i=1 acm="TensorFlow: …" pdf="https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/45166.pdf" %}
 ```
 
 #### Referring to a citation
