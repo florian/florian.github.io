@@ -6,7 +6,7 @@ description: "A probabilistic data structure for data stream summaries"
 categories: probabilistic-data-structures
 ---
 
-{% comment %} https://jsbin.com/keqalaxoda/edit?js,output {% endcomment %}
+{% comment %} https://jsbin.com/nisocenenu/1/edit?html,css,js,output {% endcomment %}
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
@@ -127,7 +127,7 @@ In other words, we initially do not need to know the keys we are actually intere
 #### Database Query Planning
 
 Database engines plan how they execute queries.
-How quickly a query is performed can heavily depend on the execution strategy, so is a crucial area of optimization.
+How quickly a query is performed can heavily depend on the execution strategy, so it is a crucial area of optimization.
 For example, this is especially important when determining the order in which several joins are performed, a task known as *join order optimization*.
 
 Part of finding good execution strategies is estimating the table sizes yielded by certain subqueries.
@@ -148,7 +148,7 @@ We can then query these sketches to estimate how many rows the result will have.
 
 Building up full hash tables for this task would require a huge amount of space.
 Using a sketch data structure is much more feasible, especially since the SQL tables in the join could potentially be very big.
-Furthermore, an approximate result is generally good enough for planing.
+Furthermore, an approximate result is generally good enough for planning.
 
 #### Finding Heavy Hitters
 
