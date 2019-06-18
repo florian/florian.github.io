@@ -4,5 +4,5 @@
 {% else %}
 <table class="image nocaption">
 {% endif %}
-<tr><td><img src="{{ site.baseurl }}/assets/posts/{{ page.slug }}/{{ include.url  }}" alt="{{ include.description }}" width="{{ include.width | default: "" }}" style="{{ include.style }}"/></td></tr>
+<tr><td><img src="{{ site.baseurl }}/assets/posts/{{ page.slug }}/{{ include.url  }}" alt="{{ include.description }}" width="{{ include.width | default: "" }}" style="{{ include.style }}" class="{{ include.class }}"/></td></tr>
 </table>

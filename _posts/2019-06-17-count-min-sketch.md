@@ -10,6 +10,24 @@ categories: probabilistic-data-structures
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
+<style>
+.matrix-left-aligned {
+  position: relative;
+}
+
+@media(min-width: 675px) {
+  .matrix-left-aligned {
+    left: -32px;
+  }
+}
+
+@media(min-width: 800px) {
+  .matrix-left-aligned {
+    left: -72px;
+  }
+}
+</style>
+
 Let's say we want to count the number of times elements appear in a stream of data.
 A simple solution is to maintain a hash table that maps elements to their frequencies.
 
@@ -74,7 +92,7 @@ Instead of trying to reason about how these hash functions influence each other,
 To this end, we use a matrix of size \\(w \times d\\).
 Rather than working on an array of length \\( w \\), we add another dimension based on the number of hash functions.
 
-{% include img.html url="matrix.png" width="613" style="position:relative;left:-72px" %}
+{% include img.html url="matrix.png" width="613" class="matrix-left-aligned" %}
 
 Next, we change our update logic so that each function operates on its on row.
 This way, hash functions cannot conflict with another anymore.
