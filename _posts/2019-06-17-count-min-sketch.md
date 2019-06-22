@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Count-Min Sketch"
-date:   2019-06-17 18:36:20
+date:   2019-06-29 05:36:20
 description: "A probabilistic data structure for data stream summaries"
 categories: probabilistic-data-structures
 ---
@@ -124,7 +124,7 @@ Additionally, let \\( \|\|\operatorname{count}\|\|_1 \\) be the sum of all count
 The central guarantee CMS provides is then the following:
 
 **Theorem**: With a probability of \\( 1 - \delta \\), the error is at most \\( \epsilon * \|\|\operatorname{count}\|\|_1 \\).
-Concrete values for these error bounds \\( \epsilon \\) and \\( \delta \\) can be freely chosen by setting \\( w = \lceil e / \epsilon \rceil \\) and \\( d = \lceil \ln 1 / \delta \rceil \\).
+Concrete values for these error bounds \\( \epsilon \\) and \\( \delta \\) can be freely chosen by setting \\( w = \lceil e / \epsilon \rceil \\) and \\( d = \lceil \ln(1 / \delta)\rceil \\).
 
 The full proof of this result is given in original CMS paper {% include ref.html i=1 %}.
 Adding another hash function quickly reduces the probability of bad errors which are outside the bound.
