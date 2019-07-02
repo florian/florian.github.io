@@ -174,7 +174,7 @@ A common task in many analytics application is finding *heavy hitters*, elements
 For example, given a huge log of website visits, we might want to determine the most popular pages and how often they were visited.
 Again, building up a full hash table could scale badly if there is a [long tail](https://en.wikipedia.org/wiki/Long_tail) of unpopular pages that have few visits.
 
-To solve the problem with CMS, we simply iterate through the log once and build up the sketch.
+To solve the problem with CMS, we simply iterate through the log once and build up the sketch {% include ref.html i=2 %}.
 To query the sketch, we need to come up with candidate keys to check for.
 If we do not have an existing candidate set, we can simple go through the log again and look up each page in the CMS, remembering the most important ones.
 
@@ -192,6 +192,7 @@ The data structure is designed in a way that allows freely trading off accuracy 
 
 {% capture refs %}
 	{% include cite.html i=1 acm="Graham Cormode and S. Muthukrishnan. 2005. An improved data stream summary: the count-min sketch and its applications. Journal of Algorithms 55, 1 (2005), 58–75" pdf="https://www.cse.unsw.edu.au/~cs9314/07s1/lectures/Lin_CS9314_References/cm-latin.pdf" notes="papers/015_An_Improved_Data_Stream_Summary_The_Count-Min_Sketch_and_its_Applications.md" %}
+	{% include cite.html i=2 acm="Cormode, G. (2017). What is Data Sketching, and Why Should I Care?. Communications of the ACM (CACM), 60(9), 48-55." pdf="https://pdfs.semanticscholar.org/548a/1a53896474c314ea33b9c1f96ecec8ed3b10.pdf" notes="papers/016_What_is_Data_Sketching_and_Why_Should_I_Care.md" %}
 {% endcapture refs %}
 {% include references-list.html content=refs %}
 
