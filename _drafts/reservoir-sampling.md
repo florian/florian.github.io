@@ -1,16 +1,15 @@
 ---
 layout: post
 title:  "Reservoir Sampling"
-date:   2019-06-01 00:00:01
+date:   2019-11-01 00:00:01
 description: "Sampling from streams"
 categories: probabilistic-data-structures
 ---
 
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
 One of my absolute favorite algorithms is part of a group of techniques with the name *reservoir sampling*.
-The algorithm is neither complex nor does it require fancy math but still very elegantly solves its problem.
+I like how the algorithm is neither complex nor requires fancy math but still very elegantly solves its problem.
 Incidentally, it also happens to be the solution to a popular interview question.
 
 The problem goes like this: Given a stream of elements, we want to sample \\(k\\) random ones without replacement using uniform probabilities.
@@ -24,20 +23,20 @@ If we do not know how to solve the problem, we could try to reduce it to one tha
 To this end, we could store all elements of the stream in an array.
 The problem then reduces down to sampling \\(k\\) random indices, whose respective elements are returned.
 
-Clearly this method does not scale.
+Clearly, this method does not scale.
 The stream might contain billions of elements and we do not want to, and often cannot, keep all of them in memory.
-Another annoyance is that the solution requires two distinct loops.
+Another annoyance is that the solution requires two distinct steps.
 First we build up an array of all elements, then we try to select random ones.
-When working with streams, we generally just want to perform one iteration.
+This does not seem like a natural solution to such a streaming problem.
 
 ### Random Tags
 
 #### Sorting
 
 Still, let's keep going with this idea for a moment.
-If we already store all elements of the stream, we could just as well sort them randomly.
+If we are already storing all elements of the stream, we could just as well sort them randomly.
 To do this, we assign a *random tag* to each element, a random number between 0 and 1.
-We then sort by the random tag and keep the \\(k\\) smallest elements.
+We then sort by the random tag and keep the \\(k\\) smallest items.
 
 Of course, this does not scale any better.
 It also does not improve on the space requirement at all.
@@ -47,7 +46,7 @@ We essentially still duplicate the stream to be able to sort it.
 
 However, there is an obvious bottleneck to the solution above.
 We are sorting the entire stream, even though we in fact only care about \\(k\\) elements.
-In a lot of cases, \\(k\\) will be much smaller than total number of elements in the stream, so we are performing a lot of unnecessary work.
+In a lot of cases, \\(k\\) will be much smaller than the total number of elements in the stream, so we are performing a lot of unnecessary work.
 
 To improve on this, let's think about the case of \\(k = 1\\).
 If we only care about one random element, then we should only keep track of the element with the smallest tag.
@@ -83,6 +82,8 @@ The final algorithm for sampling this element works as follows:
 - Store the first element as the reservoir element
 - For the \\(i\\)-th element, choose it for the reservoir with a probability of \\(1 / i \\)
 
+This is the algorithm that I find so elegant.
+It is incredibly simple, has perfect complexity, and yet the way it works seems to be a bit magical.
 If we think about some examples, adapting the probabilities like this seems to just work out.
 For example, we would process a stream with three elements as follows:
 
@@ -98,7 +99,7 @@ It turns out that by induction this works for any number of elements.
 
 **Induction assumption**: For a stream with \\(n\\) elements, all elements are chosen with the same final probability \\(1/n\\).
 
-**Induction step**: \\(n \rightarrow n + 1\\)
+**Inductive step**: \\(n \rightarrow n + 1\\)
 
 The algorithm tells us to choose the next element of the stream with a probability of \\(1 / (n + 1)\\).
 All other elements can be the current reservoir element with a probability of \\(1 / n\\) by the induction assumption.
@@ -116,6 +117,11 @@ This reservoir is initialized to contain the first \\(k\\) elements of the strea
 When processing the \\(i\\)-th element for \\(i > k\\), we add it to the reservoir with a probability of \\(k / i\\).
 If we add it, we do that by replacing a random element of the reservoir.
 In other words, in that case each element of the reservoir has a probability of \\(1 / k\\) to be replaced.
+The value of \\(k / i\\) is derived from the fact that this is the probability that any given element is sampled from a uniform distribution if we want to select \\(k\\) items.
+
+Full algorithm:
+- Store the first \\(k\\) elements as the reservoir elements
+- For the \\(i\\)-th element, add it to the reservoir with a probability of \\(k / i\\). This is done by replacing a randomly selected element in the reservoir
 
 The proof of the algorithm again works out by induction.
 Since the arithmetics get a bit more finicky for the case of \\(k \neq 1\\), I have put the full proof into the [appendix](#appendix).
@@ -154,6 +160,12 @@ The final solution is extremely simple, yet elegant.
 It does not require fancy data structures or complex math but just an intuitive way of adapting probabilities.
 Proofing that it works also seems like a good example to learn about induction.
 
+The solution of adapting probabilities is optimal for the problem as described here.
+However, there are various extensions for different use cases.
+The random tag algorithm can be extended to make it possible to sample from weighted distributions.
+Additionally, if the iterable interface allows skipping a certain number of items, the algorithm of adapting probabilities can be improved further.
+The final complexity then depends on how many elements we want to sample, rather than just on how many elements the stream has.
+
 {% capture refs %}
 	{% include cite.html i=1 acm="Vitter, J. S. (1985). Random sampling with a reservoir. ACM Transactions on Mathematical Software (TOMS), 11(1), 37-57." pdf="https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.138.784&rep=rep1&type=pdf" %}
 	{% include cite.html i=2 acm="Cormode, G. (2017). What is Data Sketching, and Why Should I Care?. Communications of the ACM (CACM), 60(9), 48-55." pdf="https://pdfs.semanticscholar.org/548a/1a53896474c314ea33b9c1f96ecec8ed3b10.pdf" notes="papers/016_What_is_Data_Sketching_and_Why_Should_I_Care.md" %}
@@ -170,7 +182,7 @@ Proofing that it works also seems like a good example to learn about induction.
 
 **Induction assumption**: For a stream with \\(n\\) elements, and for \\(k \le n\\), all elements are chosen with the same final probability \\(k/n\\).
 
-**Induction step**: \\(n \rightarrow n + 1\\)
+**Inductive step**: \\(n \rightarrow n + 1\\)
 
 Equivalently to before, the algorithm tells us to choose the next element of the stream with a probability of \\(k / (n + 1)\\).
 All other elements can be the current reservoir element with a probability of \\(k / n\\) by the induction assumption.
@@ -178,21 +190,21 @@ All other elements can be the current reservoir element with a probability of \\
 To compute the probability of an element being kept in the reservoir, we need to consider two cases:
 
 1. The current element of the stream is not added to the reservoir at all: \\(1 - (k / (n + 1)) = (n + 1 - k) / (n + 1)\\)
-1. It is added but does not replace the element in the reservoir we are considering
-	1. It is added: \\(k / (n + 1)\\)
-	1. But does not replace the element in the reservoir we are considering: \\(1 - (1 / k) = (k - 1) / k\\)
+1. (a) It is added but (b) does not replace the element in the reservoir we are considering
+	1. (a): \\(k / (n + 1)\\)
+	1. (b): \\(1 - (1 / k) = (k - 1) / k\\)
 	1. Joint probability: \\((k / (n + 1)) * ((k - 1) / k) = (k - 1) / (n + 1)\\)
 
-Finally, we need to add these two cases since they are fully disjoint:
+We need to add these two cases since they are fully disjoint:
 \\[
 (n + 1 - k) / (n + 1) + (k - 1) / (n + 1) = n / (n + 1)
 \\]
 
 Finally, each previous element had a chance of \\(k / n\\) to even be in the reservoir.
-Those steps were independent of the current one, so we have to multiply the two probabilities:
+The previous steps were independent of the current one, so we have to multiply the two probabilities:
 \\[
 (n / (n + 1)) * (k / n) = k / (n + 1)
 \\]
 
-And this is exactly where we wanted to go arrive at.
+And this is exactly where we wanted to arrive at.
 All elements still have the same final probability of ending up in the reservoir.
