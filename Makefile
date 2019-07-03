@@ -5,3 +5,9 @@ spellcheck s:
 clean c:
 	rm -f _site/*.bak
 	rm -f _drafts/*.bak
+
+drafts d:
+	jekyll server --drafts
+
+future f:
+	jekyll server --drafts --future
