@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "TensorFlow"
-date:   2019-02-01 14:00:00
+date:   2019-09-01 14:00:00
 description: "A bottom-up guide to computational graphs and tensors"
 categories: machine-learning
 ---
