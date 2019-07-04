@@ -12,7 +12,7 @@ categories: reading-notes
 
 ### [Foundation](https://www.amazon.com/Foundation-Isaac-Asimov/dp/0553293354)
 
-![book cover](/assets/posts/books-2019/foundation.jpg)
+![Foundation cover](/assets/posts/books-2019/foundation.jpg)
 
 I started reading some of [Isaac Asimov](https://en.wikipedia.org/wiki/Isaac_Asimov)'s short stories a few years ago and liked them a lot – especially [The Last Question](https://www.multivax.com/last_question.html) and [Franchise](https://en.wikipedia.org/wiki/Franchise_(short_story)).
 This year, I decided I should give his novels a read as well.
@@ -36,7 +36,7 @@ I really liked the fundamental idea behind the book and how the story was told.
 
 ### [Foundation and Empire](https://www.amazon.com/Foundation-Empire-Isaac-Asimov/dp/0553293370)
 
-![book cover](/assets/posts/books-2019/foundation-and-empire.png)
+![Foundation and Empire cover](/assets/posts/books-2019/foundation-and-empire.png)
 
 The second Foundation book is split into two parts.
 In the initial half, the first foundation is trying to establish itself against the old, falling empire.
@@ -52,23 +52,23 @@ Since the story is concerned with the overall direction that humanity is moving 
 
 ### [Second Foundation](https://www.amazon.com/Second-Foundation-Isaac-Asimov/dp/0553293362)
 
-![book cover](/assets/posts/books-2019/second-foundation.png)
+![Second Foundation cover](/assets/posts/books-2019/second-foundation.png)
 
 In the third book, and final book of the original trilogy, the focus shifts to the second foundation.
 Events pick up a few years from where the second book left off, but the same line of events is discussed.
-It is hard to talk about the third book of a series without spoiling the first two parts, so I am omitting a more thorough summary at this point.
+It is hard to talk about the third book in a series without spoiling the first two parts, so I am omitting a more thorough summary at this point.
 
 All in all I really liked the Foundation trilogy.
 A lot of the ideas presented are really interesting and I enjoyed the way the stories were told.
 There are two prequels and two sequels to the original trilogy, so in the future I might read those.
 
 I also noticed that Asimov made some fairly good predictions about the future.
-Even though the books are fairly old, he does predict a bunch of devices that exist today, for example a typewriter that automatically corrects typos.
-Interestingly, physical cash seems to be a thing in the story, e.g. for machines that let you buy public transport tickets.
+Even though the books are fairly old, he does predict a number of devices that exist today, for example a typewriter that automatically corrects typos.
+Interestingly, physical cash still seems to be a thing in the story, e.g. for machines that let you buy public transport tickets.
 
 ### [Do No Harm](https://www.amazon.com/Do-No-Harm-Stories-Surgery/dp/125009013X)
 
-![book cover](/assets/posts/books-2019/do-no-harm.jpg)
+![Do No Harm cover](/assets/posts/books-2019/do-no-harm.jpg)
 
 *Do No Harm*, recommended to me by [Swathi](https://github.com/swathiiyer2), is the autobiographical book of a British neurosurgeon.
 Each chapter tells a story from his life, with most of them discussing specific medical cases.
@@ -81,7 +81,7 @@ Later, he worries whether the operation did not go as well as it could have gone
 Another interesting insight was how difficult it is to train new neurosurgeons.
 They have to operate on real patients to learn, but until they have enough practice, they will make more mistakes than experienced surgeons.
 However, if you do not give new surgeons the chance to learn in the real world, they can never get any better.
-It generally struck me that there was a much higher cost attached to things like having an off day or to training the next generation.
+It generally struck me as interesting that in this line of work there is a much higher cost attached to things like having an off day or to training the next generation.
 
 {% comment %}
 ---
