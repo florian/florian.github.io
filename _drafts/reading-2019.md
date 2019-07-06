@@ -83,6 +83,29 @@ They have to operate on real patients to learn, but until they have enough pract
 However, if you do not give new surgeons the chance to learn in the real world, they can never get any better.
 It generally struck me as interesting that in this line of work there is a much higher cost attached to things like having an off day or to training the next generation.
 
+### [Game Theory: A Nontechnical Introduction](https://www.amazon.com/Game-Theory-Nontechnical-Introduction-Mathematics/dp/0486296725)
+
+![book cover](/assets/posts/books-2019/game-theory.png)
+
+*Game theory* is the science of decision making.
+It can be used to mathematicallly formalize how strategies should be chosen, how voting power can be measured, or how players might cooperate.
+I was looking for a short introduction to the subject.
+In particular I wanted a book which would be faster to read than a textbook but still had mathematical rigor.
+After looking for such a book for quite a long time, I settled on *Game Theory: A Nontechnical Introduction*.
+It did not contain that much math but still seemed like the closest thing to what I was looking for.
+
+Each chapter of the book starts with a set of exercises.
+The reader is asked try to solve them, before learning about the theories behind the problems in the rest of the chapter.
+This turned out to be a nice way start thinking about the ideas that were about to be discussed.
+However, the solutions were only presented at the end of each chapter.
+By that time, I had mostly forgotten about the problems again, so it did require some more time to work through the solutions.
+
+In terms of topics, the book was well organized.
+However, the chapter structure seemed a bit odd, with the last two chapters taking up nearly all of the book.
+In general, I felt like the book was a great choice for learning about game theory, especially considering how unhappy I was with other books.
+Despite not being a difficult read, I ended up taking a lot of ideas away from it.
+I have also noticed that after reading the book I now keep seeing applications to game theory everywhere.
+
 {% comment %}
 ---
 
