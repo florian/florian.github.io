@@ -79,7 +79,7 @@ They all hold data, take zero inputs and just output the data they currently con
 This value has to be known during graph construction time and is hardcoded into the graph.
 After importing TensorFlow as `tf`, we can create new constants using `tf.constant` by passing in the value the node should hold.
 
-```
+```python
 import tensorflow as tf
 
 a = tf.constant(2)
@@ -88,7 +88,7 @@ b = tf.constant(3)
 
 We can then use these nodes for arbitrary operations:
 
-```
+```python
 c = a + b
 d = a * 3
 ```
@@ -108,7 +108,7 @@ Values for them are only passed in when the training starts, i.e. when the graph
 To create a placeholder, we use `tf.placeholder` and declare the type of data that it will hold.
 Optionally, the shape of the data can be fixed as well.
 
-```
+```python
 X = tf.placeholder(tf.float32)
 y = tf.placeholder(tf.float32, shape=[128, 10])
 ```
@@ -126,7 +126,7 @@ If placeholders are the input to our function, or model, then variables are para
 To create a new variable, we use `tf.Variable` and pass in a default value.
 This could be any NumPy array, but in this case we directly create a random tensor of shape `[128, 50]`:
 
-```
+```python
 W = tf.Variable(tf.random_uniform([128, 50], -1, 1))
 ```
 
@@ -148,7 +148,7 @@ For example, in the case of matrix multiplication, it can make use of special in
 Sessions are created using the `tf.Session` constructor.
 We can then evaluate individual nodes:
 
-```
+```python
 a = tf.constant(3)
 b = a * 2
 
@@ -163,7 +163,7 @@ To do this, TensorFlow searches through the graph backwards from `b` on and find
 If our graph contains placeholders, we need to pass in their values using the `feed_dict` argument of `sess.run`.
 We can also fetch the value of several nodes using a single graph evaluation:
 
-```
+```python
 x = tf.placeholder(tf.float32)
 g = x * 5
 h = x * 6
@@ -175,7 +175,7 @@ sess.run([g, h], feed_dict={ x: 2. }) # => [10., 12.]
 When using variables, we need to initialize them before they are first used.
 A simple way of doing this is using the `tf.global_variables_initializer`:
 
-```
+```python
 x = tf.Variable(3.)
 loss = tf.abs(2 + x)
 
@@ -197,7 +197,7 @@ When the resulting optimization operation is called, it automatically computes r
 A simple example is the vanilla `tf.train.GradientDescentOptimizer`.
 We need to provide the learning rate using the first argument and define what we want to optimize for:
 
-```
+```python
 x = tf.Variable(3.)
 loss = tf.abs(2 + x)
 
@@ -213,7 +213,7 @@ While this operation has no return value, it changed the value of the variable a
 This effectively corresponds to one step of gradient descent.
 To fully minimize the loss, we need to take more than one step:
 
-```
+```python
 x = tf.Variable(3.)
 loss = tf.abs(2 + x)
 
@@ -229,7 +229,7 @@ for _ in range(7):
 This is a standard pattern in TensorFlow code: We iteratively optimize our weights by calling `sess.run` several times.
 The resulting output shows that we reached the optimal value for `x` after five iterations:
 
-```
+```python
 [5.0, None, 2.0]
 [4.0, None, 1.0]
 [3.0, None, 0.0]
@@ -251,7 +251,7 @@ The common dimension of `A` and `B` is a hyperparameter, called `dims` below.
 One way of finding an approximate solution for the factorization task is gradient descent.
 TensorFlow makes this fairly easy:
 
-```
+```python
 def factorize(C_val, dims):
   A = tf.Variable(tf.random_uniform([C_val.shape[0], dims], -1, 1))
   B = tf.Variable(tf.random_uniform([dims, C_val.shape[1]], -1, 1))

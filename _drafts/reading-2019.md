@@ -8,6 +8,12 @@ categories: reading-notes
 
 [intro]
 
+- science fiction trilogy
+- 1 novel
+- 1 book for learning about something new
+
+1 rec
+
 ---
 
 ### [Foundation](https://www.amazon.com/Foundation-Isaac-Asimov/dp/0553293354)
@@ -60,7 +66,7 @@ It is hard to talk about the third book in a series without spoiling the first t
 
 All in all I really liked the Foundation trilogy.
 A lot of the ideas presented are really interesting and I enjoyed the way the stories were told.
-There are two prequels and two sequels to the original trilogy, so in the future I might read those.
+There are two prequels and two sequels to the original trilogy, so I might read those in the future.
 
 I also noticed that Asimov made some fairly good predictions about the future.
 Even though the books are fairly old, he does predict a number of devices that exist today, for example a typewriter that automatically corrects typos.
@@ -88,7 +94,7 @@ It generally struck me as interesting that in this line of work there is a much 
 ![book cover](/assets/posts/books-2019/game-theory.png)
 
 *Game theory* is the science of decision making.
-It can be used to mathematicallly formalize how strategies should be chosen, how voting power can be measured, or how players might cooperate.
+It can be used to mathematically formalize how strategies should be chosen, how voting power can be measured, or how players might cooperate.
 I was looking for a short introduction to the subject.
 In particular I wanted a book which would be faster to read than a textbook but still had mathematical rigor.
 After looking for such a book for quite a long time, I settled on *Game Theory: A Nontechnical Introduction*.
@@ -104,7 +110,7 @@ In terms of topics, the book was well organized.
 However, the chapter structure seemed a bit odd, with the last two chapters taking up nearly all of the book.
 In general, I felt like the book was a great choice for learning about game theory, especially considering how unhappy I was with other books.
 Despite not being a difficult read, I ended up taking a lot of ideas away from it.
-I have also noticed that after reading the book I now keep seeing applications to game theory everywhere.
+I also noticed that after reading the book I now keep on seeing applications to game theory everywhere.
 
 {% comment %}
 ---
