@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Reservoir Sampling"
-date:   2019-11-01 00:00:01
+date:   2019-11-30 16:00:01
 description: "Sampling from streams"
 categories: probabilistic-data-structures
 ---
