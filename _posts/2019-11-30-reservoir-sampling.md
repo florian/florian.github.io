@@ -8,24 +8,24 @@ categories: probabilistic-data-structures
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
-One of my absolute favorite algorithms is part of a group of techniques with the name *reservoir sampling*.
+One of my favorite algorithms is part of a group of techniques with the name *reservoir sampling*.
 I like how the algorithm is neither complex nor requires fancy math but still very elegantly solves its problem.
 Incidentally, it also happens to be the solution to a popular interview question.
 
-The problem goes like this: Given a stream of elements, we want to sample \\(k\\) random ones without replacement using uniform probabilities.
+The problem goes like this: Given a stream of elements, we want to sample \\(k\\) random ones, without replacement and by using uniform probabilities.
 The total number of elements in the stream is unknown.
 At any point, someone could stop the stream, and we have to return *k* random elements.
-This blog post first goes over a naive solution, followed by one that actually scales, and then finally the algorithm that I find so elegant.
+This blog post goes over a naive solution first, followed by one that actually scales, and then finally the algorithm that I find so elegant.
 
 ### Naive Approach
 
 If we do not know how to solve the problem, we could try to reduce it to one that we do know how to solve.
 To this end, we could store all elements of the stream in an array.
-The problem then reduces down to sampling \\(k\\) random indices, whose respective elements are returned.
+The problem then reduces down to sampling \\(k\\) [random indices](https://en.wikipedia.org/wiki/Fisher–Yates_shuffle), whose respective elements are returned.
 
 Clearly, this method does not scale.
 The stream might contain billions of elements and we do not want to, and often cannot, keep all of them in memory.
-Another annoyance is that the solution requires two distinct steps.
+Furthermore, we essentially solve the problem in two distinct steps.
 First we build up an array of all elements, then we try to select random ones.
 This does not seem like a natural solution to such a streaming problem.
 
@@ -42,7 +42,7 @@ Of course, this does not scale any better.
 It also does not improve on the space requirement at all.
 We essentially still duplicate the stream to be able to sort it.
 
-#### Heaps
+#### Reservoir
 
 However, there is an obvious bottleneck to the solution above.
 We are sorting the entire stream, even though we in fact only care about \\(k\\) elements.
@@ -56,9 +56,11 @@ For arbitrary \\(k\\), we should keep track of a *reservoir* of the \\(k\\) elem
 Naively, we can do this by comparing the random tag of the current element to the random tags of elements in the reservoir.
 If necessary, the element with the largest tag is then replaced.
 
+#### Heaps
+
 This works, but at this stage the problem calls for using a [heap](https://en.wikipedia.org/wiki/Heap_(data_structure)) for better complexity.
 Heaps exactly solve the problem of keeping track of the \\(k\\) smallest elements in an efficient way.
-This solution is much better: We do not need any additional space, and when we process a new element, we at most have \\(\mathcal{O}(\log n)\\) work to perform.
+This solution is much better: We do not need any additional space, and when we process a new element, we at most have \\(\mathcal{O}(\log k)\\) work to perform.
 
 An additional advantage of the new solution is that we have a valid sample available after each step of the stream.
 This makes it possible to use the sampling technique in applications where the stream might continue indefinitely.
@@ -80,7 +82,7 @@ Let's again start with the base case of \\(k = 1\\).
 The final algorithm for sampling this element works as follows:
 
 - Store the first element as the reservoir element
-- For the \\(i\\)-th element, choose it for the reservoir with a probability of \\(1 / i \\)
+- For the \\(i\\)-th element, make it the reservoir element with a probability of \\(1 / i \\)
 
 This is the algorithm that I find so elegant.
 It is incredibly simple, has perfect complexity, and yet the way it works seems to be a bit magical.
@@ -89,7 +91,12 @@ For example, we would process a stream with three elements as follows:
 
 1. Store the first element
 1. Store the second element with a probability of \\(1 / 2\\). Now both elements have equal probabilities of being in the reservoir
-1. Store the third element with a probability of \\(1 / 3\\). The previous two elements also have a probability of \\((1 / 2) * (2 / 3) = 1 / 3\\) to be chosen
+1. Store the third element with a probability of \\(1 / 3\\). The previous two elements also have a final probability of \\((1 / 2) * (2 / 3) = 1 / 3\\) to be chosen
+
+The following visualization shows this.
+Circles represent the elements in the stream.
+
+{% include img.html url="adapting-probabilities.png" description="A visualization of the adapting probabilities algorithm" %}
 
 #### Proof
 
@@ -99,12 +106,12 @@ It turns out that by induction this works for any number of elements.
 
 **Induction assumption**: For a stream with \\(n\\) elements, all elements are chosen with the same final probability \\(1/n\\).
 
-**Inductive step**: \\(n \rightarrow n + 1\\)
+**Inductive step**: \\(n \rightarrow n + 1\\). We want to show that for a stream of \\(n + 1\\) elements, all items still have the same probability of \\(1 / (n + 1)\\) to be sampled.
 
 The algorithm tells us to choose the next element of the stream with a probability of \\(1 / (n + 1)\\).
 All other elements can be the current reservoir element with a probability of \\(1 / n\\) by the induction assumption.
 
-The current reservoir element has a probability of \\(1 - 1 / (n + 1) = n / (n + 1)\\) to be replaced.
+The current reservoir element has a probability of \\(1 - 1 / (n + 1) = n / (n + 1)\\) to stay.
 This means all previous elements have a final probability of \\((1 / n) * (n / (n + 1)) = 1 / (n + 1)\\) to be the reservoir element after this step.
 Thus, all elements still have the same probability of being selected as the reservoir element.
 
@@ -142,6 +149,7 @@ As an item is processed, the filter function is first applied, and if necessary 
 
 If the elements are read from disk and then directly sampled, one could even optimize the deserialization process.
 Only elements that reservoir sampling selects would need to be deserialized.
+Reservoir sampling is a natural fit for both these applications since we do not know how many elements the streams will contain.
 
 #### Database Query Planning
 
@@ -158,7 +166,7 @@ Furthermore, reservoir sampling makes it possible to easily add the sampling pro
 Reservoir sampling allows us to sample elements from a stream, without knowing how many elements to expect.
 The final solution is extremely simple, yet elegant.
 It does not require fancy data structures or complex math but just an intuitive way of adapting probabilities.
-Proofing that it works also seems like a good example to learn about induction.
+Proofing that it works also seems like a good example for learning about induction.
 
 The solution of adapting probabilities is optimal for the problem as described here.
 However, there are various extensions for different use cases.
@@ -200,8 +208,9 @@ We need to add these two cases since they are fully disjoint:
 (n + 1 - k) / (n + 1) + (k - 1) / (n + 1) = n / (n + 1)
 \\]
 
-Finally, each previous element had a chance of \\(k / n\\) to even be in the reservoir.
-The previous steps were independent of the current one, so we have to multiply the two probabilities:
+This is the probability of an element staying in the reservoir.
+Finally, each previous element had a chance of \\(k / n\\) to be in the reservoir to begin with.
+The prior steps were independent of the current one, so we have to multiply the two probabilities:
 \\[
 (n / (n + 1)) * (k / n) = k / (n + 1)
 \\]
