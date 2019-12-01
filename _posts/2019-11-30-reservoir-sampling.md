@@ -201,7 +201,7 @@ To compute the probability of an element being kept in the reservoir, we need to
 1. (a) It is added but (b) does not replace the element in the reservoir we are considering
 	1. (a): \\(k / (n + 1)\\)
 	1. (b): \\(1 - (1 / k) = (k - 1) / k\\)
-	1. Joint probability: \\((k / (n + 1)) * ((k - 1) / k) = (k - 1) / (n + 1)\\)
+	1. Joint probability: \\((k / (n + 1)) * ((k - 1) / k) = (k - 1) / (n + 1)\\) This is the result of multiplying (a) and (b)
 
 We need to add these two cases since they are fully disjoint:
 \\[
