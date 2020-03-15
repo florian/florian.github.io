@@ -99,6 +99,15 @@ li {
     text-indent: -1em;
 }
 
+ul ul {
+  margin-top: 0;
+}
+
+ul ul li {
+  padding: 0;
+  padding-top: 6px;
+}
+
 article li::before {
  content: "–";
  padding-right: 8px;
