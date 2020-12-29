@@ -1,6 +1,8 @@
 <li><span id="citation-{{ include.i }}">{{ include.acm }}
 		{% if include.pdf %} <a href="{{ include.pdf }}" class="pdf-link"></a> {% endif %}
 		{% if include.notes %} <a href="https://github.com/florian/reading-notes/blob/master/{{ include.notes }}" class="notes-link"></a> {% endif %}
+		{% if include.backlink != false %}
 		<a href="#ref-{{ include.i }}" class="ref-backlink"></a>
+		{% endif %}
 	</span>
 </li>
