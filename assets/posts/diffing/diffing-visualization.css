@@ -1,0 +1,133 @@
+.diff-visualization .diff-wrapper,
+.diff-visualization h4,
+.diff-visualization button {
+	width: 100%;
+  	max-width: 650px;
+}
+
+.diff-visualization .diff-wrapper {
+  display: flex;
+}
+
+.diff-visualization .diff-side,
+.diff-visualization .diff-full {
+  display: inline-block;
+  width: 50%;
+  background: white;
+  border: 1px solid grey;
+}
+
+.diff-visualization .diff-full {
+  width: 100%;
+}
+
+.diff-visualization .diff-side,
+.diff-visualization .diff-full,
+.diff-visualization textarea {
+  box-sizing: border-box;
+  font-family: monospace;
+  font-size: 14px;
+}
+
+.diff-visualization textarea {
+  width: 100%;
+  padding: 10px;
+  padding-left: 17px;
+  border: 0;
+  resize: none;
+  outline: none;
+}
+
+.diff-visualization .right-diff-side {
+  border-left: 0;
+}
+
+.diff-visualization button {
+  box-sizing: border-box;
+  margin: 0;
+  margin-bottom: 15px;
+  padding: 10px;
+  cursor: pointer;
+  border-top: 0 !important;
+}
+
+.diff-visualization button:hover {
+  background: #666;
+  color: white;
+}
+
+.diff-visualization h4 {
+  display: inline-block;
+  box-sizing: border-box;
+  margin: 0px auto;
+  padding: 12px; 5px;
+  border-bottom: 0 ! important;
+  text-align: center;
+  font-size: 15px;
+}
+
+.diff-visualization h4,
+.diff-visualization button {
+  border: 1px solid black;
+  background: #555;
+  color: white;
+  font-family: Verdana;
+}
+
+.diff-visualization .diff-results {
+  display: inline-block;
+  list-style: none;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.diff-visualization .diff-change {
+  padding: 4px 10px;
+  border-bottom: 1px solid #aaa;
+  text-indent: 0;
+  white-space: pre;
+}
+
+.diff-visualization .diff-change:last-child {
+  padding-bottom: 7px;
+  border-bottom: 0;
+}
+
+.diff-visualization .diff-added:empty,
+.diff-visualization .diff-removed:empty {
+  opacity: 0.5
+}
+
+.diff-visualization .diff-added {
+  background: green;
+  color: white;
+}
+
+.diff-visualization .diff-added::before {
+  content: "+ ";
+  padding: 0;
+}
+
+.diff-visualization .diff-removed {
+  background: red;
+  color: white;
+}
+
+.diff-visualization .diff-removed::before {
+  content: "- ";
+  padding: 0;
+}
+
+.diff-visualization .diff-unchanged,
+.diff-visualization .diff-buffer {
+  background: #ddd;
+  color: #333;
+}
+
+.diff-visualization .diff-unchanged::before,
+.diff-visualization .diff-buffer::before{
+  content: "  ";
+  white-space: pre;
+  padding: 0;
+}
