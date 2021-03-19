@@ -1,10 +1,12 @@
 ---
 layout: post
 title:  "TensorFlow"
-date:   2020-09-01 14:00:00
+date:   2018-11-20 14:00:00
 description: "A bottom-up guide to computational graphs and tensors"
 categories: machine-learning
 ---
+
+*Note: TensorFlow has changed quite a lot since this post was originally written in 2018. The fundamental concepts in this post still mostly transfer to TF2. The APIs, such as placeholders or sessions, do not. For the code below to work in TF2, you would have to import the `tf.compat.v1` module.*
 
 After I started working at Google this year, I had to learn how to use TensorFlow.
 This turned out to be a lot of fun and I ended up liking it much more than I had anticipated.
@@ -35,14 +37,14 @@ It also makes inference on mobile phones or in a web browser more efficient, by 
 ### Tensors
 
 Tensors are *n*-dimensional arrays that represent all data in TensorFlow.
-Similarly to how we can go from scalars to vectors, and from vectors to matrices, we can create differently structured data by adding more dimensions.
+Similarly to how we can go from scalars to vectors and from vectors to matrices, we can create differently structured data by adding more dimensions.
 This, for example, allows us to represent RGB images.
 If there are three channels (red, green, blue) and the image has a width of `w` and a height of `h`, then we want to store the image as a `w × h × 3` tensor.
 This is similar to a `w × h` matrix, except that each pixel has three values associated with it.
 
 Conceptually, tensors are nearly equivalent to NumPy's `np.array` function.
 This is really just a helper function for creating `np.ndarray`s, which are *n*-dimensional arrays.
-Even though the term tensor is not used as much in NumPy documents, NumPy users will already be familiar with the idea of tensors.
+Even though the term tensor is not used as much in NumPy docs, NumPy users will already be familiar with the idea of tensors.
 
 To understand the terminology used around tensors in ML, it is useful to know the following two terms:
 - The *shape* of a tensor is an array detailing the number of values in each dimension. In the case of the image described above, the shape would be `[w, h, 3]`
@@ -239,9 +241,9 @@ The resulting output shows that we reached the optimal value for `x` after five 
 [0.0, None, -2.0]
 ```
 
-The `tf.train` library contains many [other popular optimization algorithms](https://www.tensorflow.org/api_docs/python/tf/train).
+The `tf.train` library contains many [other popular optimization algorithms](https://www.tensorflow.org/api_docs/python/tf/compat/v1/train).
 
-### Matrix Factorization
+### Example: Matrix Factorization
 
 The code above is the minimal example for optimization in TensorFlow.
 Another easy, but a bit more interesting one, is matrix factorization.
@@ -253,6 +255,8 @@ TensorFlow makes this fairly easy:
 
 ```python
 def factorize(C_val, dims):
+  # Two variables with a common dimension `dim`. When these are
+  # multiplied, they produce a matrix of C's shape.
   A = tf.Variable(tf.random_uniform([C_val.shape[0], dims], -1, 1))
   B = tf.Variable(tf.random_uniform([dims, C_val.shape[1]], -1, 1))
 
@@ -279,28 +283,21 @@ The result is pretty cool.
 We can now factorize arbitrary matrices.
 When checking the loss, we can see that it works fairly well for most random matrices.
 
-### Linear Regression
+### Conclusion
 
-### Common Mistakes
-
-#### Printing
-
-#### Global Graph
-
-#### Naming
-
-### PyTorch
-
-Even though a good number of concepts transfer well from PyTorch, which I had used before, there are some major differences.
-Learning about this turned out to be a lot of fun and also made me understand some design decisions of PyTorch better.
+To develop in TensorFlow, you describe graphs of computations in a declarative manner.
+TensorFlow can then automatically compute gradients for these graphs, allowing you to easily optimize any given variable.
+It can also execute and distribute your computations on many different platforms.
+All of these things enable ML development at scale.
 
 ### Further Resources
 
-[Papers](https://www.tensorflow.org/about/bib)
+The TensorFlow team published two [papers](https://www.tensorflow.org/about/bib), both of which are very readable.
+There's some overlap between these but I found both to be worth reading:
+- The first paper {% include ref.html i=1 %} has more details about TensorFlow's programming model
+- The second one {% include ref.html i=2 %} gives some historical context and describes more advanced features
 
-{% include ref.html i=1 %} {% include ref.html i=2 %}
-
-Reading notes
+I also wrote [reading notes](https://github.com/florian/reading-notes/#papers) for both papers.
 
 {% capture refs %}
 	{% include cite.html i=1 acm="Abadi, Martín, et al. \"TensorFlow: Large-scale machine learning on heterogeneous distributed systems.\" Preliminary White Paper 2015" pdf="https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/45166.pdf" notes="papers/007_TensorFlow_Large-Scale_Machine_Learning_on_Heterogeneous_Distributed_Systems.md" %}
