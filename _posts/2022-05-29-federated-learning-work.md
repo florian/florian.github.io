@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Working on Federated Learning"
-date:   2022-5-29 19:21:01
+date:   2022-5-29 02:21:01
 description: "Why working on federated learning is interesting, meaningful and fun"
 categories: federated-learning
 ---
