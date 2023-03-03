@@ -1,14 +1,14 @@
 ---
 layout: post
-title:  "Federated Smart Text Selection"
-date:   2021-11-22 23:23:10
-description: "What I worked on at Google the past couple of years"
+title:  "Distributed Differential Privacy for Federated Learning"
+date:   2023-03-02 23:23:10
+description: "Distributed training with formal privacy guarantees that hold end-to-end"
 categories: federated-learning
 ---
 
-<meta http-equiv="refresh" content="0; url=https://ai.googleblog.com/2021/11/predicting-text-selections-with.html">
+<meta http-equiv="refresh" content="0; url=https://ai.googleblog.com/2023/03/distributed-differential-privacy-for.html">
 
 <style> * { display: none } </style>
 
 This post describes my work at Google:
-[https://ai.googleblog.com/2021/11/predicting-text-selections-with.html](https://ai.googleblog.com/2021/11/predicting-text-selections-with.html)
+[https://ai.googleblog.com/2023/03/distributed-differential-privacy-for.html](https://ai.googleblog.com/2023/03/distributed-differential-privacy-for.html)
