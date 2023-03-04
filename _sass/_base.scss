@@ -286,16 +286,23 @@ pre {
 
 .nav-links {
   float: right;
+  margin: 0;
 
   li {
    display: inline;
-   padding-left: 22px;
    font-size: 16px;
+   margin: 0;
+   padding: 0;
+  }
+
+  li + li {
+    padding-left: 15px;
   }
 
   a {
    border-bottom-style: dotted;
    opacity: .7;
+   font-size: 15px;
   }
 
   a:hover {
