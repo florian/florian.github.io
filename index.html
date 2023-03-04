@@ -4,6 +4,11 @@ layout: default
 
 <div class="header-intro">
   <h2>Florian Hartmann</h2>
+  <ul class="nav-links">
+        <li><a href="/reading">Reading Notes</a></li>
+        <li><a href="/cooking">Cooking</a></li>
+  </ul>
+
   <p>
   I work on Federated Learning at
     <a href="https://research.google">Google Research</a>.
@@ -23,21 +28,25 @@ layout: default
   <a href="http://github.com/florian">JavaScript libraries</a>.
   </p>
 </div>
-<hr />
-
 
 <div class="home">
-  <ul id="post-list">
     {% for post in paginator.posts %}
-      <li>
-        <a href="{{ post.url | prepend: site.baseurl }}">
-          <aside class="dates">{{ post.date | date: "%b %Y" }}</aside>
-          {{ post.title }}
-          <h2>{{ post.description }}</h2>
-        </a>
-      </li>
+      {% assign currentdate = post.date | date: "%Y" %}
+      {% if currentdate != date %}
+        {% unless forloop.first %}</ul>{% endunless %}
+        <h2 class="year-header" id="y{{post.date | date: "%Y"}}">{{ currentdate }}</h2>
+        <ul class="post-list">
+          {% assign date = currentdate %}
+        {% endif %}
+        <li>
+          <a href="{{ post.url | prepend: site.baseurl }}">
+            <aside class="dates">{{ post.date | date: "%b %Y" }}</aside>
+            {{ post.title }}
+            <h2>{{ post.description }}</h2>
+          </a>
+        </li>
+      {% if forloop.last %}</ul>{% endif %}
     {% endfor %}
-  </ul>
 
   {% if paginator.previous_page or paginator.next_page %}
   <div class="pagination">

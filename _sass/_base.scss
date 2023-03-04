@@ -1,5 +1,5 @@
 /* Spacing */
-.post h1, h3, h4, h5, p, .post-body ul, #post-list li {
+.post h1, h3, h4, h5, p, .post-body ul, .post-list li {
 margin-bottom: 20px;
 }
 
@@ -280,6 +280,28 @@ pre {
 
 .header-intro h2 {
     color: #444;
+    display: inline-block;
+    margin-bottom: 25px;
+}
+
+.nav-links {
+  float: right;
+
+  li {
+   display: inline;
+   padding-left: 22px;
+   font-size: 16px;
+  }
+
+  a {
+   border-bottom-style: dotted;
+   opacity: .7;
+  }
+
+  a:hover {
+   border-bottom-style: solid;
+   opacity: 1;
+  }
 }
 
 .header-intro a, .header-intro a:visited {
@@ -306,7 +328,29 @@ pre {
  * Page content
  */
 
-#post-list {
+.year-header {
+ text-align: center;
+ margin-top: 50px;
+ color: #555;
+
+ &:before, &:after {
+  content: '';
+  display: inline-block;
+  width: calc(50% - 40px);
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 5px;
+ }
+
+ &:before {
+  margin-right: 19px;
+ }
+
+ &:after {
+  margin-left: 19px;
+ }
+}
+
+.post-list {
     margin-left: 0;
     list-style: none;
 
@@ -317,13 +361,13 @@ pre {
     }
 }
 
-#post-list a:hover,
-#post-list a:hover .dates {
+.post-list a:hover,
+.post-list a:hover .dates {
     text-decoration: none;
     color: $brand-color;
 }
 
-#post-list * {
+.post-list * {
     -webkit-transition: all 0.15s ease;
     -moz-transition: all 0.15s ease;
     -ms-transition: all 0.15s ease;
@@ -334,37 +378,37 @@ pre {
 /*=========================================
 Post List
 =========================================== */
-#post-list,#archive-list {
-    margin-top: 50px;
+.post-list,#archive-list {
+    margin-top: 30px;
 }
 
-#post-list li,#archive-list li {
+.post-list li,#archive-list li {
     list-style-type: none;
 }
 
-#post-list li:last-child {
+.post-list li:last-child {
     margin-bottom: 0;
 }
 
-#post-list li+li {
+.post-list li+li {
     padding-top: 20px;
     border-top: 1px solid #DFE1E4;
 }
 
-#post-list a {
+.post-list a {
     color: #333;
     display: block;
     font: 600 21px/1.7 $base-font-family;
 }
 
-#post-list h2 {
+.post-list h2 {
     font: normal 19px/1.5em $base-font-family;
     color: #aaa;
     max-width: 600px;
     margin-top: 2px;
 }
 
-#post-list .dates {
+.post-list .dates {
     float: right;
     position: relative;
     top: 1px;
