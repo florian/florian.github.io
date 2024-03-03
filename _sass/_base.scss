@@ -205,7 +205,7 @@ pre,
 code {
     font-size: 14px;
     font-family: 'Menlo', 'Monaco', "Courier New", monospace;
-    white-space: pre-wrap;
+    //white-space: pre-wrap;
     border-radius: 3px;
     //background-color: #F5F5F5;
     //color: #c65e24;
@@ -215,14 +215,14 @@ code {
     padding: 3px 7px;
     box-sizing: content-box;
     border-radius: 5px;
-    white-space: nowrap;
+    //white-space: nowrap;
 }
 
 pre code {
     display: block;
     padding: 15px;
     line-height: 1.8;
-    white-space: pre-wrap;
+    //white-space: pre-wrap;
 }
 
 .lineno {
